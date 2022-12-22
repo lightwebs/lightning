@@ -1,0 +1,28 @@
+input.filter {
+    position: absolute;
+    left: -100000000px;
+
+    + label {
+        cursor: pointer;
+        display: inline-flex;
+        flex-shrink: 0;
+        margin: 2px 8px 8px 0;
+        padding: rc(4) rc(12);
+        border: 2px solid transparent;
+        font-size: rc(14);
+        font-weight: 500;
+        @include box-shadow;
+        @include radius-lg;
+        background-color: #ffffff;
+        transition: box-shadow 0.3s, background-color 0.3s, border-color 1s;
+
+        @media all and (min-width: #{$md}) {
+            padding: rc(8) rc(16);
+        }
+
+        span {
+            transform: rotate(0);
+            transition: transform 0.3s;
+        }
+    }
+}

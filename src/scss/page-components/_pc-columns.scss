@@ -1,0 +1,12 @@
+@layer base {
+    .pc-columns {
+        .column {
+            .text {
+                .material-icons-round {
+                    @apply text-2xl sm:text-3xl md:text-4xl;
+                    @apply leading-none #{!important};
+                }
+            }
+        }
+    }
+}

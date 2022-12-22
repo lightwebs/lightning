@@ -1,0 +1,33 @@
+.screen-reader-text {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #fff;
+
+    &:nth-child(even) {
+        background-color: #ddd;
+    }
+}
+
+.hide {
+    display: none !important;
+}
+
+.ratio-4x3-md-height {
+    @media all and (min-width: #{$md}) {
+        min-height: calc(50vw * 0.75);
+    }
+}

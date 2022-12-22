@@ -1,0 +1,98 @@
+label,
+legend {
+    font-size: rc(12);
+    font-weight: 600;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='password'],
+input[type='search'],
+input[type='number'],
+input[type='tel'],
+input[type='range'],
+input[type='date'],
+input[type='month'],
+input[type='week'],
+input[type='time'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='color'],
+textarea {
+    font-family: inherit;
+    font-size: rc(16);
+    width: 100%;
+    color: #000;
+    padding: rc(8) rc(12);
+    @include radius;
+    border: 1px solid darken($color: #f7f4f9, $amount: 5);
+    background: #ffffff;
+    box-shadow: none;
+    -webkit-appearance: none;
+    margin-bottom: rc(8);
+
+    &::placeholder {
+        color: #bababa;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:focus-within {
+        border: 1px dashed #b8938b;
+    }
+}
+
+input[type='search']::placeholder {
+    font-style: italic;
+}
+
+textarea {
+    border: none;
+    background: #ffffff;
+    -webkit-appearance: none;
+}
+
+fieldset {
+    @include radius;
+    border: none;
+    padding: 0;
+    margin-bottom: rc(8);
+}
+
+.gform_validation_container {
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.g-inline {
+    > div {
+        display: flex;
+        column-gap: rc(12);
+
+        span {
+            flex: 1;
+        }
+    }
+}
+
+form {
+    .error {
+        color: red;
+        font-weight: 600;
+    }
+
+    .success {
+        color: green;
+        font-weight: 600;
+    }
+}
+
+.validation_message {
+    color: red;
+    font-size: 12px;
+    margin-top: -8px;
+}

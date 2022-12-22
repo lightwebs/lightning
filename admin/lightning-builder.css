@@ -1,0 +1,96 @@
+#post-body-content #acf_after_title-sortables {
+    display: flex;
+}
+
+#post-body-content #acf_after_title-sortables > div {
+    flex: 1;
+}
+
+.main-builder-component {
+    background: #0f3460;
+}
+
+.main-builder-component > .acf-label {
+    color: #fff;
+}
+
+.main-builder-component .acf-repeater.-block .acf-table .acf-row:nth-child(even) .acf-row-handle {
+    background: #dedddd;
+}
+
+.main-builder-component .acf-repeater.-block .acf-tab-group {
+    background: #16213e;
+}
+
+.main-builder-component .acf-repeater.-block .acf-tab-group .acf-tab-button {
+    background: #0f3460;
+    color: #fff;
+}
+
+.main-builder-component .acf-repeater.-block .acf-tab-group li.active .acf-tab-button {
+    background: #fff;
+    color: #0f3460;
+}
+
+.acf-flexible-content .layout {
+    border: #1e4ca0 solid 1px;
+    border-radius: 4px;
+}
+
+.acf-flexible-content .layout .acf-fc-layout-handle {
+    border-bottom: #1e4ca0 solid 2px;
+}
+
+.block-title label {
+    font-size: 18px !important;
+    color: #2271b1 !important;
+}
+
+.acf-flexible-content .no-value-message {
+    color: #fff;
+}
+
+/* hide the clone field */
+.acf-fc-popup [data-layout='change_me'] {
+    display: none !important;
+}
+
+.colors-group label.selected {
+    border: 3px solid #2271b1 !important;
+}
+
+.colors-group .acf-button-group label {
+    text-indent: -100000px;
+    border-radius: 100% !important;
+    /* overflow: hidden; */
+    width: 24px;
+    position: relative;
+    height: 24px;
+    padding: 0;
+    margin-right: 4px;
+}
+
+.colors-group .acf-button-group label span.color-name {
+    text-indent: 0;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    font-weight: 500;
+    left: 0;
+    background-color: #fff;
+    box-shadow: rgba(30, 76, 160, 0.2) 0 0 5px 0;
+    border: 1px solid rgba(30, 76, 160, 0.5);
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 4px;
+    pointer-events: none;
+    text-transform: capitalize;
+    opacity: 0;
+}
+
+.colors-group .acf-button-group label:hover span.color-name {
+    opacity: 1;
+}
+
+.colors-group .acf-button-group label.selected {
+    border: 3px solid #2271b1 !important;
+}

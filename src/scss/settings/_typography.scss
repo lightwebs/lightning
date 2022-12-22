@@ -1,0 +1,171 @@
+@mixin h1 {
+    font-size: rc(34);
+    line-height: rc(42);
+
+    @media all and (min-width: #{$md}) {
+        font-size: rc(40);
+        line-height: rc(48);
+    }
+
+    @media all and (min-width: #{$lg}) {
+        font-size: rc(48);
+        line-height: rc(56);
+    }
+}
+
+@mixin h2 {
+    font-size: rc(26);
+    line-height: rc(34);
+
+    @media all and (min-width: #{$md}) {
+        font-size: rc(36);
+        line-height: rc(42);
+    }
+
+    @media all and (min-width: #{$lg}) {
+        font-size: rc(40);
+        line-height: rc(48);
+    }
+}
+
+@mixin h3 {
+    font-size: rc(24);
+    line-height: rc(32);
+
+    @media all and (min-width: #{$md}) {
+        font-size: rc(28);
+        line-height: rc(34);
+    }
+
+    @media all and (min-width: #{$lg}) {
+        font-size: rc(32);
+        line-height: rc(40);
+    }
+}
+
+@mixin h4 {
+    font-size: rc(22);
+    line-height: rc(30);
+
+    @media all and (min-width: #{$lg}) {
+        font-size: rc(24);
+        line-height: rc(32);
+    }
+}
+
+@mixin h5 {
+    font-size: rc(18);
+    line-height: rc(26);
+
+    @media all and (min-width: #{$lg}) {
+        font-size: rc(22);
+        line-height: rc(30);
+    }
+}
+
+@mixin preamble {
+    font-size: rc(18);
+    line-height: rc(28);
+
+    @media all and (min-width: #{$lg}) {
+        font-size: rc(20);
+        line-height: rc(30);
+    }
+}
+
+@mixin regular-text {
+    @layer base {
+        @apply text-base md:text-lg;
+    }
+    font-family: 'Inter', sans-serif;
+}
+
+@mixin small-text {
+    @layer base {
+        @apply text-sm;
+    }
+}
+
+@mixin tiny-text {
+    @layer base {
+        @apply text-xs;
+    }
+}
+
+@layer base {
+    strong,
+    .strong {
+        @apply font-semibold;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-bold mt-0 mb-2;
+        font-family: 'Space Grotesk', sans-serif;
+    }
+}
+
+h1,
+.h1 {
+    @include h1;
+}
+
+h2,
+.h2 {
+    @include h2;
+}
+
+h3,
+.h3 {
+    @include h3;
+}
+
+h4,
+.h4 {
+    @include h4;
+}
+
+.preamble {
+    @include preamble;
+
+    * {
+        @include preamble;
+    }
+}
+
+p,
+.p {
+    margin-top: 0;
+    @include regular-text;
+}
+
+@layer base {
+    a {
+        @apply text-base no-underline relative transition-colors duration-300;
+    }
+
+    .entry-content,
+    p,
+    .p {
+        a {
+            @apply text-purple-700 underline hover:text-purple-800 active:text-purple-800;
+        }
+    }
+}
+
+.regular-text {
+    @include regular-text;
+}
+
+small,
+.small {
+    @include small-text;
+}
+
+.tiny {
+    @include tiny-text;
+}

@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'swiper/swiper.scss';
+@import 'swiper/modules/navigation/navigation.scss';
+
+// Settings
+@import './settings/variables';
+@import './settings/mixins-master';
+@import './settings/typography';
+@import './settings/buttons';
+@import './settings/forms';
+@import './settings/accessibility';
+
+// Utilities
+@import './utils/tooltips';
+@import './utils/toggles';
+@import './utils/swiper';
+@import './utils/overlay';
+@import './utils/details';
+
+// Globals
+@import './base/global';
+@import './header/sub-menu';
+// @import './header/login-form';
+
+// Page components
+@import './page-components/pc-columns';
+@import './page-components/pc-post-listing';
+@import './page-components/pc-components-global';
+
+* {
+    box-sizing: border-box;
+}
