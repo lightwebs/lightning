@@ -14,7 +14,7 @@ function lightning_scripts() {
         'ajaxUrl' => admin_url('admin-ajax.php'),
         'homeUrl' => home_url(),
         'templateDirectory' => get_template_directory_uri(),
-        'ABSPATH' => ABSPATH,
+        'ABSPATH' => str_replace('/wp-content/themes/lwlightning', '', get_template_directory_uri()),
         'restBase' => get_rest_url() . 'lw',
         'loadMore' => wp_create_nonce('load_more'),
         'filterSearch' => wp_create_nonce('filter_search'),

@@ -7,7 +7,7 @@ let post_list, fuse
 
 // Fetch search index and initialize search.
 function fetchSearchResults(searchId) {
-    const searchIndex = `${liGlobal.templateDirectory}/search-results/${searchId}_result.json`
+    const searchIndex = `${liGlobal.ABSPATH}/search-results/${searchId}_result.json`
     const searchInput = document.querySelector(`.search-input[data-search-id=${searchId}]`)
 
     fetch(searchIndex)

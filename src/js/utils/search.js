@@ -10,7 +10,7 @@ const postCount = document.querySelector('.post-count')
 let searchIndex, post_list, fuse
 
 function fetchSearchResults(searchId) {
-    searchIndex = `${liGlobal.templateDirectory}/search-results/${searchId}_result.json`
+    searchIndex = `${liGlobal.ABSPATH}/search-results/${searchId}_result.json`
     const searchInput = document.querySelector(`.main-search-input[data-search-id=${searchId}]`)
     const minSearchLength = 2
 
