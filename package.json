@@ -13,12 +13,12 @@
   },
   "browserslist": "> 0.25%, not dead",
   "devDependencies": {
-    "@parcel/transformer-sass": "2.7.0",
+    "@parcel/transformer-sass": "2.8.2",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/line-clamp": "^0.4.2",
     "buffer": "^6.0.3",
     "cssnano": "5.1.13",
-    "parcel": "^2.7.0",
+    "parcel": "^2.8.2",
     "postcss": "^8.4.18",
     "postcss-cli": "10.0.0",
     "postcss-import": "15.0.0",
@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "fuse.js": "^6.6.2",
+    "gsap": "npm:@gsap/shockingly",
     "swiper": "^8.4.4",
     "yarn": "^1.22.19"
   }
