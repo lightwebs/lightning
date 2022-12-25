@@ -30,6 +30,10 @@ function update_post_search() {
 	}
 	$json_data = json_encode($data);
 	// write to file
+	if (!file_exists(ABSPATH . 'search-results')) {
+		mkdir(ABSPATH . 'search-results', 0777, true);
+	}
+
 	$file = fopen(ABSPATH . 'search-results/' . $post_type . '_search_result.json', 'w');
 	fwrite($file, $json_data);
 	fclose($file);
