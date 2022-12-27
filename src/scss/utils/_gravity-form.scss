@@ -1,0 +1,37 @@
+.gform_wrapper.gravity-theme {
+
+    .gfield {
+
+        .ginput_container {
+    
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                @apply bg-transparent rounded-none border-0 border-b border-white text-white px-0 pt-1 pb-2 mt-0 border-solid;
+            }
+
+            textarea {
+                @apply h-24 #{!important};
+            }
+        }
+    
+        .gfield_label {
+            height: 0;
+            @apply translate-y-7 font-normal my-0 pointer-events-none select-none transition-all;
+
+            &.active {
+                @apply translate-y-0 text-xs;
+            }
+        }
+
+    }
+
+    .gform_footer {
+        @apply p-0 mt-8 #{!important};
+
+        input[type="submit"] {
+            @apply inline-flex px-5 py-3 text-sm font-semibold text-white bg-purple-500 hover:bg-purple-400 active:bg-purple-300 md:px-6 md:text-base transition-colors duration-300;
+        }
+    }
+
+}
