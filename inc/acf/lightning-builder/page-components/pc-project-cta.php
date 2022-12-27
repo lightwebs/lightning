@@ -11,6 +11,7 @@ if (get_row_layout() == 'project_cta' && !s(get_row_layout())['hide_component'])
         <a href="<?php echo $url; ?>">
             <div class=" <?php echo s($prefix)['text_color']; ?> flex items-end pb-6 pl-10 w-full  max-w-[549px]">
                 <h1 class="m-0 "><?php echo $text; ?></h1>
+            <div class=" <?php echo s($prefix)['text_color']; ?> flex items-end pb-6 pl-10 w-full  max-w-[550px]">
             </div>
         </a>
     </section>
