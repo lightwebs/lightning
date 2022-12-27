@@ -23,29 +23,23 @@ get_header();
 		</header>
 
 		<div class="container px-0 md:px-4">
-			<div class="grid-cols-12 md:grid gap-x-4 lg:gap-x-6">
-
-				<div class="col-span-8">
-					<div class="post-listing">
-						<?php while (have_posts()) :
-							the_post();
-							if ('post' === get_post_type()) : ?>
-								<?php echo card(get_the_ID()); ?>
-							<?php else :
-								get_template_part('template-parts/content', get_post_type());
-							endif; ?>
-						<?php endwhile; ?>
-					</div>
-					<?php
-					if ($found_posts > 12) : ?>
-						<div class="flex justify-center my-8">
-							<?php echo btn_primary('Ladda fler', 'load-more mx-auto block', 'data-post-type="' . get_post_type() . '" data-cat-id="' . $cat_id . '"'); ?>
-						</div>
-					<?php
+			<div class="grid-cols-3 gap-4 md:grid lg:gap-6 post-listing">
+				<?php while (have_posts()) :
+					the_post();
+					if ('post' === get_post_type()) : ?>
+						<?php echo card(get_the_ID(), 'bg-white text-black', 10); ?>
+					<?php else :
+						get_template_part('template-parts/content', get_post_type());
 					endif; ?>
-				</div>
-				<?php get_template_part('sidebar', 'builder'); ?>
+				<?php endwhile; ?>
 			</div>
+			<?php
+			if ($found_posts > 12) : ?>
+				<div class="flex justify-center my-8">
+					<?php echo btn_primary('Ladda fler', 'load-more mx-auto block', 'data-post-type="' . get_post_type() . '" data-cat-id="' . $cat_id . '"'); ?>
+				</div>
+			<?php
+			endif; ?>
 		</div>
 
 	<?php

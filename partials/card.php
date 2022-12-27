@@ -23,10 +23,10 @@ if (!function_exists('card')) {
 ?>
 
         <div class="card group" data-post-id="<?php echo $post_id; ?>">
-            <div class="pb-8 h-full md:rounded <?php echo $class; ?>">
+            <div class="pb-8 h-full shadow-md <?php echo $class; ?>">
                 <a class="block" href="<?php echo $link; ?>">
 
-                    <div class="w-full mb-3 overflow-hidden rounded card-image md:mb-4">
+                    <div class="w-full mb-3 overflow-hidden card-image md:mb-4">
                         <?php echo image($image_id, 'medium_large', 'object-cover aspect-4/3 group-hover:scale-105 transition-transform duration-300') ?>
                     </div>
 
