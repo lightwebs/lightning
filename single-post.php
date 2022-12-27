@@ -17,11 +17,6 @@ get_header();
 	<article id="article-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="container">
 			<div class="<?php echo !$hide_sidebar ? 'grid md:grid-cols-12 md:gap-x-4 lg:gap-x-6 py-4 lg:py-8' : 'py-4 lg:py-8'; ?>">
-				<aside class="hidden md:col-span-2 lg:block">
-					<div class="sticky top-28 dark:text-white">
-						<?php echo social_share(get_the_ID(), 'col'); ?>
-					</div>
-				</aside>
 				<div class="lg:col-span-6 md:col-span-8">
 					<header class="entry-header">
 						<div class="<?php echo !$featured_image_id ? 'mb-6' : ''; ?>">

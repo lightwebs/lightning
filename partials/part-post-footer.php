@@ -21,8 +21,8 @@ $continue_reading = get_field('continue_reading');
 <?php endif; ?>
 
 <h5 class="mt-6 text-sm text-center lg:hidden dark:text-white "><?php echo __('Dela', 'lightning'); ?></h5>
-<div class="sticky bottom-6 dark:text-white lg:hidden">
-    <?php echo social_share(get_the_ID(), 'row', 'justify-center py-2 bg-white/90 dark:bg-purple-90/80 rounded-full'); ?>
+<div class="sticky text-white bottom-6 md:bottom-9">
+    <?php echo social_share(get_the_ID(), 'row', 'justify-center py-2 bg-purple-900/80 rounded-full'); ?>
 </div>
 
 <footer class="my-10">
