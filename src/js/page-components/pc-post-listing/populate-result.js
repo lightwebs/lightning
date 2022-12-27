@@ -8,7 +8,7 @@ export function populateResults() {
         return
     }
     const searchId = searchInput.getAttribute('data-search-id')
-    const listingContainer = searchInput.closest('.pc-article-listing')
+    const listingContainer = searchInput.closest('.pc-post-listing')
     const searchResult = listingContainer.querySelector('.search-result')
     const searchIndex = `${liGlobal.templateDirectory}/search-results/${searchId}_result.json`
 

@@ -41,7 +41,7 @@ function fetchSearchResults(searchId) {
 
 // Display search results.
 function displayMatches(searchId, results, searchInput) {
-    const listingContainer = searchInput.closest('.pc-article-listing')
+    const listingContainer = searchInput.closest('.pc-post-listing')
     const searchResult = listingContainer.querySelector('.search-result')
 
     results = fuse.search(searchInput.value)

@@ -1,5 +1,5 @@
 // export const loadMoreBtn = document.querySelector('.pc-load-more')
-const postCount = document.querySelector('.pc-article-listing .post-count')
+const postCount = document.querySelector('.pc-post-listing .post-count')
 const filters = document.querySelectorAll('.filter')
 const searchInput = document.querySelector('.search-input')
 let paged = 1
@@ -14,7 +14,7 @@ export const loadPosts = async (e, target) => {
         excludePosts = [...document.querySelectorAll('[data-post-id]')].map((exP) => exP.dataset.postId)
 
         loadMoreBtn = e.target
-        const articleListing = loadMoreBtn.closest('.pc-article-listing')
+        const articleListing = loadMoreBtn.closest('.pc-post-listing')
         postContainer = articleListing.querySelector('.post-container')
     } else {
         loadMoreBtn = document.querySelector('.pc-load-more')
