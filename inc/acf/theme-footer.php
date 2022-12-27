@@ -7,21 +7,15 @@ acf_add_local_field_group([
     'fields' => [
         [
             'key' => 'field_lb_theme_footer_info_tab',
-            'label' => 'Info',
+            'label' => 'Formulär',
             'type' => 'tab',
             'placement' => 'top',
         ],
         [
-            'key' => 'field_lb_theme_footer_logo',
-            'label' => 'Logga',
-            'name' => 'footer_logo',
-            'type' => 'image',
-            'return_format' => 'id',
-            'preview_size' => 'medium',
-            'library' => 'all',
-            'wrapper' => [
-                'width' => '50',
-            ]
+            'key' => 'field_lb_theme_footer_form_shortcode',
+            'label' => 'Gravity Form shortcode',
+            'name' => 'footer_form_shortcode',
+            'type' => 'text',
         ],
         [
             'key' => 'field_lb_theme_footer_columns_tab',
@@ -34,8 +28,6 @@ acf_add_local_field_group([
             'label' => 'Kolumner',
             'name' => 'footer_col_repeater',
             'type' => 'repeater',
-            'instructions' => 'Max 2 kolumner',
-            'max' => 2,
             'layout' => 'block',
             'button_label' => 'Kolumn +',
             'sub_fields' => [
