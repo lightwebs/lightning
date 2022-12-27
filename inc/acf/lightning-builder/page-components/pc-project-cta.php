@@ -8,6 +8,7 @@ if (get_row_layout() == 'project_cta' && !s(get_row_layout())['hide_component'])
         <?php component_header($prefix); ?>
         <div class=" <?php echo s($prefix)['text_color']; ?> flex items-end w-full md:h-[360px]">
             <a href="<?php echo $url; ?>" class="py-9 md:py-12 px-4 md:px-20">
+                <h1 class="m-0  max-w-[550px] uppercase"><?php echo $text; ?> <span class="material-icons-round text-[30px]">
                         arrow_forward
                     </span></h1>
 
