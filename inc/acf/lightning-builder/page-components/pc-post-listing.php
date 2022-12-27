@@ -52,7 +52,7 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
             <?php component_header($prefix); ?>
         </span>
 
-        <?php include(__DIR__ . '/pc-post-listing/pc-search.php'); ?>
+        <?php include __DIR__ . '/pc-post-listing/pc-search.php'; ?>
 
         <div class="px-0 md:px-4 container <?php echo s($prefix)['text_color']; ?>">
             <div class="grid items-stretch md:grid-cols-2 xl:grid-cols-<?php echo $columns; ?> gap-4 post-container search-result">

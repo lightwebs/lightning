@@ -23,7 +23,7 @@ if ($media_type === 'img' || $media_type === 'video') :
             <?php endif; ?>
 
             <?php if (!$full_width) : ?>
-                <?php include(__DIR__ . '/pc-media.php'); ?>
+                <?php include __DIR__ . '/pc-media.php'; ?>
             <?php else : ?>
                 <div class="py-0 my-0 order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1'; ?>"></div>
             <?php endif; ?>
@@ -33,7 +33,7 @@ if ($media_type === 'img' || $media_type === 'video') :
     <?php if ($full_width) : ?>
         <div class="h-full px-0 pointer-events-none md:absolute">
             <div class="grid items-center h-full md:grid-cols-2 gap-x-0">
-                <?php include(__DIR__ . '/pc-media.php'); ?>
+                <?php include __DIR__ . '/pc-media.php'; ?>
                 <div class="p-4 order-2 md:order-<?php echo $text_placement; ?>">
                     <span class="md:invisible md:opacity-0"><?php echo $text; ?>
                         <?php if ($link) :
