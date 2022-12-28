@@ -2,7 +2,7 @@
 return [
     'key' => 'layout_project_cta',
     'name' => 'project_cta',
-    'label' => 'Project CTA',
+    'label' => 'Projekt CTA',
     'display' => 'block',
     'sub_fields' => [
         [
