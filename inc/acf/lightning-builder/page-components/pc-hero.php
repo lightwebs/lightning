@@ -2,21 +2,24 @@
 if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
     $prefix = get_row_layout();
     $title = get_sub_field('title');
-    $subtitle = get_sub_field('subtitle');
-    $description = get_sub_field('description');
     $image = get_sub_field('image');
     $key_info = get_sub_field('key_info_repeater');
     $buttons = get_sub_field('buttons_repeater');
 ?>
     <section id="<?php echo s($prefix)['component_id']; ?>" class="pc-hero section <?php echo section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?> py-4 md:py-0 lg:py-0 xl:py-0 xxl:py-0 pt-6 md:pt-9 xl:pt-10 xxl:pt-12">
 
-        <?php component_header($prefix); ?>
 
         <div class="container <?php echo s($prefix)['text_color']; ?>  gap-4 md:flex">
             <div class="w-full flex flex-col gap-4 md:gap-6 py-6 justify-center">
-                <h3 class="text-purple-500"><?= $subtitle; ?></h3>
-                <h1><?= $title; ?></h1>
-                <p class="text-xl"><?= $description; ?></p>
+                <h1 class="text-2xl md:text-3xl text-purple-500"><?= $title; ?></h1>
+                <?php if (s($prefix)['title']) : ?>
+                    <?php echo '<' . s($prefix)['title_tag'] . '>'; ?>
+                    <?php echo s($prefix)['title'] ?>
+                    <?php echo '</' . s($prefix)['title_tag'] . '>'; ?>
+                <?php endif; ?>
+                <?php echo  s($prefix)['text']; ?>
+
+                </p>
                 <div class="flex gap-5 flex-wrap">
                     <?php
                     if (have_rows('key_info_repeater')) :
@@ -33,6 +36,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
                     ?>
 
                 </div>
+
                 <div class="flex flex-col md:flex-row gap-4 md:gap-6 md:items-stretch items-start flex-wrap">
 
                     <?php
@@ -50,8 +54,8 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
                     endif;
                     ?>
                 </div>
-
             </div>
+
             <div class="w-full  md:mt-0 flex items-end">
                 <? if (!empty($image)) : ?>
                     <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="object-contain " />
