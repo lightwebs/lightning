@@ -88,15 +88,16 @@ return [
             'max' => 2,
             'layout' => 'block',
             'button_label' => __('Add Button', 'lightning'),
+
             'sub_fields' => [
                 [
-                    'key' => 'field_lb_hero_button_text',
-                    'label' => __('Text', 'lightning'),
-                    'name' => 'button_text',
-                    'type' => 'text',
-                    'instructions' => __('Enter the text shown in the button', 'lightning'),
-                    'required' => 1,
-                    'wrapper' => ['width' => 33]
+                    'key' => 'field_lb_hero_button_link',
+                    'label' => __('Link', 'lightning'),
+                    'name' => 'link',
+                    'type' => 'link',
+                    'instructions' => __('The link and title of the button', 'lightning'),
+                    'required' => 0, // 0 | 1
+                    'wrapper' => ['width' => 33] // 0-100
                 ],
 
                 [
@@ -133,69 +134,7 @@ return [
                     'ui_off_text' => 'Hide icon',
                     'wrapper' => ['width' => 33]
                 ],
-                [
-                    'key' => 'field_lb_hero_button_is_external',
-                    'label' => __('Is external', 'lightning'),
-                    'name' => 'is_external',
-                    'type' => 'true_false',
-                    'message' => 'Check the box if the button should link to an external URL',
-                    'default_value' => 0,
-                    'ui' => 0,
-                    'ui_on_text' => 'Is external',
-                    'ui_off_text' => 'Is internal',
-                    'wrapper' => ['width' => 33]
-                ],
-                [
-                    'key' => 'field_lb_hero_button_url',
-                    'label' => __('URL', 'lightning'),
-                    'name' => 'button_url',
-                    'type' => 'text',
-                    'instructions' => __('Enter the text shown in the button', 'lightning'),
-                    'required' => 1,
-                    'wrapper' => ['width' => 66],
-                    'conditional_logic' => [
-                        [
-                            [
-                                'field' => 'field_lb_hero_button_is_external',
-                                'operator' => '==',
-                                'value' => '1',
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'key' => 'field_lb_hero_button_page_link',
-                    'label' => __('Page Link', 'lightning'),
-                    'name' => 'page_link',
-                    'type' => 'page_link',
-                    'instructions' => __('Select the internal page the button should link to', 'lightning'),
-                    'post_type' => [
-                        'post',
-                    ],
-                    'taxonomy' => [
-                        'category',
-                    ],
-                    'allow_null' => 0,
-                    'multiple' => 0,
-                    'return_format' => 'object',
-                    'ui' => 0,
-                    'required' => 0,
-                    'wrapper' => ['width' => 66],
-                    'conditional_logic' => [
-                        [
-                            [
-                                'field' => 'field_lb_hero_button_is_external',
-                                'operator' => '==',
-                                'value' => '0',
-                            ],
-                        ],
-                    ],
-
-                ],
-
-
             ],
-            'wrapper' => ['width' => 100]
         ],
         [
             'key' => 'field_lb_hero_image',

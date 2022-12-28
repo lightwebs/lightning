@@ -36,15 +36,14 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
                     <?php
                     if (have_rows('buttons_repeater')) :
                         while (have_rows('buttons_repeater')) : the_row();
-                            $text = get_sub_field('button_text');
+                            $link = get_sub_field('link');
                             $show_icon = get_sub_field('show_icon');
                             $is_external = get_sub_field('is_external');
                             $type = get_sub_field('button_type');
-                            $button = [
-                                'url' =>  $button_url,
-                                'title' => $show_icon ? $text . '<span class="material-icons-round">arrow_forward</span>' : $text,
-                            ];
-                            $type == 'primary' ? btn_l_primary($button, 'items-center') : btn_l_secondary($button, ' justify-center text-purple-500 border-solid border-purple-500 hover:text-white border-box');
+                            if ($show_icon) {
+                                $link['title'] = $link['title'] . '<span class="material-icons-round text-purple-500">arrow_forward</span>';
+                            }
+                            $type == 'primary' ? btn_l_primary($link, 'items-center') : btn_l_secondary($link, ' justify-center text-purple-500 border-solid border-purple-500 hover:text-white border-box');
                         endwhile;
                     endif;
                     ?>
