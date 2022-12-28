@@ -13,7 +13,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
         <?php component_header($prefix); ?>
 
         <div class="container <?php echo s($prefix)['text_color']; ?>  gap-4 md:flex">
-            <div class="w-full flex flex-col gap-4 md:gap-6 py-6">
+            <div class="w-full flex flex-col gap-4 md:gap-6 py-6 justify-center">
                 <h3 class="text-purple-500"><?= $subtitle; ?></h3>
                 <h1><?= $title; ?></h1>
                 <p class="text-xl"><?= $description; ?></p>
@@ -52,9 +52,9 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
                 </div>
 
             </div>
-            <div class="w-full  md:mt-0 ">
+            <div class="w-full  md:mt-0 flex items-end">
                 <? if (!empty($image)) : ?>
-                    <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="h-full object-cover" />
+                    <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="object-contain " />
                 <? endif; ?>
             </div>
 
