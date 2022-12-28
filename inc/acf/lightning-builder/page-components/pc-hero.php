@@ -16,7 +16,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
             <div class="w-full flex flex-col gap-4 md:gap-6">
                 <h3 class="text-purple-500"><?= $subtitle; ?></h3>
                 <h1><?= $title; ?></h1>
-                <p><?= $description; ?></p>
+                <p class="text-xl"><?= $description; ?></p>
                 <div class="flex gap-5">
                     <?php
                     if (have_rows('key_info_repeater')) :
