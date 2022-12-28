@@ -96,8 +96,8 @@ return [
                     'name' => 'link',
                     'type' => 'link',
                     'instructions' => __('The link and title of the button', 'lightning'),
-                    'required' => 0, // 0 | 1
-                    'wrapper' => ['width' => 33] // 0-100
+                    'required' => 0,
+                    'wrapper' => ['width' => 33]
                 ],
 
                 [
