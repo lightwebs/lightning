@@ -29,20 +29,11 @@ return [
             'placement' => 'top',
         ],
         [
-            'key' => 'field_lb_project_cta_text',
-            'label' => __('Text', 'lightning'),
-            'name' => 'text',
-            'type' => 'text',
-            'instructions' => __('This is the text displayed in the CTA', 'lightning'),
-            'required' => 0, // 0 | 1
-            'wrapper' => ['width' => 100] // 0-100
-        ],
-        [
-            'key' => 'field_lb_project_cta_url',
-            'label' => __('Url', 'lightning'),
-            'name' => 'url',
-            'type' => 'url',
-            'instructions' => __('The URL the CTA should link to', 'lightning'),
+            'key' => 'field_lb_project_cta_link',
+            'label' => __('Link', 'lightning'),
+            'name' => 'link',
+            'type' => 'link',
+            'instructions' => __('Enter the link the CTA should link to', 'lightning'),
             'required' => 0, // 0 | 1
             'wrapper' => ['width' => 100] // 0-100
         ],
