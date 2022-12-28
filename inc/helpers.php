@@ -309,7 +309,7 @@ function btn_secondary(string $text, string $class = null, $data = null) {
 function custom_link($link, $class = null) {
     if ($link) {
         $link_color = get_sub_field('link_colors');
-        echo "<a class='inline-flex items-center font-semibold group gap-x-2 md:text-lg {$link_color} {$class}' href='{$link['url']}'>{$link['title']}<span class='text-xl font-semibold transition-transform duration-300 material-icons-round group-hover:translate-x-1'>arrow_forward</span></a>";
+        echo "<a class='inline-flex items-center font-semibold group gap-x-2 md:text-lg {$link_color} {$class}' href='{$link['url']}'>{$link['title']}<span class='font-semibold transition-transform duration-300 text-inherit material-icons-round group-hover:translate-x-1'>arrow_forward</span></a>";
     }
 }
 
