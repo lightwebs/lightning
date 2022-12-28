@@ -18,15 +18,20 @@
 @import './utils/swiper';
 @import './utils/overlay';
 @import './utils/details';
+@import './utils/gravity-form';
 
 // Globals
 @import './base/global';
 @import './header/sub-menu';
 
+// Footer
+@import './footer/footer-form';
+
 // Page components
 @import './page-components/pc-columns';
 @import './page-components/pc-post-listing';
 @import './page-components/pc-components-global';
+
 
 * {
     box-sizing: border-box;

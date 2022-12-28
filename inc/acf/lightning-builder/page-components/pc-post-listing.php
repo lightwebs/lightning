@@ -8,8 +8,6 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
     $card_text_colors = get_sub_field('card_text_colors');
     $card_bg_colors = get_sub_field('card_bg_colors');
     $content_type = get_sub_field('content_type');
-    $picked_post = get_sub_field('picked_post');
-    $picked_case = get_sub_field('picked_case');
     $columns = get_sub_field('columns');
 
     $args = [
@@ -22,12 +20,14 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
         $args['order'] = 'DESC';
     }
 
-    if ($content_type == 'picked' && $post_type == 'case') {
-        $args['post__in'] = $picked_case;
-    }
-
-    if ($content_type == 'picked' && $post_type == 'post') {
-        $args['post__in'] = $picked_post;
+    // Gets the post types from the acf-arrays folder and checks if the post type is in the array
+    // If it is, it will get the posts from the picked post type
+    include acf_path() . 'acf-arrays/post-types.php';
+    foreach ($post_types as $key => $type) {
+        if ($key == $post_type) {
+            $args['post__in'] = get_sub_field('picked_' . $key);
+            $args['orderby'] = 'post__in';
+        }
     }
 
     if ($qty > 0) {
@@ -46,7 +46,7 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
 
 ?>
 
-    <section <?php component_id($prefix); ?> class="pc-post-listing section <?php echo section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?>">
+    <section <?php component_id($prefix); ?> class="pc-post-listing section <?php echo section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?>" data-card-bg="<?php echo $card_bg_colors; ?>" data-card-text="<?php echo $card_text_colors; ?>">
 
         <span class="<?php echo s($prefix)['text_color']; ?>">
             <?php component_header($prefix); ?>
