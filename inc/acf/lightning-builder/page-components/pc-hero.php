@@ -17,9 +17,9 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
                     <?php echo s($prefix)['title'] ?>
                     <?php echo '</' . s($prefix)['title_tag'] . '>'; ?>
                 <?php endif; ?>
-                <?php echo  s($prefix)['text']; ?>
+                <p class="text-xl"><?php echo  s($prefix)['text']; ?></p>
 
-                </p>
+
                 <div class="flex gap-5 flex-wrap">
                     <?php
                     if (have_rows('key_info_repeater')) :
