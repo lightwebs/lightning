@@ -33,7 +33,7 @@ return [
             'label' => __('Link', 'lightning'),
             'name' => 'link',
             'type' => 'link',
-            'instructions' => __('Enter the link the CTA should link to', 'lightning'),
+            'instructions' => __('Välj länk och rubrik för CTA', 'lightning'),
             'required' => 0, // 0 | 1
             'wrapper' => ['width' => 100] // 0-100
         ],
