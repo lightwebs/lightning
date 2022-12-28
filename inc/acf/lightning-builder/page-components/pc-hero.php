@@ -26,7 +26,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
                         while (have_rows('key_info_repeater')) : the_row();
                             $title = get_sub_field('key_info_title');
                     ?>
-                            <div class="flex gap-2 md:gap-4">
+                            <div class="flex gap-2 md:gap-4 items-center">
                                 <span class="material-icons-round text-purple-500">change_history</span>
                                 <p class="font-medium"> <?= $title ?> </p>
                             </div>
