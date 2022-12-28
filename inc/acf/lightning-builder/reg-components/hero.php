@@ -112,7 +112,7 @@ return [
             'wrapper' => ['width' => 100]
         ],
         [
-            'key' => 'field_lb_hero_image_tab',
+            'key' => 'field_lb_hero_image',
             'label' => __('Hero Image', 'lightning'),
             'name' => 'image',
             'type' => 'image',
