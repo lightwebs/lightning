@@ -80,13 +80,13 @@ return [
         [
             'key' => 'field_lb_hero_buttons',
             'label' => __('Buttons', 'lightning'),
-            'name' => 'repeater',
+            'name' => 'buttons_repeater',
             'type' => 'repeater',
             'instructions' => __('CTA buttons', 'lightning'),
             'collapsed' => 'field_lb_hero_button_text',
             'min' => 0,
             'max' => 2,
-            'layout' => 'table',
+            'layout' => 'block',
             'button_label' => __('Add Button', 'lightning'),
             'sub_fields' => [
                 [
@@ -99,6 +99,39 @@ return [
                     'wrapper' => ['width' => 100]
                 ],
                 [
+                    'key' => 'field_lb_hero_button_show_icon',
+                    'label' => __('Display icon', 'lightning'),
+                    'name' => 'show_icon',
+                    'type' => 'true_false',
+                    'instructions' => __('Check the box if the button should display an arrow icon next to it in the frontend', 'lightning'),
+                    'default_value' => 0,
+                    'ui' => 0,
+                    'ui_on_text' => 'Show icon',
+                    'ui_off_text' => 'Hide icon',
+                ],
+                [
+                    'key' => 'field_lb_hero_button_type',
+                    'label' => __('Button type', 'lightning'),
+                    'name' => 'select',
+                    'type' => 'select',
+                    'instructions' => __('Select if the button should be displayed as primary or secondary', 'lightning'),
+                    'choices' => [
+                        'primary' => __('Primary', 'lightning'),
+                        'secondary' => __('Secondary', 'lightning'),
+                    ],
+                    'default_value' => [
+                        'value',
+                    ],
+                    'allow_null' => 0, // 0 | 1
+                    'multiple' => 0, // 0 | 1
+                    'ui' => 0, // 0 | 1
+                    'return_format' => 'value', // value, label, array
+                    'ajax' => 0, // 0 | 1
+                    'placeholder' => __('Placeholder', 'lightning'),
+                    'required' => 0, // 0 | 1
+                    'wrapper' => ['width' => 100] // 0-100
+                ],
+                [
                     'key' => 'field_lb_hero_button_url',
                     'label' => __('URL', 'lightning'),
                     'name' => 'button_url',
@@ -107,6 +140,7 @@ return [
                     'required' => 1,
                     'wrapper' => ['width' => 100]
                 ],
+
 
             ],
             'wrapper' => ['width' => 100]
