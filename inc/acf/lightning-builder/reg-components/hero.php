@@ -102,7 +102,7 @@ return [
                 [
                     'key' => 'field_lb_hero_button_type',
                     'label' => __('Button type', 'lightning'),
-                    'name' => 'select',
+                    'name' => 'button_type',
                     'type' => 'select',
                     'instructions' => __('Select if the button should be displayed as primary or secondary', 'lightning'),
                     'choices' => [
