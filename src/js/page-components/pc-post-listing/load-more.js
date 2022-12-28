@@ -1,5 +1,5 @@
 // export const loadMoreBtn = document.querySelector('.pc-load-more')
-const postCount = document.querySelector('.pc-article-listing .post-count')
+const postCount = document.querySelector('.pc-post-listing .post-count')
 const filters = document.querySelectorAll('.filter')
 const searchInput = document.querySelector('.search-input')
 let paged = 1
@@ -12,10 +12,13 @@ export const loadPosts = async (e, target) => {
     const data = new FormData()
     if (e.target.classList.contains('pc-load-more')) {
         excludePosts = [...document.querySelectorAll('[data-post-id]')].map((exP) => exP.dataset.postId)
-
         loadMoreBtn = e.target
-        const articleListing = loadMoreBtn.closest('.pc-article-listing')
-        postContainer = articleListing.querySelector('.post-container')
+
+        const postListing = loadMoreBtn.closest('.pc-post-listing')
+        data.append('card_bg_color', postListing.dataset.cardBg)
+        data.append('card_text_color', postListing.dataset.cardText)
+
+        postContainer = postListing.querySelector('.post-container')
     } else {
         loadMoreBtn = document.querySelector('.pc-load-more')
     }
@@ -94,7 +97,7 @@ export const loadPosts = async (e, target) => {
             console.error('error ' + error)
         })
 
-    loadMoreBtn.classList.remove('d-none')
+    loadMoreBtn.classList.remove('hidden')
 }
 
 document.addEventListener('click', function (e) {

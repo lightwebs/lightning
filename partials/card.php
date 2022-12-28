@@ -20,11 +20,10 @@ if (!function_exists('card')) {
         } else {
             $category = get_post_type($post_id) . '_category';
         }
-        // $taxonomies = get_object_taxonomies(get_post_type($post_id));
 ?>
 
         <div class="card group" data-post-id="<?php echo $post_id; ?>">
-            <div class="pb-8 bg-white h-full md:rounded dark:bg-white/5 <?php echo $class; ?>">
+            <div class="pb-8 h-full md:rounded <?php echo $class; ?>">
                 <a class="block" href="<?php echo $link; ?>">
 
                     <div class="w-full mb-3 overflow-hidden rounded card-image md:mb-4">
@@ -35,8 +34,8 @@ if (!function_exists('card')) {
 
                         <?php get_post_terms($post_id, $category, 'mb-4'); ?>
 
-                        <h4 class="mb-2 dark:text-white"><?php echo $title; ?></h4>
-                        <div class="mb-2 dark:text-white"><?php echo custom_excerpt($excerpt_length, 'preamble', $post_id); ?></div>
+                        <h4 class="mb-2"><?php echo $title; ?></h4>
+                        <div class="mb-2"><?php echo custom_excerpt($excerpt_length, 'preamble', $post_id); ?></div>
 
                         <?php get_author($post_id, 'date', 'small'); ?>
                     </div>
