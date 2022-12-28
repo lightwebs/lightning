@@ -273,7 +273,7 @@ function btn_l_primary($link, string $class = null, $data = null) {
  */
 function btn_l_secondary($btn, string $class = null, $data = null) {
     if ($btn) {
-        echo "<a class='inline-flex px-5 py-3 text-sm font-semibold text-white bg-transparent hover:bg-purple-500 btn btn-primary md:px-6 md:text-base transition-colors duration-300{$class}' {$data}' href='{$btn['url']}'>{$btn['title']}</a>";
+        echo "<a class='inline-flex px-5 py-3 text-sm font-semibold text-white bg-transparent hover:bg-purple-500 btn btn-primary md:px-6 md:text-base transition-colors duration-300 {$class}' {$data}' href='{$btn['url']}'>{$btn['title']}</a>";
     }
 }
 
