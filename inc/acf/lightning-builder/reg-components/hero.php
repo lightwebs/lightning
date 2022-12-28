@@ -12,6 +12,15 @@ return [
             'placement' => 'top',
         ],
         [
+            'key' => 'field_lb_hero_subtitle',
+            'label' => __('Title', 'lightning'),
+            'name' => 'title',
+            'type' => 'text',
+            'instructions' => __('Rubrik visas ovanför header som H1.', 'lightning'),
+            'required' => 0,
+            'wrapper' => ['width' => 100]
+        ],
+        [
             'key' => 'field_lb_hero_header',
             'label' => 'Header',
             'name' => 'hero',
@@ -29,38 +38,11 @@ return [
             'placement' => 'top',
         ],
         [
-            'key' => 'field_lb_hero_subtitle',
-            'label' => __('Subtitle', 'lightning'),
-            'name' => 'subtitle',
-            'type' => 'text',
-            'instructions' => __('Subtitle displayed in color above the title', 'lightning'),
-            'required' => 0,
-            'wrapper' => ['width' => 100]
-        ],
-        [
-            'key' => 'field_lb_hero_title',
-            'label' => __('Title', 'lightning'),
-            'name' => 'title',
-            'type' => 'text',
-            'instructions' => __('Title displayed as H1 in the header block', 'lightning'),
-            'required' => 0,
-            'wrapper' => ['width' => 100]
-        ],
-        [
-            'key' => 'field_lb_hero_description',
-            'label' => __('Description', 'lightning'),
-            'name' => 'description',
-            'type' => 'text',
-            'instructions' => __('The description shown below the H1 title', 'lightning'),
-            'required' => 0,
-            'wrapper' => ['width' => 100]
-        ],
-        [
             'key' => 'field_lb_hero_key_info',
             'label' => __('Key info', 'lightning'),
             'name' => 'key_info_repeater',
             'type' => 'repeater',
-            'instructions' => __('Enter key info displayed as text with purple triangle icon', 'lightning'),
+            'instructions' => __('Fyll i nyckelinformation. Visas under ingressen som text med en lila trinagel till höger', 'lightning'),
             'collapsed' => 'field_lb_hero_key_info_title',
             'layout' => 'table',
             'button_label' => __('Add Key Info', 'lightning'),
@@ -95,7 +77,7 @@ return [
                     'label' => __('Link', 'lightning'),
                     'name' => 'link',
                     'type' => 'link',
-                    'instructions' => __('The link and title of the button', 'lightning'),
+                    'instructions' => __('Välj länk och text till knappen', 'lightning'),
                     'required' => 0,
                     'wrapper' => ['width' => 33]
                 ],
@@ -105,7 +87,7 @@ return [
                     'label' => __('Button type', 'lightning'),
                     'name' => 'button_type',
                     'type' => 'select',
-                    'instructions' => __('Select if the button should be displayed as primary or secondary', 'lightning'),
+                    'instructions' => __('Välj om knappen ska visas som primär eller sekundär', 'lightning'),
                     'choices' => [
                         'primary' => __('Primary', 'lightning'),
                         'secondary' => __('Secondary', 'lightning'),
@@ -127,7 +109,7 @@ return [
                     'label' => __('Display icon', 'lightning'),
                     'name' => 'show_icon',
                     'type' => 'true_false',
-                    'instructions' => __('Check the box if the button should display an arrow icon next to it in the frontend', 'lightning'),
+                    'instructions' => __('Fyll i knappen om den ska visa en pil-ikon i frontend', 'lightning'),
                     'default_value' => 0,
                     'ui' => 0,
                     'ui_on_text' => 'Show icon',
@@ -141,7 +123,7 @@ return [
             'label' => __('Hero Image', 'lightning'),
             'name' => 'image',
             'type' => 'image',
-            'instructions' => __('The header image displayed to the right of the content', 'lightning'),
+            'instructions' => __('Välj bild som visas till höger i heron', 'lightning'),
             'preview_size' => 'thumbnail',
             'mime_types' => 'svg, png, jpg, jpeg',
             'return_format' => 'array',
