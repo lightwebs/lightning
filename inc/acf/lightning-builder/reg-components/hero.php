@@ -96,19 +96,9 @@ return [
                     'type' => 'text',
                     'instructions' => __('Enter the text shown in the button', 'lightning'),
                     'required' => 1,
-                    'wrapper' => ['width' => 100]
+                    'wrapper' => ['width' => 33]
                 ],
-                [
-                    'key' => 'field_lb_hero_button_show_icon',
-                    'label' => __('Display icon', 'lightning'),
-                    'name' => 'show_icon',
-                    'type' => 'true_false',
-                    'instructions' => __('Check the box if the button should display an arrow icon next to it in the frontend', 'lightning'),
-                    'default_value' => 0,
-                    'ui' => 0,
-                    'ui_on_text' => 'Show icon',
-                    'ui_off_text' => 'Hide icon',
-                ],
+
                 [
                     'key' => 'field_lb_hero_button_type',
                     'label' => __('Button type', 'lightning'),
@@ -122,14 +112,38 @@ return [
                     'default_value' => [
                         'value',
                     ],
-                    'allow_null' => 0, // 0 | 1
-                    'multiple' => 0, // 0 | 1
-                    'ui' => 0, // 0 | 1
-                    'return_format' => 'value', // value, label, array
-                    'ajax' => 0, // 0 | 1
+                    'allow_null' => 0,
+                    'multiple' => 0,
+                    'ui' => 0,
+                    'return_format' => 'value',
+                    'ajax' => 0,
                     'placeholder' => __('Placeholder', 'lightning'),
-                    'required' => 0, // 0 | 1
-                    'wrapper' => ['width' => 100] // 0-100
+                    'required' => 0,
+                    'wrapper' => ['width' => 33]
+                ],
+                [
+                    'key' => 'field_lb_hero_button_show_icon',
+                    'label' => __('Display icon', 'lightning'),
+                    'name' => 'show_icon',
+                    'type' => 'true_false',
+                    'instructions' => __('Check the box if the button should display an arrow icon next to it in the frontend', 'lightning'),
+                    'default_value' => 0,
+                    'ui' => 0,
+                    'ui_on_text' => 'Show icon',
+                    'ui_off_text' => 'Hide icon',
+                    'wrapper' => ['width' => 33]
+                ],
+                [
+                    'key' => 'field_lb_hero_button_is_external',
+                    'label' => __('Is external', 'lightning'),
+                    'name' => 'is_external',
+                    'type' => 'true_false',
+                    'message' => 'Check the box if the button should link to an external URL',
+                    'default_value' => 0,
+                    'ui' => 0,
+                    'ui_on_text' => 'Is external',
+                    'ui_off_text' => 'Is internal',
+                    'wrapper' => ['width' => 33]
                 ],
                 [
                     'key' => 'field_lb_hero_button_url',
@@ -138,7 +152,45 @@ return [
                     'type' => 'text',
                     'instructions' => __('Enter the text shown in the button', 'lightning'),
                     'required' => 1,
-                    'wrapper' => ['width' => 100]
+                    'wrapper' => ['width' => 66],
+                    'conditional_logic' => [
+                        [
+                            [
+                                'field' => 'field_lb_hero_button_is_external',
+                                'operator' => '==',
+                                'value' => '1',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'key' => 'field_lb_hero_button_page_link',
+                    'label' => __('Page Link', 'lightning'),
+                    'name' => 'page_link',
+                    'type' => 'page_link',
+                    'instructions' => __('Select the internal page the button should link to', 'lightning'),
+                    'post_type' => [
+                        'post',
+                    ],
+                    'taxonomy' => [
+                        'category',
+                    ],
+                    'allow_null' => 0,
+                    'multiple' => 0,
+                    'return_format' => 'object',
+                    'ui' => 0,
+                    'required' => 0,
+                    'wrapper' => ['width' => 66],
+                    'conditional_logic' => [
+                        [
+                            [
+                                'field' => 'field_lb_hero_button_is_external',
+                                'operator' => '==',
+                                'value' => '0',
+                            ],
+                        ],
+                    ],
+
                 ],
 
 
