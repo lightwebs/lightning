@@ -38,10 +38,10 @@ return [
             'wrapper' => ['width' => 100]
         ],
         [
-            'key' => 'field_lb_project_cta_url',
-            'label' => __('Url', 'lightning'),
-            'name' => 'url',
-            'type' => 'url',
+            'key' => 'field_lb_project_cta_link',
+            'label' => __('Link', 'lightning'),
+            'name' => 'link',
+            'type' => 'link',
             'instructions' => __('The URL the CTA should link to', 'lightning'),
             'required' => 0,
             'wrapper' => ['width' => 100]
