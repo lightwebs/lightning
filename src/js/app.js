@@ -7,6 +7,7 @@ import './utils/search'
 import './utils/load-more'
 import './menu/menu.js'
 import './page-components/pc-post-listing/load-more'
+import './page-components/counter'
 import './utils/gravity-form-inputs'
 
 // scss

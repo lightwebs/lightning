@@ -210,7 +210,7 @@ return [
                 [
                     'key' => 'field_lb_statistics_title',
                     'label' => __('Rubrik', 'lightning'),
-                    'name' => 'title',
+                    'name' => 'statistic_title',
                     'type' => 'text',
                     'instructions' => __('Rubrik som visas över statistiken', 'lightning'),
                     'required' => 1,
@@ -219,7 +219,7 @@ return [
                 [
                     'key' => 'field_lb_text_statistics_type',
                     'label' => 'Statistiktyp',
-                    'name' => 'type',
+                    'name' => 'statistic_type',
                     'type' => 'button_group',
                     'wrapper' => [
                         'width' => 40,
@@ -235,7 +235,7 @@ return [
                 [
                     'key' => 'field_lb_statistics_value',
                     'label' => __('Värde', 'lightning'),
-                    'name' => 'end',
+                    'name' => 'statistic_value',
                     'type' => 'number',
                     'instructions' => __('Värdet countern ska animera till', 'lightning'),
                     'required' => 1,
@@ -253,7 +253,7 @@ return [
                 [
                     'key' => 'field_lb_statistics_unit',
                     'label' => __('Enhet', 'lightning'),
-                    'name' => 'unit',
+                    'name' => 'statistic_unit',
                     'type' => 'text',
                     'instructions' => __('Ange vilken enhet som ska visas bredvid siffran', 'lightning'),
                     'required' => 0,
@@ -271,7 +271,7 @@ return [
                 [
                     'key' => 'field_lb_statistics_division_numerator',
                     'label' => __('Täljare', 'lightning'),
-                    'name' => 'numerator',
+                    'name' => 'statistic_numerator',
                     'type' => 'number',
                     'instructions' => __('Täljaren i bråket. Visas till höger', 'lightning'),
                     'required' => 1,
@@ -289,7 +289,7 @@ return [
                 [
                     'key' => 'field_lb_statistics_division_denominator',
                     'label' => __('Täljare', 'lightning'),
-                    'name' => 'end',
+                    'name' => 'statistic_denominator',
                     'type' => 'number',
                     'instructions' => __('Nämnaren i bråket. Visas till vänster', 'lightning'),
                     'required' => 1,
