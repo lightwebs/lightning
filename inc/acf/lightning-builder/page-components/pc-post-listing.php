@@ -68,7 +68,7 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
 
         <?php include __DIR__ . '/pc-post-listing/pc-search.php'; ?>
 
-        <div class="<?php $post_type == 'post' ? 'px-4' : 'px-0'; ?> md:px-4 container <?php echo s($prefix)['text_color']; ?>">
+        <div class="container <?php echo s($prefix)['text_color']; ?>">
 
             <div class="grid gap-6 lg:gap-8 xxl:gap-12 post-container search-result <?php
                                                                                     echo $post_type == 'post' ? 'md:grid-cols-4' : 'md:grid-cols-2';

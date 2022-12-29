@@ -32,7 +32,7 @@ if (!function_exists('post_card')) {
                         <?php echo image($image_id, 'medium_large', $image_calsses); ?>
                     </div>
 
-                    <div class="flex flex-col md:col-span-3 card-body <?php echo str_contains($class, 'bg-[transparent]') ? 'p-0' : 'p-4 xl:p-6'; ?>">
+                    <div class="flex flex-col md:col-span-3 card-body p-4 xl:p-6 <?php echo str_contains($class, 'bg-[transparent]') ? '!px-0' : ''; ?>">
 
                         <?php get_post_terms($post_id, 'category', 'mb-4'); ?>
 
