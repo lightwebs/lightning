@@ -214,25 +214,41 @@ return [
                     'type' => 'text',
                     'instructions' => __('Rubrik som visas över statistiken', 'lightning'),
                     'required' => 1,
-                    'wrapper' => ['width' => 100]
+                    'wrapper' => ['width' => 60]
                 ],
                 [
-                    'key' => 'field_lb_statistics_start',
-                    'label' => __('Startsiffra', 'lightning'),
-                    'name' => 'start',
-                    'type' => 'number',
-                    'instructions' => __('Siffran animationen ska börja ifrån', 'lightning'),
-                    'required' => 1,
-                    'wrapper' => ['width' => 33]
+                    'key' => 'field_lb_text_statistics_type',
+                    'label' => 'Statistiktyp',
+                    'name' => 'type',
+                    'type' => 'button_group',
+                    'wrapper' => [
+                        'width' => 40,
+                    ],
+                    'choices' => [
+                        'simple' => 'Enkel',
+                        'division' => 'Bråk',
+                    ],
+                    'return_format' => 'value',
+                    'allow_null' => 0,
+                    'layout' => 'horizontal',
                 ],
                 [
-                    'key' => 'field_lb_statistics_end',
-                    'label' => __('Slutsiffra', 'lightning'),
+                    'key' => 'field_lb_statistics_value',
+                    'label' => __('Värde', 'lightning'),
                     'name' => 'end',
                     'type' => 'number',
-                    'instructions' => __('Siffran animationen ska sluta på', 'lightning'),
+                    'instructions' => __('Värdet countern ska animera till', 'lightning'),
                     'required' => 1,
-                    'wrapper' => ['width' => 33]
+                    'wrapper' => ['width' => 60],
+                    'conditional_logic' => [
+                        [
+                            [
+                                'field' => 'field_lb_text_statistics_type',
+                                'operator' => '==',
+                                'value' => 'simple',
+                            ],
+                        ],
+                    ],
                 ],
                 [
                     'key' => 'field_lb_statistics_unit',
@@ -241,7 +257,52 @@ return [
                     'type' => 'text',
                     'instructions' => __('Ange vilken enhet som ska visas bredvid siffran', 'lightning'),
                     'required' => 0,
-                    'wrapper' => ['width' => 33]
+                    'wrapper' => ['width' => 40],
+                    'conditional_logic' => [
+                        [
+                            [
+                                'field' => 'field_lb_text_statistics_type',
+                                'operator' => '==',
+                                'value' => 'simple',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'key' => 'field_lb_statistics_division_numerator',
+                    'label' => __('Täljare', 'lightning'),
+                    'name' => 'numerator',
+                    'type' => 'number',
+                    'instructions' => __('Täljaren i bråket. Visas till höger', 'lightning'),
+                    'required' => 1,
+                    'wrapper' => ['width' => 50],
+                    'conditional_logic' => [
+                        [
+                            [
+                                'field' => 'field_lb_text_statistics_type',
+                                'operator' => '==',
+                                'value' => 'division',
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'key' => 'field_lb_statistics_division_denominator',
+                    'label' => __('Täljare', 'lightning'),
+                    'name' => 'end',
+                    'type' => 'number',
+                    'instructions' => __('Nämnaren i bråket. Visas till vänster', 'lightning'),
+                    'required' => 1,
+                    'wrapper' => ['width' => 50],
+                    'conditional_logic' => [
+                        [
+                            [
+                                'field' => 'field_lb_text_statistics_type',
+                                'operator' => '==',
+                                'value' => 'division',
+                            ],
+                        ],
+                    ],
                 ],
             ],
             'wrapper' => ['width' => 100]
