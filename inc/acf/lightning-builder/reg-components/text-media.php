@@ -56,6 +56,7 @@ return [
             'choices' => [
                 'img' => 'Bild',
                 'video' => 'Video',
+                'statistics' => 'Statistics',
             ],
             'return_format' => 'value',
             'allow_null' => 0,
@@ -186,6 +187,64 @@ return [
             'ui_on_text' => 'Ja',
             'ui_off_text' => 'Nej',
             'ui' => 1,
+        ],
+        [
+            'key' => 'field_lb_text_media_statstics_repeater',
+            'label' => __('Statistik', 'lightning'),
+            'name' => 'statistics_repeater',
+            'type' => 'repeater',
+            'collapsed' => 'field_lb_statistics_title',
+            'min' => 1,
+            'layout' => 'block',
+            'button_label' => __('Lägg till statistikrad', 'lightning'),
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'field_lb_text_media_type',
+                        'operator' => '==',
+                        'value' => 'statistics',
+                    ],
+                ],
+            ],
+            'sub_fields' => [
+                [
+                    'key' => 'field_lb_statistics_title',
+                    'label' => __('Rubrik', 'lightning'),
+                    'name' => 'title',
+                    'type' => 'text',
+                    'instructions' => __('Rubrik som visas över statistiken', 'lightning'),
+                    'required' => 1,
+                    'wrapper' => ['width' => 100]
+                ],
+                [
+                    'key' => 'field_lb_statistics_start',
+                    'label' => __('Startsiffra', 'lightning'),
+                    'name' => 'start',
+                    'type' => 'number',
+                    'instructions' => __('Siffran animationen ska börja ifrån', 'lightning'),
+                    'required' => 1,
+                    'wrapper' => ['width' => 33]
+                ],
+                [
+                    'key' => 'field_lb_statistics_end',
+                    'label' => __('Slutsiffra', 'lightning'),
+                    'name' => 'end',
+                    'type' => 'number',
+                    'instructions' => __('Siffran animationen ska sluta på', 'lightning'),
+                    'required' => 1,
+                    'wrapper' => ['width' => 33]
+                ],
+                [
+                    'key' => 'field_lb_statistics_unit',
+                    'label' => __('Enhet', 'lightning'),
+                    'name' => 'unit',
+                    'type' => 'text',
+                    'instructions' => __('Ange vilken enhet som ska visas bredvid siffran', 'lightning'),
+                    'required' => 0,
+                    'wrapper' => ['width' => 33]
+                ],
+            ],
+            'wrapper' => ['width' => 100]
         ],
         [
             'key' => 'field_lb_text_media_settings_tab',
