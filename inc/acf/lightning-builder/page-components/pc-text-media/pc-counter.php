@@ -12,7 +12,7 @@
 
             if ($is_simple) {
                 $unit = get_sub_field('statistic_unit');
-                $v = get_sub_field('statistic_value');
+                $n = get_sub_field('statistic_value');
             }
 
             if ($is_division) {
@@ -21,18 +21,20 @@
             }
 
     ?>
-            <?php if ($is_simple) : ?>
-                <div class="">
-                    <p class="text-5xl font-bold"><span class="counter"><?php echo $v ?></span><?php echo ' ' . $unit; ?></p>
-                    <p class="text-xl"><?php echo $title; ?></p>
-                </div>
-            <?php endif; ?>
-            <?php if ($is_division) : ?>
-                <div class="">
-                    <p class="text-5xl font-bold"><?php echo $n . '/' . $d ?></p>
-                    <p class="text-xl"><?php echo $title; ?></p>
-                </div>
-            <?php endif; ?>
+
+            <div class="flex flex-col gap-4">
+                <p class="text-5xl font-bold">
+                    <span class="counter">
+                        <?php echo $n ?>
+                    </span>
+                    <?php if ($is_simple) :
+                        echo ' ' . $unit;
+                    elseif ($is_division) :
+                        echo '/' . $d;
+                    endif; ?>
+                </p>
+                <p class="text-xl"><?php echo $title; ?></p>
+            </div>
     <?php
         endwhile;
     endif; ?>
