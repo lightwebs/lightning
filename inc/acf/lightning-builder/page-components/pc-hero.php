@@ -11,7 +11,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
 
         <div class="container <?php echo s($prefix)['text_color']; ?>  gap-4 md:gap-24 md:flex">
             <div class="w-full flex flex-col gap-4 md:gap-6 py-6 justify-center">
-                <h1 class="text-2xl md:text-3xl text-purple-500"><?= $title; ?></h1>
+                <h1 class="text-2xl md:text-3xl text-purple-500"><?php echo $title; ?></h1>
                 <?php if (s($prefix)['title']) : ?>
                     <?php echo '<' . s($prefix)['title_tag'] . '>'; ?>
                     <?php echo s($prefix)['title'] ?>
@@ -28,7 +28,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
                     ?>
                             <div class="flex gap-2 md:gap-4 items-center">
                                 <span class="material-icons-round text-purple-500">change_history</span>
-                                <p class="font-medium"> <?= $title ?> </p>
+                                <p class="font-medium"> <?php echo $title ?> </p>
                             </div>
                     <?php
                         endwhile;
@@ -58,7 +58,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
 
             <div class="w-full  md:mt-0 flex items-end">
                 <? if (!empty($image)) : ?>
-                    <img src="<?= $image['url']; ?>" alt="<?= $image['alt']; ?>" class="object-contain " />
+                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="object-contain " />
                 <? endif; ?>
             </div>
 
