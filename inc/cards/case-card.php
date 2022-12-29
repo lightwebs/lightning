@@ -21,7 +21,7 @@ if (!function_exists('case_card')) {
                 <a class="block" href="<?php echo $link; ?>">
 
                     <div class="w-full mb-3 overflow-hidden card-image md:mb-4">
-                        <?php echo image($image_id, 'medium_large', 'object-cover aspect-4/3 group-hover:scale-105 transition-transform duration-300') ?>
+                        <?php echo image($image_id, 'medium_large', 'object-cover w-full aspect-4/3 group-hover:scale-105 transition-transform duration-300') ?>
                     </div>
 
                     <div class="flex flex-col md:col-span-3 card-body">

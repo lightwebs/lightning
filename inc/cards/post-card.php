@@ -20,7 +20,7 @@ if (!function_exists('post_card')) {
         }
 
         if (!$masonry) {
-            $image_calsses .= ' aspect-4/3';
+            $image_calsses .= ' w-full aspect-4/3';
         }
 ?>
         <div class="<?php echo $masonry ? 'row-span-3 lg:row-span-4 [&:nth-child(1)]:row-span-2 [&:nth-child(2)]:row-span-3 [&:nth-child(3)]:row-span-2' : 'lg:col-span-1'; ?> col-span-2 card group" data-post-id="<?php echo $post_id; ?>">
