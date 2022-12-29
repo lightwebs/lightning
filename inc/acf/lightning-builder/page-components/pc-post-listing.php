@@ -9,6 +9,17 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
     $card_bg_colors = get_sub_field('card_bg_colors');
     $content_type = get_sub_field('content_type');
     $columns = get_sub_field('columns');
+    $masonry = get_sub_field('masonry');
+    $post_number = 0;
+
+    $card_classes = $card_text_colors;
+    if ($masonry && $post_type == 'post') {
+        $columns = $columns * 2;
+    }
+
+    if ($post_type == 'post') {
+        $card_classes .= ' ' . $card_bg_colors;
+    }
 
     $args = [
         'post_type' => $post_type,
@@ -22,11 +33,14 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
 
     // Gets the post types from the acf-arrays folder and checks if the post type is in the array
     // If it is, it will get the posts from the picked post type
-    include acf_path() . 'acf-arrays/post-types.php';
-    foreach ($post_types as $key => $type) {
-        if ($key == $post_type) {
-            $args['post__in'] = get_sub_field('picked_' . $key);
-            $args['orderby'] = 'post__in';
+
+    if ($content_type == 'picked') {
+        include acf_path() . 'acf-arrays/post-types.php';
+        foreach ($post_types as $key => $type) {
+            if ($key == $post_type) {
+                $args['post__in'] = get_sub_field('picked_' . $key);
+                $args['orderby'] = 'post__in';
+            }
         }
     }
 
@@ -54,14 +68,29 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
 
         <?php include __DIR__ . '/pc-post-listing/pc-search.php'; ?>
 
-        <div class="px-0 md:px-4 container <?php echo s($prefix)['text_color']; ?>">
-            <div class="grid items-stretch md:grid-cols-2 xl:grid-cols-<?php echo $columns; ?> gap-4 post-container search-result">
-                <?php if ($query->have_posts()) : ?>
-                    <?php while ($query->have_posts()) : $query->the_post(); ?>
+        <div class="container <?php echo s($prefix)['text_color']; ?>">
 
-                        <?php card(get_the_ID(), $card_text_colors . ' ' . $card_bg_colors); ?>
+            <div class="grid gap-6 lg:gap-8 xxl:gap-12 post-container search-result <?php
+                                                                                    echo $post_type == 'post' ? 'md:grid-cols-4' : 'md:grid-cols-2';
+                                                                                    echo $post_type == 'testimonial' ? ' items-start' : ' items-stretch';
+                                                                                    ?> lg:grid-cols-<?php echo $columns; ?>">
+                <?php
+                if ($query->have_posts()) : ?>
+                    <?php while ($query->have_posts()) : $query->the_post();
+                        if ($post_type == 'post') {
+                            post_card(get_the_ID(), $card_classes, 20, $post_number, $masonry);
+                        }
 
-                    <?php endwhile; ?>
+                        if ($post_type == 'case') {
+                            case_card(get_the_ID(), $card_classes, 10);
+                        }
+
+                        if ($post_type == 'testimonial') {
+                            testimonial_card(get_the_ID(), $card_classes, 10);
+                        }
+
+                        $post_number++;
+                    endwhile; ?>
                 <?php endif;
                 wp_reset_postdata(); ?>
             </div>
@@ -69,7 +98,7 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
             <?php
             if ($found_posts > 12 && $qty < 1) :  ?>
                 <div class="flex justify-center my-8">
-                    <?php echo btn_primary('Ladda fler', 'pc-load-more mx-auto block', 'data-post-type="' . $post_type . '" data-qty="' . $qty . '"'); ?>
+                    <?php echo btn_primary('Ladda fler', 'pc-load-more mx-auto block', 'data-post-type="' . $post_type . '" data-qty="' . $qty . '"' . '" data-masonry="' . $masonry . '"'); ?>
                 </div>
             <?php
             endif; ?>
