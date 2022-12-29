@@ -10,4 +10,4 @@
 
 ?>
 
-<?php echo card(get_the_ID(), 'bg-white text-black'); ?>
+<?php echo post_card(get_the_ID(), 'bg-white text-black'); ?>

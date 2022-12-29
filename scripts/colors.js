@@ -61,10 +61,10 @@ const colorsArrayFile = `<?php
  * @return array
 */
 
-if (is_admin()) {
-
 $bg_colors = [];
 $text_colors = [];
+
+if (is_admin()) {
 
 $bg_colors = [${bgColorsArrayString}];
 $text_colors = [${textColorsArrayString}];

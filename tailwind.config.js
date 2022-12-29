@@ -10,7 +10,7 @@ module.exports = {
     // darkMode: 'class',
     safelist: [
         {
-            pattern: /grid-cols-(1|2|3|4)/,
+            pattern: /grid-cols-(1|2|3|4|5|6|7|8)/,
             variants: ['md', 'lg', 'xl', 'xxl'],
         },
     ],
@@ -87,6 +87,11 @@ module.exports = {
             },
         },
 
-        plugins: [require('@tailwindcss/line-clamp'), require('@tailwindcss/aspect-ratio')],
+        variants: {
+            extend: {
+                lineClamp: ['active'],
+            },
+        },
     },
+    plugins: [require('@tailwindcss/line-clamp'), require('@tailwindcss/aspect-ratio')],
 }

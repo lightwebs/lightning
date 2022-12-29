@@ -1,5 +1,9 @@
 <?php
+
 if (function_exists('acf_add_local_field_group')) {
+    // Include the clone fields
+    include get_template_directory() . '/inc/acf/acf-arrays/colors.php';
+
     acf_add_local_field_group([
         'key' => 'group_clone_component_header',
         'title' => 'Component header',
@@ -116,14 +120,14 @@ if (function_exists('acf_add_local_field_group')) {
             ],
             [
                 'key' => 'field_lb_clone_component_hide_component',
-                'label' => __('Göm komponenten', 'lightning'),
+                'label' => __('Dölj komponenten', 'lightning'),
                 'name' => 'hide_component',
                 'type' => 'true_false',
                 'message' => 'Döljer komponenten på hemsidan',
                 'default_value' => 0,
                 'ui' => 1,
-                'ui_on_text' => 'Ja',
-                'ui_off_text' => 'Nej',
+                'ui_on_text' => 'Dölj',
+                'ui_off_text' => 'Visa',
             ],
         ],
     ]);

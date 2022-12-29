@@ -12,10 +12,10 @@
  * @return array
 */
 
-if (is_admin()) {
-
 $bg_colors = [];
 $text_colors = [];
+
+if (is_admin()) {
 
 $bg_colors = ['bg-[transparent]' => __('transparent', 'lightning') , 'bg-[#ffffff]' => __('white', 'lightning') , 'bg-[#000000]' => __('black', 'lightning')];
 $text_colors = ['text-[#ffffff]' => __('white', 'lightning') , 'text-[#000000]' => __('black', 'lightning')];

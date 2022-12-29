@@ -164,10 +164,59 @@ return [
             ],
         ],
         [
+            'key' => 'field_lb_post_listing_picked_testimonials',
+            'label' => __('Välj vittnesmål', 'lightning'),
+            'name' => 'picked_testimonial',
+            'type' => 'relationship',
+            'post_type' => [
+                'testimonial',
+            ],
+            'filters' => [
+                'search',
+                'taxonomy',
+            ],
+            'min' => '0',
+            'return_format' => 'id',
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'field_lb_post_listing_content_type',
+                        'operator' => '==',
+                        'value' => 'picked',
+                    ],
+                    [
+                        'field' => 'field_lb__post_listing_post_type',
+                        'operator' => '==',
+                        'value' => 'testimonial',
+                    ],
+                ],
+            ],
+        ],
+        [
             'key' => 'field_lb_post_listing_settings_tab',
             'label' => 'Inställningar',
             'type' => 'tab',
             'placement' => 'top',
+        ],
+        [
+            'key' => 'field_lb_post_listing_masonry',
+            'label' => __('Masonry grid?', 'lightning'),
+            'name' => 'masonry',
+            'type' => 'true_false',
+            'message' => 'Visa i masonry-grid',
+            'default_value' => 0,
+            'ui' => 1,
+            'ui_on_text' => 'Ja',
+            'ui_off_text' => 'Nej',
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'field_lb__post_listing_post_type',
+                        'operator' => '==',
+                        'value' => 'post',
+                    ],
+                ],
+            ],
         ],
         [
             'key' => 'field_lb_post_listing_cards_bgcolors',
@@ -179,6 +228,15 @@ return [
             'return_format' => 'value',
             'allow_null' => 0,
             'layout' => 'horizontal',
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'field_lb__post_listing_post_type',
+                        'operator' => '==',
+                        'value' => 'post',
+                    ],
+                ],
+            ],
         ],
         [
             'key' => 'field_lb_post_listing_cards_colors',

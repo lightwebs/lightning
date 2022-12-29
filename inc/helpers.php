@@ -356,5 +356,13 @@ function get_related_posts_by_field($post_id, $field, $limit = 3) {
  */
 include_once get_template_directory() . '/partials/social-share.php';
 include_once get_template_directory() . '/partials/author.php';
-include_once get_template_directory() . '/partials/small-card.php';
-include_once get_template_directory() . '/partials/card.php';
+
+/**
+ * 
+ * List cards
+ * 
+ */
+include_once get_template_directory() . '/inc/cards/small-card.php';
+include_once get_template_directory() . '/inc/cards/post-card.php';
+include_once get_template_directory() . '/inc/cards/case-card.php';
+include_once get_template_directory() . '/inc/cards/testimonial-card.php';

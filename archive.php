@@ -27,7 +27,7 @@ get_header();
 				<?php while (have_posts()) :
 					the_post();
 					if ('post' === get_post_type()) : ?>
-						<?php echo card(get_the_ID(), 'bg-white text-black', 10); ?>
+						<?php echo post_card(get_the_ID(), 'bg-white text-black', 10); ?>
 					<?php else :
 						get_template_part('template-parts/content', get_post_type());
 					endif; ?>
