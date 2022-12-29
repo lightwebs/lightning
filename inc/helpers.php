@@ -306,10 +306,12 @@ function btn_secondary(string $text, string $class = null, $data = null) {
  * Link
  *
  */
-function custom_link($link, $class = null) {
+function custom_link($link, $class = null, bool $inline_block = false, int $arrow_padding = null) {
     if ($link) {
         $link_color = get_sub_field('link_colors');
-        echo "<a class='inline-flex items-center font-semibold group gap-x-2 md:text-lg {$link_color} {$class}' href='{$link['url']}'>{$link['title']}<span class='font-semibold transition-transform duration-300 text-inherit material-icons-round group-hover:translate-x-1'>arrow_forward</span></a>";
+        $display = $inline_block ? 'inline-block' : 'inline-flex items-center';
+        $arrow_padding = $arrow_padding ? 'pl-' . $arrow_padding : null;
+        echo "<a class='{$display} font-semibold group gap-x-2 md:text-lg {$link_color} {$class}' href='{$link['url']}'>{$link['title']}<span class='{$arrow_padding} font-semibold transition-transform duration-300 text-inherit material-icons-round group-hover:translate-x-1'>arrow_forward</span></a>";
     }
 }
 
