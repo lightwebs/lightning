@@ -12,7 +12,7 @@ function image($image_id, $size = 'full', string $class = null) {
 
 
 /**
- * 
+ *
  * Get fields from clone fields
  * s stands for settings, just wanted to keep it short
  * Useage example: s($prefix)['title']
@@ -55,9 +55,9 @@ function s($prefix, bool $sub = true) {
 
 
 /**
- * 
+ *
  * Output component id if set
- * 
+ *
  */
 
 function component_id($prefix) {
@@ -68,9 +68,9 @@ function component_id($prefix) {
 
 
 /**
- * 
+ *
  * Output the component header
- * 
+ *
  */
 function component_header(string $field_name) { ?>
     <?php if (s($field_name)['title'] || s($field_name)['text']) : ?>
@@ -90,9 +90,9 @@ function component_header(string $field_name) { ?>
 
 
 /**
- * 
+ *
  * Get location by user ip
- * 
+ *
  */
 
 // function getLocationInfoByIp() {
@@ -116,9 +116,9 @@ function component_header(string $field_name) { ?>
 
 
 /**
- * 
+ *
  * Hide component for specific countries
- * 
+ *
  */
 // function hide_country($prefix) {
 //     $country_codes = get_sub_field($prefix . '_country_codes');
@@ -136,9 +136,9 @@ function component_header(string $field_name) { ?>
 
 
 /**
- * 
+ *
  * Get categories as tags for post
- * 
+ *
  */
 function get_post_terms($post_id, string $taxonomy, $class = null, $term_class = null) {
     $taxonomy = get_the_terms($post_id, $taxonomy);
@@ -159,7 +159,7 @@ function get_post_terms($post_id, string $taxonomy, $class = null, $term_class =
 
 
 /**
- * 
+ *
  * Get a page url by template name
  * Call it like this: get_page_url_by_template('the-template-name');
  */
@@ -196,7 +196,7 @@ function acf_path() {
 
 
 /**
- * Get the page id of the current page if it's a parent page. 
+ * Get the page id of the current page if it's a parent page.
  * If it's a child page, get the id of the parent page.
  * @return int
  */
@@ -245,9 +245,9 @@ function custom_excerpt($limit, $field, $post_id = null) {
 
 
 /**
- * 
+ *
  * Get the spacing for sections
- * 
+ *
  */
 function section_spacing() {
     echo 'py-6 md:py-8 lg:py-9 xl:py-10 xxl:py-12';
@@ -255,9 +255,9 @@ function section_spacing() {
 
 
 /**
- * 
+ *
  * Link as button - Primary
- * 
+ *
  */
 function btn_l_primary($link, string $class = null, $data = null) {
     if ($link) {
@@ -267,9 +267,9 @@ function btn_l_primary($link, string $class = null, $data = null) {
 
 
 /**
- * 
+ *
  * Link as button - Secondary
- * 
+ *
  */
 function btn_l_secondary($btn, string $class = null, $data = null) {
     if ($btn) {
@@ -279,9 +279,9 @@ function btn_l_secondary($btn, string $class = null, $data = null) {
 
 
 /**
- * 
+ *
  * Primary button
- * 
+ *
  */
 function btn_primary(string $text, string $class = null, $data = null) {
     if ($text) {
@@ -290,9 +290,9 @@ function btn_primary(string $text, string $class = null, $data = null) {
 }
 
 /**
- * 
+ *
  * Secondary button
- * 
+ *
  */
 function btn_secondary(string $text, string $class = null, $data = null) {
     if ($text) {
@@ -302,22 +302,22 @@ function btn_secondary(string $text, string $class = null, $data = null) {
 
 
 /**
- * 
+ *
  * Link
- * 
+ *
  */
 function custom_link($link, $class = null) {
     if ($link) {
         $link_color = get_sub_field('link_colors');
-        echo "<a class='inline-flex items-center font-semibold group gap-x-2 md:text-lg {$link_color} {$class}' href='{$link['url']}'>{$link['title']}<span class='text-xl font-semibold transition-transform duration-300 material-icons-round group-hover:translate-x-1'>arrow_forward</span></a>";
+        echo "<a class='inline-flex items-center font-semibold group gap-x-2 md:text-lg {$link_color} {$class}' href='{$link['url']}'>{$link['title']}<span class='font-semibold transition-transform duration-300 text-inherit material-icons-round group-hover:translate-x-1'>arrow_forward</span></a>";
     }
 }
 
 
 /**
- * 
+ *
  * Get related posts by category.
- * 
+ *
  */
 function get_related_posts($post_id, $limit = 3) {
     $categories = get_the_category($post_id);
@@ -334,9 +334,9 @@ function get_related_posts($post_id, $limit = 3) {
 }
 
 /**
- * 
+ *
  * Get posts by ids from acf field.
- * 
+ *
  */
 function get_related_posts_by_field($post_id, $field, $limit = 3) {
     $args = [
@@ -350,9 +350,9 @@ function get_related_posts_by_field($post_id, $field, $limit = 3) {
 
 
 /**
- * 
+ *
  * List partials
- * 
+ *
  */
 include_once get_template_directory() . '/partials/social-share.php';
 include_once get_template_directory() . '/partials/author.php';

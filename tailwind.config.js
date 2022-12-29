@@ -41,6 +41,7 @@ module.exports = {
             center: true,
         },
 
+
         colors: {
             transparent: 'transparent',
             white: '#ffffff',
@@ -84,6 +85,9 @@ module.exports = {
             aspectRatio: {
                 '4/3': '4 / 3',
                 '3/4': '3 / 4',
+            },
+            fontSize: {
+                inherit: 'inherit',
             },
         },
 
