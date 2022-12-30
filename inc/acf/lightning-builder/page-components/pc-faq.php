@@ -12,7 +12,7 @@ if (get_row_layout() == 'faq' && !s(get_row_layout())['hide_component']) :
 ?>
 
     <section <?php component_id($prefix); ?> class="pc-faq section <?php echo section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?>">
-        <div class="w-full max-w-[50rem] mx-auto">
+        <div class="w-full max-w-[52rem] xl:max-w-[54rem] xxl:max-w-[56rem] mx-auto">
             <?php component_header($prefix); ?>
         </div>
 
