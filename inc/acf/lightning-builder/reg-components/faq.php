@@ -54,7 +54,7 @@ return [
             'name' => 'faq',
             'type' => 'clone',
             'clone' => [
-                0 => 'group_clone_component_footer',
+                0 => 'group_clone_component_settings',
             ],
             'display' => 'seamless',
             'prefix_name' => 1,

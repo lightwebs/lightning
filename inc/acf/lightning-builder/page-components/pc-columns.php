@@ -6,7 +6,9 @@ if (get_row_layout() == 'columns' && !s(get_row_layout())['hide_component']) :
 ?>
 
     <section <?php component_id($prefix); ?> class="pc-columns <?php echo section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?> <?php echo s($prefix)['text_color']; ?>">
+
         <?php component_header($prefix); ?>
+
         <div class="container">
             <div class="grid md:grid-cols-2 xl:grid-cols-<?php echo $cols; ?> gap-6 lg:gap-8 xxl:gap-12">
                 <?php if (have_rows('columns_cols')) : ?>
@@ -133,5 +135,8 @@ if (get_row_layout() == 'columns' && !s(get_row_layout())['hide_component']) :
 
         </div>
         </div>
+
+        <?php component_footer($prefix); ?>
+
     </section>
 <?php endif; ?>
