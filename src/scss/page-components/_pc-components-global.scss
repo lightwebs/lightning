@@ -10,6 +10,22 @@
                     @apply mt-[-163px] pt-[163px];
                 }
             }
+
+            &.bg-\[\#ffffff\]:not(.full-width) {
+                + .bg-\[\#ffffff\] {
+                    @apply pt-0;
+                }
+            }
+            &.bg-\[\#000000\]:not(.full-width) {
+                + .bg-\[\#000000\] {
+                    @apply pt-0;
+                }
+            }
+            &.bg-\[\transparent\]:not(.full-width) {
+                + .bg-\[\transparent\] {
+                    @apply pt-0;
+                }
+            }
         }
     }
 }

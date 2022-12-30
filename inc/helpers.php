@@ -315,7 +315,7 @@ function custom_excerpt($limit, $field, $post_id = null) {
  *
  */
 function section_spacing() {
-    echo 'py-6 md:py-8 lg:py-9 xl:py-10 xxl:py-12';
+    echo 'py-12 md:py-16 lg:py-18 xl:py-24 xxl:py-28';
 }
 
 
