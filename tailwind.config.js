@@ -81,6 +81,9 @@ module.exports = {
             fontSize: {
                 inherit: 'inherit',
             },
+            backgroundImage: {
+                radial: "url('/src/assets/gradients/radial.svg')",
+            },
         },
 
         variants: {

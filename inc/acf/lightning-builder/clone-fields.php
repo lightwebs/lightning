@@ -131,6 +131,17 @@ if (function_exists('acf_add_local_field_group')) {
                 'layout' => 'horizontal',
             ],
             [
+                'key' => 'field_lb_clone_gradient',
+                'label' => __('Visa gradient?', 'lightning'),
+                'name' => 'gradient',
+                'type' => 'true_false',
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => 'Visa',
+                'ui_off_text' => 'Dölj',
+            ],
+            [
                 'key' => 'field_clone_component_name',
                 'label' => 'Komponentens namn',
                 'name' => 'component_name',

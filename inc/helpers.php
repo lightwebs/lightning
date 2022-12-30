@@ -27,6 +27,7 @@ function s($prefix, bool $sub = true) {
         $link = get_sub_field($prefix . '_component_link');
         $bg_color = get_sub_field($prefix . '_bg_colors');
         $hide_component = get_sub_field($prefix . '_hide_component');
+        $gradient = get_sub_field($prefix . '_gradient');
         $text_color = get_sub_field($prefix . '_text_colors');
         $component_id = get_sub_field('component_id');
         $has_color_bg = $bg_color !== 'bg-[transparent]';
@@ -39,6 +40,7 @@ function s($prefix, bool $sub = true) {
         $link = get_field($prefix . '_component_link');
         $bg_color = get_field($prefix . '_bg_colors');
         $hide_component = get_field($prefix . '_hide_component');
+        $gradient = get_field($prefix . '_gradient');
         $text_color = get_field($prefix . '_text_colors');
         $component_id = get_field('component_id');
         $has_color_bg = $bg_color !== 'bg-[transparent]';
@@ -47,6 +49,7 @@ function s($prefix, bool $sub = true) {
     return [
         'bg_color' => $bg_color,
         'hide_component' => $hide_component,
+        'gradient' => $gradient,
         'text_color' => $text_color,
         'text' => $text,
         'link' => $link,
@@ -84,16 +87,20 @@ function component_header(string $field_name) { ?>
         $is_black_text = s($field_name)['text_color'] == 'text-[#000000]';
         $title_class = s($field_name)['text_color'];
         if ($is_small_text) {
-            $title_class .= ' !text-2xl !uppercase';
+            $title_class .= ' !text-xl lg:!text-2xl !uppercase';
         }
     ?>
+        <?php if (s($field_name)['gradient']) : ?>
+            <span class="absolute top-0 right-0 z-0 w-full min-h-[1200px] pointer-events-none bg-radial bg-contain bg-right-top bg-no-repeat"></span>
+        <?php endif; ?>
+
         <header class="container mb-6 md:mb-6 xl:mb-8 xxl:mb-12 <?php echo s($field_name)['text_align']; ?>">
             <?php if (s($field_name)['title']) : ?>
                 <?php echo '<' . s($field_name)['title_tag'] . ' class="' . $title_class . '" >'; ?>
 
                 <?php
                 if ($is_small_text) : ?>
-                    <div class="absolute left-0 mt-3.5 w-full border-t-2 <?php echo $is_black_text ? 'border-text-black' : 'border-text-white'; ?>"></div>
+                    <div class="absolute left-0 pointer-events-none mt-3.5 w-full border-t-2 <?php echo $is_black_text ? 'border-text-black' : 'border-text-white'; ?>"></div>
                     <span class="relative z-[1] <?php echo $is_black_text ? 'bg-white ml-4 px-5' : 'bg-black ml-4 px-5'; ?>">
                     <?php
                 endif;
@@ -126,12 +133,12 @@ function component_footer(string $field_name) {
         $is_black_text = s($field_name)['text_color'] == 'text-[#000000]';
         $link_class = s($field_name)['text_color'] . ' !uppercase';
         if ($is_small_text) {
-            $link_class .= ' !text-2xl italic';
+            $link_class .= ' !text-xl lg:!text-2xl italic';
         } ?>
         <footer class="container mt-6 md:mt-6 xl:mt-8 xxl:mt-12 flex <?php echo $is_small_text ? 'justify-end' : ''; ?> ">
             <?php
             if ($is_small_text) : ?>
-                <div class="absolute left-0 mt-3.5 w-full border-t-2 <?php echo $is_black_text ? 'border-text-black' : 'border-text-white'; ?>"></div>
+                <div class="absolute left-0 pointer-events-none mt-3.5 w-full border-t-2 <?php echo $is_black_text ? 'border-text-black' : 'border-text-white'; ?>"></div>
                 <span class="relative z-[1] <?php echo $is_black_text ? 'bg-white mr-4 px-5' : 'bg-black mr-4 px-5'; ?>">
 
                 <?php
