@@ -21,6 +21,7 @@ function s($prefix, bool $sub = true) {
     if ($sub) {
         $title = get_sub_field($prefix . '_title');
         $title_tag = get_sub_field($prefix . '_title_tag');
+        $title_type = get_sub_field($prefix . '_title_type');
         $text_align = get_sub_field($prefix . '_text_align');
         $text = get_sub_field($prefix . '_text');
         $bg_color = get_sub_field($prefix . '_bg_colors');
@@ -31,6 +32,7 @@ function s($prefix, bool $sub = true) {
     } else {
         $title = get_field($prefix . '_title');
         $title_tag = get_field($prefix . '_title_tag');
+        $title_type = get_field($prefix . '_title_type');
         $text_align = get_field($prefix . '_text_align');
         $text = get_field($prefix . '_text');
         $bg_color = get_field($prefix . '_bg_colors');
@@ -47,6 +49,7 @@ function s($prefix, bool $sub = true) {
         'text' => $text,
         'title' => $title,
         'title_tag' => $title_tag,
+        'title_type' => $title_type,
         'text_align' => $text_align,
         'component_id' => $component_id,
         'has_color_bg' => $has_color_bg
@@ -72,13 +75,33 @@ function component_id($prefix) {
  * Output the component header
  *
  */
-function component_header(string $field_name) { ?>
+function component_header(string $field_name) {
+    $is_small_text = s($field_name)['title_type'] == 'small';
+    $is_black_text = s($field_name)['text_color'] == 'text-[#000000]';
+    $title_class = '';
+    if ($is_small_text) {
+        $title_class = 'class="!text-2xl !uppercase"';
+    }
+?>
     <?php if (s($field_name)['title'] || s($field_name)['text']) : ?>
         <header class="container mb-6 md:mb-6 xl:mb-8 xxl:mb-12 <?php echo s($field_name)['text_align']; ?>">
             <?php if (s($field_name)['title']) : ?>
-                <?php echo '<' . s($field_name)['title_tag'] . '>'; ?>
-                <?php echo s($field_name)['title']; ?>
-                <?php echo '</' . s($field_name)['title_tag'] . '>'; ?>
+                <?php echo '<' . s($field_name)['title_tag'] . ' ' . $title_class . ' >'; ?>
+
+                <?php
+                if ($is_small_text) : ?>
+                    <div class="absolute left-0 mt-3.5 w-full border-t-2 <?php echo $is_black_text ? 'border-text-black' : 'border-text-white'; ?>"></div>
+                    <span class="relative z-[1] <?php echo $is_black_text ? 'bg-white ml-4 px-5' : 'bg-black ml-4 px-5'; ?>">
+                    <?php
+                endif;
+
+                echo s($field_name)['title'];
+
+                if ($is_small_text) : ?>
+                    </span>
+                <?php
+                endif;
+                echo '</' . s($field_name)['title_tag'] . '>'; ?>
             <?php endif; ?>
 
             <?php if (s($field_name)['text']) : ?>

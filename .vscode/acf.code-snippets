@@ -743,7 +743,7 @@
                         "\t\t\t'name' => '${1:change_me}',",
                         "\t\t\t'type' => 'clone',",
                         "\t\t\t'clone' => [",
-                            "\t\t\t\t0 => 'group_clone_component_footer',",
+                            "\t\t\t\t0 => 'group_clone_component_settings',",
                         "\t\t\t],",
                         "\t\t\t'display' => 'seamless',",
                         "\t\t\t'prefix_name' => 1",

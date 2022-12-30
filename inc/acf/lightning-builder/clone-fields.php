@@ -13,18 +13,13 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Rubrik',
                 'name' => 'title',
                 'type' => 'text',
-                'wrapper' => [
-                    'width' => '80'
-                ],
+                'wrapper' => ['width' => 70],
             ],
             [
                 'key' => 'field_clone_title_tag',
                 'label' => 'Rubrikstorlek',
                 'name' => 'title_tag',
                 'type' => 'select',
-                'wrapper' => [
-                    'width' => '20',
-                ],
                 'choices' => [
                     'h1' => 'H1',
                     'h2' => 'H2',
@@ -35,6 +30,20 @@ if (function_exists('acf_add_local_field_group')) {
                 'allow_null' => 0,
                 'multiple' => 0,
                 'return_format' => 'value',
+                'wrapper' => ['width' => 15],
+            ],
+            [
+                'key' => 'field_lb_clone_title_type',
+                'label' => __('Rubriksvariant', 'lightning'),
+                'name' => 'title_type',
+                'type' => 'button_group',
+                'default_value' => 1,
+                'choices' => [
+                    'normal' => 'Vanlig',
+                    'small' => 'Liten',
+                ],
+                'return_format' => 'value',
+                'wrapper' => ['width' => 15],
             ],
             [
                 'key' => 'field_clone_title_tag_message',
@@ -80,8 +89,8 @@ if (function_exists('acf_add_local_field_group')) {
     ]);
 
     acf_add_local_field_group([
-        'key' => 'group_clone_component_footer',
-        'title' => 'Component footer',
+        'key' => 'group_clone_component_settings',
+        'title' => 'Component settings',
         'fields' => [
             [
                 'key' => 'field_clone_bg_colors',
