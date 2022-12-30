@@ -62,9 +62,7 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
 
     <section <?php component_id($prefix); ?> class="pc-post-listing section <?php echo section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?>" data-card-bg="<?php echo $card_bg_colors; ?>" data-card-text="<?php echo $card_text_colors; ?>">
 
-        <span class="<?php echo s($prefix)['text_color']; ?>">
-            <?php component_header($prefix); ?>
-        </span>
+        <?php component_header($prefix); ?>
 
         <?php include __DIR__ . '/pc-post-listing/pc-search.php'; ?>
 
@@ -103,5 +101,8 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
             <?php
             endif; ?>
         </div>
+
+        <?php component_footer($prefix); ?>
+
     </section>
 <?php endif; ?>

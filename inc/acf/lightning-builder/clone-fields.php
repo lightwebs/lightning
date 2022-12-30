@@ -64,7 +64,7 @@ if (function_exists('acf_add_local_field_group')) {
             ],
             [
                 'key' => 'field_clone_text',
-                'label' => 'Text',
+                'label' => __('Ingress', 'lightning'),
                 'name' => 'text',
                 'type' => 'wysiwyg',
                 'tabs' => 'visual',
@@ -74,7 +74,7 @@ if (function_exists('acf_add_local_field_group')) {
             ],
             [
                 'key' => 'field_clone_text_align',
-                'label' => 'Textjustering',
+                'label' => __('Textjustering', 'lightning'),
                 'name' => 'text_align',
                 'type' => 'button_group',
                 'choices' => [
@@ -82,8 +82,18 @@ if (function_exists('acf_add_local_field_group')) {
                     'text-center' => __('Center', 'lightning'),
                 ],
                 'allow_null' => 0,
+                'instructions' => __('Appliceras på komponentens huvud och fot. Inte innehållet.', 'lightning'),
                 'layout' => 'horizontal',
                 'return_format' => 'value',
+            ],
+            [
+                'key' => 'field_lb_clone_footer_link',
+                'label' => __('Länk i komponentfoten', 'lightning'),
+                'name' => 'component_link',
+                'type' => 'link',
+                'instructions' => __('Hamnar längst ner under allt innehåll i komponenten', 'lightning'),
+                'required' => 0,
+                'wrapper' => ['width' => 100]
             ],
         ],
     ]);

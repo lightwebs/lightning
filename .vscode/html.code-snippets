@@ -30,6 +30,9 @@
 			"\t<div class=\"container <?php echo s(\\$\`prefix)['text_color']; ?>\">"
 			"\t\t\ \`$0<?php echo $\`${10:sub_field_name}; ?>",
 			"\t</div>",
+			"",
+			"\t<?php component_footer(\\$\`prefix); ?>",
+			"",
 			"</section>",
 			"<?php endif; ?>"
         ],
