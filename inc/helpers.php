@@ -78,84 +78,6 @@ function component_id($prefix) {
 
 /**
  *
- * Output the component header
- *
- */
-function component_header(string $field_name) { ?>
-    <?php if (s($field_name)['title'] || s($field_name)['text']) :
-        $is_small_text = s($field_name)['title_type'] == 'small';
-        $is_black_text = s($field_name)['text_color'] == 'text-[#000000]';
-        $title_class = s($field_name)['text_color'];
-        if ($is_small_text) {
-            $title_class .= ' !text-xl lg:!text-2xl !uppercase';
-        }
-    ?>
-        <?php if (s($field_name)['gradient']) : ?>
-            <span class="absolute top-0 right-0 z-0 w-full min-h-[1200px] pointer-events-none bg-radial bg-contain bg-right-top bg-no-repeat"></span>
-        <?php endif; ?>
-
-        <header class="container mb-6 md:mb-6 xl:mb-8 xxl:mb-12 <?php echo s($field_name)['text_align']; ?>">
-            <?php if (s($field_name)['title']) : ?>
-                <?php echo '<' . s($field_name)['title_tag'] . ' class="' . $title_class . '" >'; ?>
-
-                <?php
-                if ($is_small_text) : ?>
-                    <div class="absolute left-0 pointer-events-none mt-3.5 w-full border-t-2 <?php echo $is_black_text ? 'border-text-black' : 'border-text-white'; ?>"></div>
-                    <span class="relative z-[1] <?php echo $is_black_text ? 'bg-white ml-4 px-5' : 'bg-black ml-4 px-5'; ?>">
-                    <?php
-                endif;
-
-                echo s($field_name)['title'];
-
-                if ($is_small_text) : ?>
-                    </span>
-                <?php
-                endif;
-                echo '</' . s($field_name)['title_tag'] . '>'; ?>
-            <?php endif; ?>
-
-            <?php if (s($field_name)['text']) : ?>
-                <div class="preamble <?php echo s($field_name)['text_color']; ?>"><?php echo s($field_name)['text']; ?></div>
-            <?php endif; ?>
-        </header>
-    <?php endif; ?>
-    <?php }
-
-
-/**
- *
- * Output the component footer
- *
- */
-function component_footer(string $field_name) {
-    if (s($field_name)['link']) :
-        $is_small_text = s($field_name)['title_type'] == 'small';
-        $is_black_text = s($field_name)['text_color'] == 'text-[#000000]';
-        $link_class = s($field_name)['text_color'] . ' !uppercase';
-        if ($is_small_text) {
-            $link_class .= ' !text-xl lg:!text-2xl italic';
-        } ?>
-        <footer class="container mt-6 md:mt-6 xl:mt-8 xxl:mt-12 flex <?php echo $is_small_text ? 'justify-end' : ''; ?> ">
-            <?php
-            if ($is_small_text) : ?>
-                <div class="absolute left-0 pointer-events-none mt-3.5 w-full border-t-2 <?php echo $is_black_text ? 'border-text-black' : 'border-text-white'; ?>"></div>
-                <span class="relative z-[1] <?php echo $is_black_text ? 'bg-white mr-4 px-5' : 'bg-black mr-4 px-5'; ?>">
-
-                <?php
-            endif;
-            custom_link(s($field_name)['link'], $link_class);
-            if ($is_small_text) : ?>
-                </span>
-            <?php
-            endif; ?>
-        </footer>
-    <?php
-    endif;
-}
-
-
-/**
- *
  * Get location by user ip
  *
  */
@@ -371,10 +293,11 @@ function btn_secondary(string $text, string $class = null, $data = null) {
  * Link
  *
  */
-function custom_link($link, $class = null) {
+function custom_link($link, string $class = null, string $icon_class = null, string $icon_name = null) {
     if ($link) {
+        $icon_name = $icon_name ? $icon_name : 'arrow_forward';
         $link_color = get_sub_field('link_colors');
-        echo "<a class='inline-flex items-center font-semibold group gap-x-2 md:text-lg {$link_color} {$class}' href='{$link['url']}'>{$link['title']}<span class='font-semibold transition-transform duration-300 text-inherit material-icons-round group-hover:translate-x-1'>arrow_forward</span></a>";
+        echo "<a class='inline-block font-semibold group md:text-lg {$link_color} {$class}' href='{$link['url']}'>{$link['title']}<span class='ml-3 -mt-1 font-semibold align-middle transition-transform duration-300 md:ml-4 text-inherit material-icons-round group-hover:translate-x-1 {$icon_class}'>{$icon_name}</span></a>";
     }
 }
 
@@ -419,6 +342,8 @@ function get_related_posts_by_field($post_id, $field, $limit = 3) {
  * List partials
  *
  */
+include_once get_template_directory() . '/partials/component-header.php';
+include_once get_template_directory() . '/partials/component-footer.php';
 include_once get_template_directory() . '/partials/social-share.php';
 include_once get_template_directory() . '/partials/author.php';
 
