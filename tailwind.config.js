@@ -83,6 +83,10 @@ module.exports = {
             },
             backgroundImage: {
                 radial: "url('/src/assets/gradients/radial.svg')",
+                upleft: "url('/src/assets/gradients/gradient-upleft.svg')",
+                upright: "url('/src/assets/gradients/gradient-upright.svg')",
+                downleft: "url('/src/assets/gradients/gradient-downleft.svg')",
+                downright: "url('/src/assets/gradients/gradient-downright.svg')",
             },
         },
 
