@@ -2,7 +2,6 @@ const siteHeader = document.querySelector('.site-header')
 
 // Check if scroll position is greater than 0
 function checkScrollPosition() {
-    console.log(window.scrollY)
     if (window.scrollY > 20) {
         siteHeader.classList.add('bg-black')
     } else {
