@@ -5,7 +5,7 @@ if (get_row_layout() == 'columns' && !s(get_row_layout())['hide_component']) :
     $cols = get_sub_field('col_qty');
 ?>
 
-    <section <?php component_id($prefix); ?> class="pc-columns <?php echo section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?> <?php echo s($prefix)['text_color']; ?>">
+    <section <?php component_id($prefix); ?> class="pc-columns section <?php echo section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?> <?php echo s($prefix)['text_color']; ?>">
 
         <?php component_header($prefix); ?>
 

@@ -1,10 +1,16 @@
 const siteHeader = document.querySelector('.site-header')
 
-// Check if the site header is sticky
-const observer = new IntersectionObserver(([e]) => e.target.classList.toggle(`bg-black`, e.intersectionRatio < 1), {
-    threshold: [1],
-})
-observer.observe(siteHeader)
+// Check if scroll position is greater than 0
+function checkScrollPosition() {
+    if (window.scrollY > 20) {
+        siteHeader.classList.add('bg-black')
+    } else {
+        siteHeader.classList.remove('bg-black')
+    }
+}
+
+document.addEventListener('DOMContentLoaded', checkScrollPosition)
+window.addEventListener('scroll', checkScrollPosition)
 
 document.addEventListener('click', function (e) {
     const overlay = document.querySelector('.overlay')
