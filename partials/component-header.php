@@ -13,20 +13,18 @@ if (!function_exists('component_header')) {
             $title_class = s($field_name)['text_color'];
             if ($is_small_text) {
                 $title_class .= ' !text-xl lg:!text-2xl !uppercase';
+            } else {
+                $title_class .= ' relative';
             }
         ?>
-            <?php if (s($field_name)['gradient']) : ?>
-                <span class="absolute top-0 right-0 z-0 w-full min-h-[1200px] pointer-events-none bg-radial bg-contain bg-right-top bg-no-repeat"></span>
-            <?php endif; ?>
-
             <header class="container mb-6 md:mb-6 xl:mb-8 xxl:mb-12 <?php echo s($field_name)['text_align']; ?>">
                 <?php if (s($field_name)['title']) : ?>
                     <?php echo '<' . s($field_name)['title_tag'] . ' class="' . $title_class . '" >'; ?>
 
                     <?php
                     if ($is_small_text) : ?>
-                        <div class="absolute left-0 pointer-events-none mt-3.5 w-full border-t-2 <?php echo $is_black_text ? 'border-text-black' : 'border-text-white'; ?>"></div>
-                        <span class="relative z-[1] <?php echo $is_black_text ? 'bg-white ml-4 px-5' : 'bg-black ml-4 px-5'; ?>">
+                        <div class="!absolute left-0 pointer-events-none mt-3.5 w-full border-t-2 <?php echo $is_black_text ? 'border-text-black' : 'border-text-white'; ?>"></div>
+                        <span class="relative z-[1] px-5 ml-4 <?php echo $is_black_text ? 'bg-white' : 'bg-black'; ?>">
                         <?php
                     endif;
 
@@ -40,7 +38,7 @@ if (!function_exists('component_header')) {
                 <?php endif; ?>
 
                 <?php if (s($field_name)['text']) : ?>
-                    <div class="preamble <?php echo s($field_name)['text_color']; ?>"><?php echo s($field_name)['text']; ?></div>
+                    <div class="preamble relative <?php echo s($field_name)['text_color']; ?>"><?php echo s($field_name)['text']; ?></div>
                 <?php endif; ?>
             </header>
 <?php
