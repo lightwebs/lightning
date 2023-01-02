@@ -31,7 +31,7 @@
 	<div id="page" class="overflow-hidden site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'lightning'); ?></a>
 
-		<header id="masthead" class="sticky top-[-1px] pt-[1px] transition-colors duration-300 z-[1001] w-full site-header">
+		<header id="masthead" class="fixed top-0 transition-colors duration-300 z-[1001] w-full site-header">
 			<div class="container">
 				<?php get_template_part('components/component', 'navbar'); ?>
 			</div>

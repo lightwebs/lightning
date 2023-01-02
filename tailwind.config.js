@@ -81,6 +81,10 @@ module.exports = {
             fontSize: {
                 inherit: 'inherit',
             },
+
+            padding: {
+                18: '4.5rem',
+            },
         },
 
         variants: {

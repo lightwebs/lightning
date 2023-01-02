@@ -4,11 +4,10 @@
             @apply relative;
 
             &:first-of-type {
-                @apply mt-[-163px] pt-[243px];
+                @apply pt-[calc(65px+3rem)] md:pt-[calc(80px+4rem)] lg:pt-[calc(88px+4.5rem)] xl:pt-[calc(88px+6rem)] xxl:pt-[calc(88px+7rem)];
 
-                &.pc-cover,
-                &.pc-hero {
-                    @apply mt-[-163px] pt-[163px];
+                &.pc-cover {
+                    @apply pt-[65px] md:pt-[80px] lg:pt-[88px];
                 }
             }
 
