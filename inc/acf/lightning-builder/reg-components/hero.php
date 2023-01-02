@@ -149,17 +149,6 @@ return [
             'prefix_name' => 1,
         ],
         [
-            'key' => 'field_lb_hero_small_cover',
-            'label' => 'Smal cover?',
-            'name' => 'cover_small',
-            'type' => 'true_false',
-            'instructions' => 'Används på t.ex. kategorisidor.',
-            'default_value' => 0,
-            'ui' => 1,
-            'ui_on_text' => 'Ja',
-            'ui_off_text' => 'Nej',
-        ],
-        [
             'key' => 'field_lb_hero_component_id',
             'label' => 'Komponentens id (frivillig)',
             'name' => 'component_id',
