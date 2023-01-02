@@ -137,15 +137,27 @@ return [
             'placement' => 'top',
         ],
         [
-            'key' => 'field_lb_hero_colors',
+            'key' => 'field_lb_cover_colors',
             'label' => 'Färger',
-            'name' => 'hero',
+            'name' => 'cover',
             'type' => 'clone',
             'clone' => [
-                0 => 'group_clone_component_footer',
+                0 => 'group_clone_component_settings',
             ],
             'display' => 'seamless',
-            'prefix_name' => 1
+            'layout' => 'block',
+            'prefix_name' => 1,
+        ],
+        [
+            'key' => 'field_lb_cover_small_cover',
+            'label' => 'Smal cover?',
+            'name' => 'cover_small',
+            'type' => 'true_false',
+            'instructions' => 'Används på t.ex. kategorisidor.',
+            'default_value' => 0,
+            'ui' => 1,
+            'ui_on_text' => 'Ja',
+            'ui_off_text' => 'Nej',
         ],
         [
             'key' => 'field_lb_hero_component_id',
