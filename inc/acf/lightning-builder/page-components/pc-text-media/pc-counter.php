@@ -30,7 +30,7 @@
                     <?php if ($is_simple) :
                         echo ' ' . $unit;
                     elseif ($is_division) :
-                        echo '/' . $d;
+                        echo '/ ' . $d;
                     endif; ?>
                 </p>
                 <p class="text-xl"><?php echo $title; ?></p>
