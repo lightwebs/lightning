@@ -111,9 +111,9 @@ return [
                     'type' => 'true_false',
                     'instructions' => __('Fyll i knappen om den ska visa en pil-ikon i frontend', 'lightning'),
                     'default_value' => 0,
-                    'ui' => 0,
-                    'ui_on_text' => 'Show icon',
-                    'ui_off_text' => 'Hide icon',
+                    'ui' => 1,
+                    'ui_on_text' => 'Ja',
+                    'ui_off_text' => 'Nej',
                     'wrapper' => ['width' => 33]
                 ],
             ],
