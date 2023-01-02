@@ -139,7 +139,7 @@ return [
         [
             'key' => 'field_lb_hero_colors',
             'label' => 'Färger',
-            'name' => 'cover',
+            'name' => 'hero',
             'type' => 'clone',
             'clone' => [
                 0 => 'group_clone_component_settings',
