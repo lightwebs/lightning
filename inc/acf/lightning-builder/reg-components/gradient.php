@@ -13,15 +13,16 @@ return [
         ],
         [
             'key' => 'field_lb_gradient_gradient_placement',
-            'label' => __('Position', 'lightning'),
+            'label' => __('Riktning', 'lightning'),
             'name' => 'gradient_placement',
+            'instructions' => 'Välj i vilken riktning gradient ska skina. Tänk likt en lampa som skänker ljus i en viss riktning.',
             'type' => 'button_group',
             'choices' => [
-                'left-top' => __('↖', 'lightning'),
-                'right-top' => __('↗', 'lightning'),
+                'left-bottom' => __('↗', 'lightning'),
+                'left-top' => __('↘', 'lightning'),
                 'center' => __('⊙', 'lightning'),
-                'left-bottom' => __('↙', 'lightning'),
-                'right-bottom' => __('↘', 'lightning'),
+                'right-top' => __('↙', 'lightning'),
+                'right-bottom' => __('↖', 'lightning'),
             ],
             'default_value' => 'upleft',
             'wrapper' => ['width' => 100]
