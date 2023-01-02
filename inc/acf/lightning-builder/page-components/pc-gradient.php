@@ -6,7 +6,7 @@ if (get_row_layout() == 'gradient' && !s(get_row_layout())['hide_component']) :
     <section id="<?php echo s($prefix)['component_id']; ?>" class="relative pc-gradient">
 
         <?php if ($gradient_placement) :
-            $img_class = 'absolute z-0 w-full pointer-events-none';
+            $img_class = 'absolute z-[1] w-full pointer-events-none';
             if (strpos($gradient_placement, 'bottom') !== false) {
                 $img_class .= ' bottom-0';
             }
