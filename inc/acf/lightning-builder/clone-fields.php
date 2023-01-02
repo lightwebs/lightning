@@ -1,5 +1,9 @@
 <?php
+
 if (function_exists('acf_add_local_field_group')) {
+    // Include the clone fields
+    include get_template_directory() . '/inc/acf/acf-arrays/colors.php';
+
     acf_add_local_field_group([
         'key' => 'group_clone_component_header',
         'title' => 'Component header',
@@ -9,18 +13,13 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Rubrik',
                 'name' => 'title',
                 'type' => 'text',
-                'wrapper' => [
-                    'width' => '80'
-                ],
+                'wrapper' => ['width' => 70],
             ],
             [
                 'key' => 'field_clone_title_tag',
                 'label' => 'Rubrikstorlek',
                 'name' => 'title_tag',
                 'type' => 'select',
-                'wrapper' => [
-                    'width' => '20',
-                ],
                 'choices' => [
                     'h1' => 'H1',
                     'h2' => 'H2',
@@ -31,6 +30,20 @@ if (function_exists('acf_add_local_field_group')) {
                 'allow_null' => 0,
                 'multiple' => 0,
                 'return_format' => 'value',
+                'wrapper' => ['width' => 15],
+            ],
+            [
+                'key' => 'field_lb_clone_title_type',
+                'label' => __('Rubriksvariant', 'lightning'),
+                'name' => 'title_type',
+                'type' => 'button_group',
+                'default_value' => 1,
+                'choices' => [
+                    'normal' => 'Vanlig',
+                    'small' => 'Liten',
+                ],
+                'return_format' => 'value',
+                'wrapper' => ['width' => 15],
             ],
             [
                 'key' => 'field_clone_title_tag_message',
@@ -51,7 +64,7 @@ if (function_exists('acf_add_local_field_group')) {
             ],
             [
                 'key' => 'field_clone_text',
-                'label' => 'Text',
+                'label' => __('Ingress', 'lightning'),
                 'name' => 'text',
                 'type' => 'wysiwyg',
                 'tabs' => 'visual',
@@ -61,7 +74,7 @@ if (function_exists('acf_add_local_field_group')) {
             ],
             [
                 'key' => 'field_clone_text_align',
-                'label' => 'Textjustering',
+                'label' => __('Textjustering', 'lightning'),
                 'name' => 'text_align',
                 'type' => 'button_group',
                 'choices' => [
@@ -69,15 +82,25 @@ if (function_exists('acf_add_local_field_group')) {
                     'text-center' => __('Center', 'lightning'),
                 ],
                 'allow_null' => 0,
+                'instructions' => __('Appliceras på komponentens huvud och fot. Inte innehållet.', 'lightning'),
                 'layout' => 'horizontal',
                 'return_format' => 'value',
+            ],
+            [
+                'key' => 'field_lb_clone_footer_link',
+                'label' => __('Länk i komponentfoten', 'lightning'),
+                'name' => 'component_link',
+                'type' => 'link',
+                'instructions' => __('Hamnar längst ner under allt innehåll i komponenten', 'lightning'),
+                'required' => 0,
+                'wrapper' => ['width' => 100]
             ],
         ],
     ]);
 
     acf_add_local_field_group([
-        'key' => 'group_clone_component_footer',
-        'title' => 'Component footer',
+        'key' => 'group_clone_component_settings',
+        'title' => 'Component settings',
         'fields' => [
             [
                 'key' => 'field_clone_bg_colors',
@@ -108,6 +131,17 @@ if (function_exists('acf_add_local_field_group')) {
                 'layout' => 'horizontal',
             ],
             [
+                'key' => 'field_lb_clone_gradient',
+                'label' => __('Visa gradient?', 'lightning'),
+                'name' => 'gradient',
+                'type' => 'true_false',
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => 'Visa',
+                'ui_off_text' => 'Dölj',
+            ],
+            [
                 'key' => 'field_clone_component_name',
                 'label' => 'Komponentens namn',
                 'name' => 'component_name',
@@ -116,14 +150,14 @@ if (function_exists('acf_add_local_field_group')) {
             ],
             [
                 'key' => 'field_lb_clone_component_hide_component',
-                'label' => __('Göm komponenten', 'lightning'),
+                'label' => __('Dölj komponenten', 'lightning'),
                 'name' => 'hide_component',
                 'type' => 'true_false',
                 'message' => 'Döljer komponenten på hemsidan',
                 'default_value' => 0,
                 'ui' => 1,
-                'ui_on_text' => 'Ja',
-                'ui_off_text' => 'Nej',
+                'ui_on_text' => 'Dölj',
+                'ui_off_text' => 'Visa',
             ],
         ],
     ]);

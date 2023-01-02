@@ -10,6 +10,4 @@
 
 ?>
 
-<article id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php echo card(get_the_ID()); ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+<?php echo post_card(get_the_ID(), 'bg-white text-black'); ?>

@@ -21,20 +21,26 @@ function s($prefix, bool $sub = true) {
     if ($sub) {
         $title = get_sub_field($prefix . '_title');
         $title_tag = get_sub_field($prefix . '_title_tag');
+        $title_type = get_sub_field($prefix . '_title_type');
         $text_align = get_sub_field($prefix . '_text_align');
         $text = get_sub_field($prefix . '_text', false, false);
+        $link = get_sub_field($prefix . '_component_link');
         $bg_color = get_sub_field($prefix . '_bg_colors');
         $hide_component = get_sub_field($prefix . '_hide_component');
+        $gradient = get_sub_field($prefix . '_gradient');
         $text_color = get_sub_field($prefix . '_text_colors');
         $component_id = get_sub_field('component_id');
         $has_color_bg = $bg_color !== 'bg-[transparent]';
     } else {
         $title = get_field($prefix . '_title');
         $title_tag = get_field($prefix . '_title_tag');
+        $title_type = get_field($prefix . '_title_type');
         $text_align = get_field($prefix . '_text_align');
         $text = get_field($prefix . '_text');
+        $link = get_field($prefix . '_component_link');
         $bg_color = get_field($prefix . '_bg_colors');
         $hide_component = get_field($prefix . '_hide_component');
+        $gradient = get_field($prefix . '_gradient');
         $text_color = get_field($prefix . '_text_colors');
         $component_id = get_field('component_id');
         $has_color_bg = $bg_color !== 'bg-[transparent]';
@@ -43,10 +49,13 @@ function s($prefix, bool $sub = true) {
     return [
         'bg_color' => $bg_color,
         'hide_component' => $hide_component,
+        'gradient' => $gradient,
         'text_color' => $text_color,
         'text' => $text,
+        'link' => $link,
         'title' => $title,
         'title_tag' => $title_tag,
+        'title_type' => $title_type,
         'text_align' => $text_align,
         'component_id' => $component_id,
         'has_color_bg' => $has_color_bg
@@ -65,28 +74,6 @@ function component_id($prefix) {
         echo 'id="' . s($prefix)['component_id'] . '"';
     }
 }
-
-
-/**
- *
- * Output the component header
- *
- */
-function component_header(string $field_name) { ?>
-    <?php if (s($field_name)['title'] || s($field_name)['text']) : ?>
-        <header class="container mb-6 md:mb-6 xl:mb-8 xxl:mb-12 <?php echo s($field_name)['text_align']; ?>">
-            <?php if (s($field_name)['title']) : ?>
-                <?php echo '<' . s($field_name)['title_tag'] . '>'; ?>
-                <?php echo s($field_name)['title']; ?>
-                <?php echo '</' . s($field_name)['title_tag'] . '>'; ?>
-            <?php endif; ?>
-
-            <?php if (s($field_name)['text']) : ?>
-                <div class="preamble"><?php echo s($field_name)['text']; ?></div>
-            <?php endif; ?>
-        </header>
-    <?php endif; ?>
-<?php }
 
 
 /**
@@ -250,7 +237,7 @@ function custom_excerpt($limit, $field, $post_id = null) {
  *
  */
 function section_spacing() {
-    echo 'py-6 md:py-8 lg:py-9 xl:py-10 xxl:py-12';
+    echo 'py-12 md:py-16 lg:py-18 xl:py-24 xxl:py-28';
 }
 
 
@@ -306,10 +293,11 @@ function btn_secondary(string $text, string $class = null, $data = null) {
  * Link
  *
  */
-function custom_link($link, $class = null) {
+function custom_link($link, string $class = null, string $icon_class = null, string $icon_name = null) {
     if ($link) {
+        $icon_name = $icon_name ? $icon_name : 'arrow_forward';
         $link_color = get_sub_field('link_colors');
-        echo "<a class='inline-flex items-center font-semibold group gap-x-2 md:text-lg {$link_color} {$class}' href='{$link['url']}'>{$link['title']}<span class='font-semibold transition-transform duration-300 text-inherit material-icons-round group-hover:translate-x-1'>arrow_forward</span></a>";
+        echo "<a class='inline-block font-semibold group md:text-lg {$link_color} {$class}' href='{$link['url']}'>{$link['title']}<span class='ml-3 -mt-1 font-semibold align-middle transition-transform duration-300 md:ml-4 text-inherit material-icons-round group-hover:translate-x-1 {$icon_class}'>{$icon_name}</span></a>";
     }
 }
 
@@ -354,7 +342,17 @@ function get_related_posts_by_field($post_id, $field, $limit = 3) {
  * List partials
  *
  */
+include_once get_template_directory() . '/partials/component-header.php';
+include_once get_template_directory() . '/partials/component-footer.php';
 include_once get_template_directory() . '/partials/social-share.php';
 include_once get_template_directory() . '/partials/author.php';
-include_once get_template_directory() . '/partials/small-card.php';
-include_once get_template_directory() . '/partials/card.php';
+
+/**
+ *
+ * List cards
+ *
+ */
+include_once get_template_directory() . '/inc/cards/small-card.php';
+include_once get_template_directory() . '/inc/cards/post-card.php';
+include_once get_template_directory() . '/inc/cards/case-card.php';
+include_once get_template_directory() . '/inc/cards/testimonial-card.php';

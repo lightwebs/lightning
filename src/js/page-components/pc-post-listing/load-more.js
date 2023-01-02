@@ -1,4 +1,3 @@
-// export const loadMoreBtn = document.querySelector('.pc-load-more')
 const postCount = document.querySelector('.pc-post-listing .post-count')
 const filters = document.querySelectorAll('.filter')
 const searchInput = document.querySelector('.search-input')
@@ -17,6 +16,10 @@ export const loadPosts = async (e, target) => {
         const postListing = loadMoreBtn.closest('.pc-post-listing')
         data.append('card_bg_color', postListing.dataset.cardBg)
         data.append('card_text_color', postListing.dataset.cardText)
+
+        if (loadMoreBtn.dataset.masonry != '') {
+            data.append('masonry', true)
+        }
 
         postContainer = postListing.querySelector('.post-container')
     } else {
