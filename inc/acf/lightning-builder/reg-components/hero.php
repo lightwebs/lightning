@@ -13,7 +13,7 @@ return [
         ],
         [
             'key' => 'field_lb_hero_subtitle',
-            'label' => __('Title', 'lightning'),
+            'label' => __('Titel', 'lightning'),
             'name' => 'title',
             'type' => 'text',
             'instructions' => __('Rubrik visas ovanför header som H1.', 'lightning'),
@@ -39,7 +39,7 @@ return [
         ],
         [
             'key' => 'field_lb_hero_key_info',
-            'label' => __('Key info', 'lightning'),
+            'label' => __('Nyckelinfo', 'lightning'),
             'name' => 'key_info_repeater',
             'type' => 'repeater',
             'instructions' => __('Fyll i nyckelinformation. Visas under ingressen som text med en lila trinagel till höger', 'lightning'),
@@ -61,7 +61,7 @@ return [
         ],
         [
             'key' => 'field_lb_hero_buttons',
-            'label' => __('Buttons', 'lightning'),
+            'label' => __('Knappar', 'lightning'),
             'name' => 'buttons_repeater',
             'type' => 'repeater',
             'instructions' => __('CTA buttons', 'lightning'),
@@ -74,7 +74,7 @@ return [
             'sub_fields' => [
                 [
                     'key' => 'field_lb_hero_button_link',
-                    'label' => __('Link', 'lightning'),
+                    'label' => __('Länk', 'lightning'),
                     'name' => 'link',
                     'type' => 'link',
                     'instructions' => __('Välj länk och text till knappen', 'lightning'),
@@ -84,7 +84,7 @@ return [
 
                 [
                     'key' => 'field_lb_hero_button_type',
-                    'label' => __('Button type', 'lightning'),
+                    'label' => __('Knapptyp', 'lightning'),
                     'name' => 'button_type',
                     'type' => 'select',
                     'instructions' => __('Välj om knappen ska visas som primär eller sekundär', 'lightning'),
@@ -106,7 +106,7 @@ return [
                 ],
                 [
                     'key' => 'field_lb_hero_button_show_icon',
-                    'label' => __('Display icon', 'lightning'),
+                    'label' => __('Visa ikon', 'lightning'),
                     'name' => 'show_icon',
                     'type' => 'true_false',
                     'instructions' => __('Fyll i knappen om den ska visa en pil-ikon i frontend', 'lightning'),
@@ -120,7 +120,7 @@ return [
         ],
         [
             'key' => 'field_lb_hero_image',
-            'label' => __('Hero Image', 'lightning'),
+            'label' => __('Bild', 'lightning'),
             'name' => 'image',
             'type' => 'image',
             'instructions' => __('Välj bild som visas till höger i heron', 'lightning'),
