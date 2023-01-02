@@ -23,7 +23,7 @@ function s($prefix, bool $sub = true) {
         $title_tag = get_sub_field($prefix . '_title_tag');
         $title_type = get_sub_field($prefix . '_title_type');
         $text_align = get_sub_field($prefix . '_text_align');
-        $text = get_sub_field($prefix . '_text');
+        $text = get_sub_field($prefix . '_text', false, false);
         $link = get_sub_field($prefix . '_component_link');
         $bg_color = get_sub_field($prefix . '_bg_colors');
         $hide_component = get_sub_field($prefix . '_hide_component');
@@ -263,7 +263,7 @@ function btn_l_primary($link, string $class = null, $data = null) {
  */
 function btn_l_secondary($btn, string $class = null, $data = null) {
     if ($btn) {
-        echo "<a class='inline-flex px-5 py-3 text-sm font-semibold text-white bg-transparent hover:bg-purple-500 btn btn-primary md:px-6 md:text-base transition-colors duration-300{$class}' {$data}' href='{$btn['url']}'>{$btn['title']}</a>";
+        echo "<a class='inline-flex px-5 py-3 text-sm font-semibold text-white bg-transparent hover:bg-purple-500 btn btn-primary md:px-6 md:text-base transition-colors duration-300 {$class}' {$data}' href='{$btn['url']}'>{$btn['title']}</a>";
     }
 }
 
@@ -351,9 +351,9 @@ include_once get_template_directory() . '/partials/social-share.php';
 include_once get_template_directory() . '/partials/author.php';
 
 /**
- * 
+ *
  * List cards
- * 
+ *
  */
 include_once get_template_directory() . '/inc/cards/small-card.php';
 include_once get_template_directory() . '/inc/cards/post-card.php';
