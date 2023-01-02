@@ -137,7 +137,7 @@ return [
             'placement' => 'top',
         ],
         [
-            'key' => 'field_lb_cover_colors',
+            'key' => 'field_lb_hero_colors',
             'label' => 'Färger',
             'name' => 'cover',
             'type' => 'clone',
@@ -149,7 +149,7 @@ return [
             'prefix_name' => 1,
         ],
         [
-            'key' => 'field_lb_cover_small_cover',
+            'key' => 'field_lb_hero_small_cover',
             'label' => 'Smal cover?',
             'name' => 'cover_small',
             'type' => 'true_false',
