@@ -78,6 +78,11 @@ function component_id($prefix) {
     }
 }
 
+function compensate_padding(string $text_placement) {
+    $is_left_aligned = $text_placement === '1';
+    echo $is_left_aligned ? ' pr-4 md:pr-6 lg:pr-12 ' : ' pl-4 md:pl-6 lg:pl-12 ';
+}
+
 
 /**
  *
