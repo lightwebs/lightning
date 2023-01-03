@@ -5,18 +5,26 @@ acf_add_local_field_group([
     'title' => 'Meny',
     'fields' => [
         [
-			'key' => 'field_lb_menu_icons',
-			'label' => 'Ikon',
-			'name' => 'icon',
-			'type' => 'select',
-			'multiple' => 0,
-			'allow_null' => 0,
-			'choices' => $icons,
-			'default_value' => false,
-			'ui' => 1,
-			'ajax' => 1,
-			'return_format' => 'label',
-        ],
+            'key' => 'field_lb_menu_description',
+            'label' => 'Undertext',
+            'name' => 'description',
+            'aria-label' => '',
+            'type' => 'text',
+            'instructions' => 'Bör bara användas på undermenyer',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'relevanssi_exclude' => 0,
+            'default_value' => '',
+            'maxlength' => '',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+        ]
     ],
     'location' => [
         [
