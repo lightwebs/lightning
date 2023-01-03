@@ -10,20 +10,7 @@ acf_add_local_field_group([
             'name' => 'description',
             'aria-label' => '',
             'type' => 'text',
-            'instructions' => 'Bör bara användas på undermenyer',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'relevanssi_exclude' => 0,
-            'default_value' => '',
-            'maxlength' => '',
-            'placeholder' => '',
-            'prepend' => '',
-            'append' => '',
+            'instructions' => 'Bör endast användas på undermenyer',
         ]
     ],
     'location' => [
