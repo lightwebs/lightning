@@ -3,8 +3,6 @@
 class Menu_Content extends Walker_Nav_Menu {
     function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
 
-
-
         // Prepare all li classes.
         $li_classes = $value = '';
         $extra_li_classes = empty($item->classes) ? array() : (array) $item->classes;
@@ -17,16 +15,12 @@ class Menu_Content extends Walker_Nav_Menu {
             $extra_li_classes[] = 'sub-level';
         }
 
-
         $li_classes = join(' ', apply_filters('nav_menu_css_class', array_filter($extra_li_classes), $item));
         $li_classes = 'class="' . esc_attr($li_classes) . '"';
-
-
         $output .= '<li id="menu-item-' . $item->ID . '"' . $value . $li_classes . '>';
 
         // Prepare all a attributes.
         $a_classes = '';
-
         $link_attributes  = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
         $link_attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
         $link_attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
@@ -38,10 +32,7 @@ class Menu_Content extends Walker_Nav_Menu {
         if ($depth === 0 && in_array('menu-item-has-children', $extra_li_classes)) {
             $item_output .= '<div class="menu-item-with-arrow">';
         }
-
-
         $item_output .= '<a' . $link_attributes . '>';
-
 
         if ($depth === 0) {
             // Acctual link text

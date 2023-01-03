@@ -15,11 +15,9 @@ $walker = new Menu_Content;
         </a>
     </div>
 
-
     <!-- Desktop menu -->
     <div id="desktop-menu">
         <?php
-
         wp_nav_menu(
             array(
                 'theme_location' => 'menu-1',
@@ -49,11 +47,9 @@ $walker = new Menu_Content;
             btn_l_primary($right_menu_btn);
         endif; ?>
 
-
         <button id="main-menu-toggle" class="p-0 text-white btn nav-btn main-menu-toggle-btn lg:hidden" aria-label="<?php echo __('Toggla menyn', 'lightning'); ?>" title="<?php echo __('Toggla menyn', 'lightning'); ?>">
             <span id="burger-icon" class="text-4xl text-white material-icons-round">menu</span>
             <span id="burger-close" class="hidden text-4xl text-white material-icons-round">close</span>
-
         </button>
     </div>
 </nav><!-- #site-navigation -->
