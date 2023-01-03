@@ -28,8 +28,8 @@
             ?>
 
                     <div class="flex flex-col gap-4">
-                        <p class="text-5xl font-bold">
                             <span class="<?php echo $should_animate ? 'counter' : null; ?>">
+                        <p class="text-5xl font-bold font-space">
                                 <?php echo $n ?>
                             </span>
                             <?php if ($is_simple) :
