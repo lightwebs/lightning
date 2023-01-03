@@ -1,68 +1,21 @@
-@media all and (max-width: #{$lg}) {
-    #main-menu {
-        ul.sub-menu {
-            counter-reset: mobilemenu;
-            @apply flex-col hidden py-2.5 left-0 opacity-0 bg-white text-black p-0 text-xl mb-3 pb-2 border-b border-gray-300;
+// @media all and (max-width: #{$lg}) {
+#main-menu {
+    ul.sub-menu {
+        counter-reset: menu;
+        @apply flex-col hidden py-2.5 left-0 opacity-0 bg-white text-black p-0 text-xl mb-3 pb-2 border-b border-gray-300 lg:flex-row lg:flex-wrap lg:absolute lg:max-w-[740] lg:w-[740px] lg:z-10 lg:left-0 lg:top-full lg:text-black lg:px-12 lg:pt-10 lg:pb-2;
 
-            &.active {
-                @apply flex opacity-100;
-            }
-
-            li.sub-level {
-                @apply p-0 m-0;
-
-                & > a {
-                    @apply flex-col items-start;
-
-                    .sub-menu-title {
-                        @apply text-xl font-bold text-black;
-                    }
-
-                    .sub-menu-description {
-                        @apply font-sans text-base text-black normal-case opacity-60;
-                    }
-                }
-            }
-
-            a span.sub-menu-title {
-                &::before {
-                    counter-increment: mobilemenu;
-                    content: '0' counter(mobilemenu) ' /';
-                    @apply text-[#9147F2] mr-2;
-                }
-            }
+        &.active {
+            @apply flex opacity-100;
         }
-    }
-}
 
-@media all and (min-width: #{$lg}) {
-    #main-menu {
-        ul.sub-menu {
-            counter-reset: menu;
-            @apply absolute max-w-[740px] w-[740px] flex-wrap z-10 hidden left-0 top-full opacity-0 bg-white text-black px-12 pt-10 pb-2;
+        li.sub-level {
+            @apply p-0 m-0 lg:w-1/2 lg:mb-8;
 
-            &.active {
-                @apply flex opacity-100;
-            }
-
-            li {
-                @apply w-1/2 p-0 mb-8;
-
-                a {
-                    @apply flex-col items-start;
-
-                    &:active,
-                    &:focus {
-                        outline: 1px dashed #000;
-                    }
-                }
-            }
-
-            a {
-                @apply mr-4;
+            & > a {
+                @apply flex-col items-start lg:mr-4;
 
                 .sub-menu-title {
-                    @apply text-2xl font-bold text-black;
+                    @apply text-xl font-bold text-black lg:text-2xl;
 
                     &::before {
                         counter-increment: menu;
@@ -72,7 +25,12 @@
                 }
 
                 .sub-menu-description {
-                    @apply font-sans text-base text-black opacity-60 normal-case;
+                    @apply font-sans text-base text-black normal-case opacity-60;
+                }
+
+                &:active,
+                &:focus {
+                    outline: 1px dashed #000;
                 }
             }
         }
