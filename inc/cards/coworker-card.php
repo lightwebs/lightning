@@ -10,14 +10,10 @@ if (!function_exists('coworker_card')) {
 
     function coworker_card($post_id, $class = null, $excerpt_length = 20) {
         $title = get_the_title();
-        $link = get_permalink();
         $image_id = get_post_thumbnail_id($post_id);
-        $post_type = get_post_type($post_id);
         $email = get_field('coworker_email', $post_id);
         $phone = get_field('coworker_phone', $post_id);
-        $category = get_the_category();
         $terms =  get_the_terms( $post->ID , 'coworker_category' );
-
     ?>
         
         <div class="card group" data-post-id="<?php echo $post_id; ?>">
