@@ -5,12 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('main-menu-toggle')
     const mobileMenu = document.getElementById('main-menu')
     const burgerIcon = document.getElementById('burger-icon')
-    const burgerClose = document.getElementById('burger-close')
     
     function toggleMenu() {
         mobileMenu.classList.toggle('!flex')
-        burgerIcon.classList.toggle('hidden')
-        burgerClose.classList.toggle('hidden')
+        burgerIcon.textContent === 'menu' ? burgerIcon.textContent = 'close' : burgerIcon.textContent = 'menu'
         document.body.classList.toggle('mobile-menu-open')
     }
 
