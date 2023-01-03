@@ -359,3 +359,4 @@ include_once get_template_directory() . '/inc/cards/small-card.php';
 include_once get_template_directory() . '/inc/cards/post-card.php';
 include_once get_template_directory() . '/inc/cards/case-card.php';
 include_once get_template_directory() . '/inc/cards/testimonial-card.php';
+include_once get_template_directory() . '/inc/cards/coworker-card.php';

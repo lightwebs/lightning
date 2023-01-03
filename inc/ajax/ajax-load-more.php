@@ -73,6 +73,9 @@ function load_more_callback() {
             if ($post_type == 'case') {
                 case_card(get_the_ID(), $card_text_colors, 10);
             }
+            if ($post_type == 'coworker') {
+                coworker_card(get_the_ID(), $card_text_colors, 10);
+            }
             $post_array[] = ob_get_clean();
         }
     }
