@@ -28,6 +28,7 @@ function s($prefix, bool $sub = true) {
         $bg_color = get_sub_field($prefix . '_bg_colors');
         $hide_component = get_sub_field($prefix . '_hide_component');
         $gradient = get_sub_field($prefix . '_gradient');
+        $gradient_placement = get_sub_field($prefix . '_gradient_placement');
         $text_color = get_sub_field($prefix . '_text_colors');
         $component_id = get_sub_field('component_id');
         $has_color_bg = $bg_color !== 'bg-[transparent]';
@@ -41,6 +42,7 @@ function s($prefix, bool $sub = true) {
         $bg_color = get_field($prefix . '_bg_colors');
         $hide_component = get_field($prefix . '_hide_component');
         $gradient = get_field($prefix . '_gradient');
+        $gradient_placement = get_field($prefix . '_gradient_placement');
         $text_color = get_field($prefix . '_text_colors');
         $component_id = get_field('component_id');
         $has_color_bg = $bg_color !== 'bg-[transparent]';
@@ -50,6 +52,7 @@ function s($prefix, bool $sub = true) {
         'bg_color' => $bg_color,
         'hide_component' => $hide_component,
         'gradient' => $gradient,
+        'gradient_placement' => $gradient_placement,
         'text_color' => $text_color,
         'text' => $text,
         'link' => $link,

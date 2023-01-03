@@ -81,8 +81,9 @@ module.exports = {
             fontSize: {
                 inherit: 'inherit',
             },
-            backgroundImage: {
-                radial: "url('/src/assets/gradients/radial.svg')",
+
+            padding: {
+                18: '4.5rem',
             },
         },
 

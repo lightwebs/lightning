@@ -46,7 +46,6 @@ document.addEventListener('click', (e) => {
         const overlay = e.target
         overlay.classList.remove('visible')
     }
-    console.log(e.target)
     if (e.target.classList.contains('card-body')) {
         const cardBody = e.target
         cardBody.classList.toggle('!line-clamp-none')
