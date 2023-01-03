@@ -1,0 +1,132 @@
+#desktop-menu {
+    @apply items-center hidden lg:flex;
+
+    .desktop-menu-wrapper {
+        & > ul {
+            @apply flex flex-row;
+
+            li {
+                // Continer on link when it has a sub-menu, to show an arrow
+                .menu-item-with-arrow {
+                    @apply flex items-center w-full lg:w-auto md:justify-start gap-x-2;
+
+                    .sub-menu-toggle-button {
+                        @apply w-4 h-4 p-0 ml-auto;
+
+                        .material-icons-round {
+                            @apply text-white duration-300 pointer-events-none;
+                        }
+
+                        &.active {
+                            @apply rotate-180;
+                        }
+                    }
+                }
+
+                a {
+                    @apply flex font-medium uppercase font-space text-white;
+                }
+
+                &.top-level {
+                    @apply py-2 mx-6 xl:mx-10 first-of-type:ml-0 last-of-type:mr-0;
+
+                    &.menu-item-has-children {
+                        @apply relative;
+
+                        &:hover {
+                            > .sub-menu {
+                                @apply flex opacity-100;
+                            }
+
+                            .sub-menu-toggle-button {
+                                @apply rotate-180;
+                            }
+                        }
+                    }
+
+                    & > a {
+                        @apply items-center text-lg;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#mobile-menu {
+    @apply fixed bottom-0 pt-4 overflow-auto left-0 right-0 hidden w-full bg-white top-[68px] md:top-[72px] lg:hidden;
+
+    .mobile-menu-wrapper {
+        @apply w-full;
+
+        & > ul {
+            @apply flex flex-col pb-12;
+
+            li {
+                &.top-level {
+                    @apply flex flex-col;
+                }
+
+                .menu-item-with-arrow {
+                    @apply flex items-center justify-between;
+
+                    a {
+                        @apply flex-1;
+                    }
+
+                    .sub-menu-toggle-button {
+                        @apply self-stretch px-2;
+
+                        .material-icons-round {
+                            @apply text-4xl text-black duration-300 pointer-events-none;
+                        }
+
+                        &.active {
+                            @apply rotate-180;
+                        }
+                    }
+                }
+
+                & > a {
+                    @apply items-center flex-1;
+                }
+
+                a {
+                    @apply flex font-medium uppercase font-space text-xl text-black px-4 py-2;
+                }
+            }
+        }
+    }
+}
+
+.mobile-menu-open {
+    @apply overflow-hidden;
+
+    .site-header {
+        @apply bg-white;
+
+        .logo-light {
+            @apply hidden;
+        }
+
+        .logo-dark {
+            @apply block;
+        }
+
+        .logo-img,
+        .nav-right a,
+        .nav-right button,
+        .sub-menu-toggle-button,
+        .sub-menu a,
+        li a {
+            &:focus-within {
+                outline: 1px dashed #000;
+            }
+        }
+
+        #burger-icon,
+        #burger-close {
+            @apply text-black;
+        }
+    }
+}
