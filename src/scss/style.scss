@@ -22,6 +22,7 @@
 
 // Globals
 @import './base/global';
+@import './header/menu';
 @import './header/sub-menu';
 
 // Footer
@@ -31,7 +32,6 @@
 @import './page-components/pc-columns';
 @import './page-components/pc-post-listing';
 @import './page-components/pc-components-global';
-
 
 * {
     box-sizing: border-box;

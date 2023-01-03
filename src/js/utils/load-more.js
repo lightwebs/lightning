@@ -38,6 +38,8 @@ export const loadPosts = async (e, target) => {
             data.append('exclude', excludePosts)
         }
         data.append('post_type', loadMoreBtn.dataset.postType)
+        data.append('card_bg_color', 'bg-white')
+        data.append('card_text_color', 'text-black')
         paged++
     } else if (target === 'reset') {
         paged = 1
@@ -71,7 +73,7 @@ export const loadPosts = async (e, target) => {
                 return
             }
 
-            if (response.data.load_more_btn_text === 'Inga mer inlägg') {
+            if (response.data.load_more_btn_text === 'Inga fler inlägg') {
                 loadMoreBtn.setAttribute('disabled', 'disabled')
                 loadMoreBtn.classList.remove('loading')
             } else {

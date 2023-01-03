@@ -38,7 +38,7 @@ function coworker_post_type() {
         'label' => __('Medarbetare', 'lightning'),
         'description' => __('Beskrivning av Medarbetare', 'lightning'),
         'labels' => $labels,
-        'supports' => array('title', 'editor', 'thumbnail', 'revisions'),
+        'supports' => array('title', 'thumbnail', 'revisions'),
         'taxonomies' => array(''),
         'hierarchical' => false,
         'public' => true,
