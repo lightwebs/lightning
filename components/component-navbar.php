@@ -16,31 +16,19 @@ $walker = new Menu_Content;
     </div>
 
     <!-- Desktop menu -->
-    <div id="desktop-menu">
+    <div id="main-menu">
         <?php
         wp_nav_menu(
             array(
                 'theme_location' => 'menu-1',
-                'container_class'   => 'desktop-menu-wrapper',
+                'container_class'   => 'main-menu-wrapper',
                 'walker'         => $walker,
             )
         );
         ?>
     </div>
 
-    <!-- Mobile menu -->
-    <div id="mobile-menu">
-        <?php
-        $mobile_walker = new Menu_Content;
-        wp_nav_menu(
-            array(
-                'theme_location' => 'menu-1',
-                'container_class'   => 'mobile-menu-wrapper',
-                'walker'         => $walker,
-            )
-        );
-        ?>
-    </div>
+
 
     <div class="flex items-center gap-4 nav-right">
         <?php if ($right_menu_btn) :
