@@ -3,11 +3,11 @@ $h_full = $full_width ? 'h-full' : '';
 $text_media_img = get_sub_field('text_media_img');
 ?>
 
-<div class="order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1'; ?> <?php echo $full_width ? 'relative h-full' : ''; ?>">
+<div class="order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1'; ?> <?php echo $full_width ? '!px-0 h-full' : ''; ?>">
     <?php if ($media_type === 'img') : ?>
-        <div class="h-full">
+        <div class="h-full w-full">
             <?php if ($img) :
-                image($text_media_img, 'full', $full_width ? 'object-cover aspect-4/3 h-full' : 'object-cover aspect-4/3');
+                image($text_media_img, 'full', $full_width ? 'w-full object-cover aspect-4/3 h-full' : 'object-cover aspect-4/3');
             endif; ?>
         </div>
     <?php endif; ?>
