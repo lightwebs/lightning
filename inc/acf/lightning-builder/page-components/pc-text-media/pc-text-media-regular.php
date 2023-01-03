@@ -19,7 +19,7 @@ if ($is_media || $is_video || $is_statistics) :
                                                     echo $full_width ? ' max-w-container-1/2' : '';
                                                     ?>">
 
-                <div class="  <?php echo $full_width ? ' ' . compensate_padding($text_placement) : ''; ?>">
+                <div class="  <?php echo $full_width ? 'container' : ''; ?>">
                     <?php echo $text; ?>
                     <?php if ($link) :
                         btn_l_primary($link, 'mt-4 lg:mt-6');
