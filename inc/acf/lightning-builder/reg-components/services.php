@@ -35,7 +35,7 @@ return [
             'type' => 'repeater',
             'layout' => 'block',
             'collapsed' => 'field_lb_services_cols_title',
-            'button_label' => 'rad +',
+            'button_label' => 'Rad +',
             'sub_fields' => [
                 [
                     'key' => 'field_lb_services_cols',
