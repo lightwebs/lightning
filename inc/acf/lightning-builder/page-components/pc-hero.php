@@ -11,7 +11,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
 
         <div class="container <?php echo s($prefix)['text_color']; ?>  gap-4 md:gap-24 md:flex">
             <div class="w-full flex flex-col gap-4 md:gap-6 py-6 justify-center">
-                <h1 class="text-2xl md:text-3xl text-purple-500"><?php echo $title; ?></h1>
+                <h1 class="text-2xl md:text-3xl text-purple-500 mb-0"><?php echo $title; ?></h1>
                 <?php if (s($prefix)['title']) : ?>
                     <?php echo '<' . s($prefix)['title_tag'] . ' class="text-5xl md:text-7xl mb-0"> '; ?>
                     <?php echo s($prefix)['title'] ?>
