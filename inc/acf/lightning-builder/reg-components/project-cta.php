@@ -1,66 +1,61 @@
 <?php
 return [
-    'key' => 'layout_faq',
-    'name' => 'faq',
-    'label' => 'FAQs',
+    'key' => 'layout_project_cta',
+    'name' => 'project_cta',
+    'label' => 'Projekt CTA',
     'display' => 'block',
     'sub_fields' => [
         [
-            'key' => 'field_lb_faq_comp_head_tab',
+            'key' => 'field_lb_project_cta_comp_head_tab',
             'label' => 'Komponenthuvud',
             'type' => 'tab',
             'placement' => 'top',
         ],
         [
-            'key' => 'field_lb_faq_header',
+            'key' => 'field_lb_project_cta_header',
             'label' => 'Header',
-            'name' => 'faq',
+            'name' => 'project_cta',
             'type' => 'clone',
             'clone' => [
                 0 => 'group_clone_component_header',
             ],
             'display' => 'seamless',
-            'prefix_name' => 1,
+            'prefix_name' => 1
         ],
         [
-            'key' => 'field_lb_faq_content_tab',
+            'key' => 'field_lb_project_cta_content_tab',
             'label' => 'Innehåll',
             'type' => 'tab',
             'placement' => 'top',
         ],
         [
-            'key' => 'field_lb_faq_faqs',
-            'label' => 'FAQ:er',
-            'name' => 'faqs',
-            'type' => 'relationship',
-            'post_type' => [
-                0 => 'faq',
-            ],
-            'filters' => [
-                0 => 'search',
-                1 => 'taxonomy',
-            ],
-            'return_format' => 'id',
+            'key' => 'field_lb_project_cta_link',
+            'label' => __('Link', 'lightning'),
+            'name' => 'link',
+            'type' => 'link',
+            'instructions' => __('Välj länk och rubrik för CTA', 'lightning'),
+            'required' => 0, // 0 | 1
+            'wrapper' => ['width' => 100] // 0-100
         ],
         [
-            'key' => 'field_lb_faq_settings_tab',
+            'key' => 'field_lb_project_cta_settings_tab',
             'label' => 'Inställningar',
             'type' => 'tab',
             'placement' => 'top',
         ],
         [
-            'key' => 'field_lb_faq_colors',
+            'key' => 'field_lb_project_cta_colors',
             'label' => 'Färger',
-            'name' => 'faq',
+            'name' => 'project_cta',
             'type' => 'clone',
             'clone' => [
                 0 => 'group_clone_component_settings',
             ],
             'display' => 'seamless',
-            'prefix_name' => 1,
+            'prefix_name' => 1
         ],
         [
-            'key' => 'field_lb_faq_component_id',
+            'key' => 'field_lb_project_cta_component_id',
             'label' => 'Komponentens id (frivillig)',
             'name' => 'component_id',
             'type' => 'text',

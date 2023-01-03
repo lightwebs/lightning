@@ -5,9 +5,11 @@ if (get_row_layout() == 'columns' && !s(get_row_layout())['hide_component']) :
     $cols = get_sub_field('col_qty');
 ?>
 
-    <section <?php component_id($prefix); ?> class="pc-columns <?php echo section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?> <?php echo s($prefix)['text_color']; ?>">
+    <section <?php component_id($prefix); ?> class="pc-columns section <?php echo section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?> <?php echo s($prefix)['text_color']; ?>">
+
         <?php component_header($prefix); ?>
-        <div class="container sm:px-4 <?php echo $card_view ? 'px-0' : 'px-4'; ?>">
+
+        <div class="container">
             <div class="grid md:grid-cols-2 xl:grid-cols-<?php echo $cols; ?> gap-6 lg:gap-8 xxl:gap-12">
                 <?php if (have_rows('columns_cols')) : ?>
 
@@ -133,5 +135,8 @@ if (get_row_layout() == 'columns' && !s(get_row_layout())['hide_component']) :
 
         </div>
         </div>
+
+        <?php component_footer($prefix); ?>
+
     </section>
 <?php endif; ?>

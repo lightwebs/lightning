@@ -84,6 +84,7 @@ add_filter('use_block_editor_for_post', '__return_false', 10);
 // Disable standard editor for some post types
 add_action('admin_init', function () {
 	remove_post_type_support('post', 'editor');
+	remove_post_type_support('case', 'editor');
 	remove_post_type_support('page', 'editor');
 });
 

@@ -12,7 +12,7 @@ function image($image_id, $size = 'full', string $class = null) {
 
 
 /**
- * 
+ *
  * Get fields from clone fields
  * s stands for settings, just wanted to keep it short
  * Useage example: s($prefix)['title']
@@ -21,20 +21,28 @@ function s($prefix, bool $sub = true) {
     if ($sub) {
         $title = get_sub_field($prefix . '_title');
         $title_tag = get_sub_field($prefix . '_title_tag');
+        $title_type = get_sub_field($prefix . '_title_type');
         $text_align = get_sub_field($prefix . '_text_align');
-        $text = get_sub_field($prefix . '_text');
+        $text = get_sub_field($prefix . '_text', false, false);
+        $link = get_sub_field($prefix . '_component_link');
         $bg_color = get_sub_field($prefix . '_bg_colors');
         $hide_component = get_sub_field($prefix . '_hide_component');
+        $gradient = get_sub_field($prefix . '_gradient');
+        $gradient_placement = get_sub_field($prefix . '_gradient_placement');
         $text_color = get_sub_field($prefix . '_text_colors');
         $component_id = get_sub_field('component_id');
         $has_color_bg = $bg_color !== 'bg-[transparent]';
     } else {
         $title = get_field($prefix . '_title');
         $title_tag = get_field($prefix . '_title_tag');
+        $title_type = get_field($prefix . '_title_type');
         $text_align = get_field($prefix . '_text_align');
         $text = get_field($prefix . '_text');
+        $link = get_field($prefix . '_component_link');
         $bg_color = get_field($prefix . '_bg_colors');
         $hide_component = get_field($prefix . '_hide_component');
+        $gradient = get_field($prefix . '_gradient');
+        $gradient_placement = get_field($prefix . '_gradient_placement');
         $text_color = get_field($prefix . '_text_colors');
         $component_id = get_field('component_id');
         $has_color_bg = $bg_color !== 'bg-[transparent]';
@@ -43,10 +51,14 @@ function s($prefix, bool $sub = true) {
     return [
         'bg_color' => $bg_color,
         'hide_component' => $hide_component,
+        'gradient' => $gradient,
+        'gradient_placement' => $gradient_placement,
         'text_color' => $text_color,
         'text' => $text,
+        'link' => $link,
         'title' => $title,
         'title_tag' => $title_tag,
+        'title_type' => $title_type,
         'text_align' => $text_align,
         'component_id' => $component_id,
         'has_color_bg' => $has_color_bg
@@ -55,9 +67,9 @@ function s($prefix, bool $sub = true) {
 
 
 /**
- * 
+ *
  * Output component id if set
- * 
+ *
  */
 
 function component_id($prefix) {
@@ -68,31 +80,9 @@ function component_id($prefix) {
 
 
 /**
- * 
- * Output the component header
- * 
- */
-function component_header(string $field_name) { ?>
-    <?php if (s($field_name)['title'] || s($field_name)['text']) : ?>
-        <header class="container mb-6 md:mb-6 xl:mb-8 xxl:mb-12 <?php echo s($field_name)['text_align']; ?>">
-            <?php if (s($field_name)['title']) : ?>
-                <?php echo '<' . s($field_name)['title_tag'] . '>'; ?>
-                <?php echo s($field_name)['title']; ?>
-                <?php echo '</' . s($field_name)['title_tag'] . '>'; ?>
-            <?php endif; ?>
-
-            <?php if (s($field_name)['text']) : ?>
-                <div class="preamble"><?php echo s($field_name)['text']; ?></div>
-            <?php endif; ?>
-        </header>
-    <?php endif; ?>
-<?php }
-
-
-/**
- * 
+ *
  * Get location by user ip
- * 
+ *
  */
 
 // function getLocationInfoByIp() {
@@ -116,9 +106,9 @@ function component_header(string $field_name) { ?>
 
 
 /**
- * 
+ *
  * Hide component for specific countries
- * 
+ *
  */
 // function hide_country($prefix) {
 //     $country_codes = get_sub_field($prefix . '_country_codes');
@@ -136,9 +126,9 @@ function component_header(string $field_name) { ?>
 
 
 /**
- * 
+ *
  * Get categories as tags for post
- * 
+ *
  */
 function get_post_terms($post_id, string $taxonomy, $class = null, $term_class = null) {
     $taxonomy = get_the_terms($post_id, $taxonomy);
@@ -159,7 +149,7 @@ function get_post_terms($post_id, string $taxonomy, $class = null, $term_class =
 
 
 /**
- * 
+ *
  * Get a page url by template name
  * Call it like this: get_page_url_by_template('the-template-name');
  */
@@ -196,7 +186,7 @@ function acf_path() {
 
 
 /**
- * Get the page id of the current page if it's a parent page. 
+ * Get the page id of the current page if it's a parent page.
  * If it's a child page, get the id of the parent page.
  * @return int
  */
@@ -245,19 +235,19 @@ function custom_excerpt($limit, $field, $post_id = null) {
 
 
 /**
- * 
+ *
  * Get the spacing for sections
- * 
+ *
  */
 function section_spacing() {
-    echo 'py-6 md:py-8 lg:py-9 xl:py-10 xxl:py-12';
+    echo 'py-12 md:py-16 lg:py-18 xl:py-24 xxl:py-28';
 }
 
 
 /**
- * 
+ *
  * Link as button - Primary
- * 
+ *
  */
 function btn_l_primary($link, string $class = null, $data = null) {
     if ($link) {
@@ -267,21 +257,21 @@ function btn_l_primary($link, string $class = null, $data = null) {
 
 
 /**
- * 
+ *
  * Link as button - Secondary
- * 
+ *
  */
 function btn_l_secondary($btn, string $class = null, $data = null) {
     if ($btn) {
-        echo "<a class='inline-flex px-5 py-3 text-sm font-semibold text-white bg-transparent hover:bg-purple-500 btn btn-primary md:px-6 md:text-base transition-colors duration-300{$class}' {$data}' href='{$btn['url']}'>{$btn['title']}</a>";
+        echo "<a class='inline-flex px-5 py-3 text-sm font-semibold text-white bg-transparent hover:bg-purple-500 btn btn-primary md:px-6 md:text-base transition-colors duration-300 {$class}' {$data}' href='{$btn['url']}'>{$btn['title']}</a>";
     }
 }
 
 
 /**
- * 
+ *
  * Primary button
- * 
+ *
  */
 function btn_primary(string $text, string $class = null, $data = null) {
     if ($text) {
@@ -290,9 +280,9 @@ function btn_primary(string $text, string $class = null, $data = null) {
 }
 
 /**
- * 
+ *
  * Secondary button
- * 
+ *
  */
 function btn_secondary(string $text, string $class = null, $data = null) {
     if ($text) {
@@ -302,22 +292,23 @@ function btn_secondary(string $text, string $class = null, $data = null) {
 
 
 /**
- * 
+ *
  * Link
- * 
+ *
  */
-function custom_link($link, $class = null) {
+function custom_link($link, string $class = null, string $icon_class = null, string $icon_name = null) {
     if ($link) {
+        $icon_name = $icon_name ? $icon_name : 'arrow_forward';
         $link_color = get_sub_field('link_colors');
-        echo "<a class='inline-flex items-center font-semibold group gap-x-2 md:text-lg {$link_color} {$class}' href='{$link['url']}'>{$link['title']}<span class='text-xl font-semibold transition-transform duration-300 material-icons-round group-hover:translate-x-1'>arrow_forward</span></a>";
+        echo "<a class='inline-block font-semibold group md:text-lg {$link_color} {$class}' href='{$link['url']}'>{$link['title']}<span class='ml-3 -mt-1 font-semibold align-middle transition-transform duration-300 md:ml-4 text-inherit material-icons-round group-hover:translate-x-1 {$icon_class}'>{$icon_name}</span></a>";
     }
 }
 
 
 /**
- * 
+ *
  * Get related posts by category.
- * 
+ *
  */
 function get_related_posts($post_id, $limit = 3) {
     $categories = get_the_category($post_id);
@@ -334,9 +325,9 @@ function get_related_posts($post_id, $limit = 3) {
 }
 
 /**
- * 
+ *
  * Get posts by ids from acf field.
- * 
+ *
  */
 function get_related_posts_by_field($post_id, $field, $limit = 3) {
     $args = [
@@ -350,11 +341,21 @@ function get_related_posts_by_field($post_id, $field, $limit = 3) {
 
 
 /**
- * 
+ *
  * List partials
- * 
+ *
  */
+include_once get_template_directory() . '/partials/component-header.php';
+include_once get_template_directory() . '/partials/component-footer.php';
 include_once get_template_directory() . '/partials/social-share.php';
 include_once get_template_directory() . '/partials/author.php';
-include_once get_template_directory() . '/partials/small-card.php';
-include_once get_template_directory() . '/partials/card.php';
+
+/**
+ *
+ * List cards
+ *
+ */
+include_once get_template_directory() . '/inc/cards/small-card.php';
+include_once get_template_directory() . '/inc/cards/post-card.php';
+include_once get_template_directory() . '/inc/cards/case-card.php';
+include_once get_template_directory() . '/inc/cards/testimonial-card.php';
