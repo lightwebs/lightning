@@ -38,7 +38,7 @@ if ($is_media || $is_video || $is_statistics) :
     </div>
 
     <?php if ($full_width) : ?>
-        <div class="h-full px-0 pointer-events-none w-full">
+        <div class="h-full px-0 pointer-events-none md:absolute">
             <div class="grid w-full items-center h-full md:grid-cols-2 gap-x-0">
                 <?php if ($is_statistics) :
                     include __DIR__ . '/pc-counter.php';
