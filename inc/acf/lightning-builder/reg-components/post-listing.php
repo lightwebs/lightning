@@ -165,7 +165,7 @@ return [
         ],
         [
             'key' => 'field_lb_post_listing_picked_coworkers',
-            'label' => __('Välj Kollega', 'lightning'),
+            'label' => __('Välj kollega', 'lightning'),
             'name' => 'picked_coworker',
             'type' => 'relationship',
             'post_type' => [
