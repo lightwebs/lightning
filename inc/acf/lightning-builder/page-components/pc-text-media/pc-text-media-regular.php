@@ -26,12 +26,11 @@ if ($is_media || $is_video || $is_statistics) :
             <?php endif; ?>
 
             <?php if (!$full_width) : ?>
-                <?php if ($is_media || $is_video) : ?>
-                    <?php include __DIR__ . '/pc-media.php'; ?>
-                <?php endif; ?>
-                <?php if ($is_statistics) : ?>
-                    <?php include __DIR__ . '/pc-counter.php'; ?>
-                <?php endif; ?>
+                <?php if ($is_media || $is_video) :
+                    include __DIR__ . '/pc-media.php';
+                elseif ($is_statistics) :
+                    include __DIR__ . '/pc-counter.php';
+                endif; ?>
             <?php else : ?>
                 <div class="py-0 my-0 order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1'; ?>"></div>
             <?php endif; ?>
