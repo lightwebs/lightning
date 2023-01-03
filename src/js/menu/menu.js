@@ -12,43 +12,73 @@ function checkScrollPosition() {
 document.addEventListener('DOMContentLoaded', checkScrollPosition)
 window.addEventListener('scroll', checkScrollPosition)
 
-document.addEventListener('click', function (e) {
-    const overlay = document.querySelector('.overlay')
-    const mainMenu = document.querySelector('#main-menu')
+// Closes all active submenus and rotates the arrows
+function closeSubMenus() {
+    const elems = document.querySelectorAll('#main-menu .sub-menu.active')
+    if( elems ) {
+        elems.forEach((elem) => {
+            elem.classList.remove('active')
+        })
 
-    if (e.target.classList.contains('main-menu-toggle-btn')) {
-        document.body.classList.toggle('main-menu-open')
-        mainMenu.classList.toggle('!flex')
+        const arrows = document.querySelectorAll('#main-menu .sub-menu-toggle-button.active')
+        if( arrows ) {
+            arrows.forEach((arrow) => {
+                arrow.classList.remove('active')
+            })
+        }
+    }
+}
+
+// Calculates the position of the submenus so they don't go off screen
+function calcSubMenuPositions() {
+    const subMenuWidth = 740
+    const elems = document.querySelectorAll('#main-menu .sub-menu')
+    if( elems ) {
+        elems.forEach((elem) => {
+
+            const parentItem = elem.closest('li')
+            const parentItemRect = parentItem.getBoundingClientRect()          
+            const parentItemLeft = parentItemRect.left
+
+            if( parentItemLeft + subMenuWidth > window.innerWidth ) {
+                elem.style.left = `-${(parentItemLeft + subMenuWidth) - window.innerWidth}px`
+            }
+        })
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    let screenWidth = window.innerWidth
+    console.log(screenWidth)
+    if( screenWidth >= 1024 ) {
+        calcSubMenuPositions()
     }
 
-    // Toggle nav items that has the nav-toggle class, closes on click outside
-    const navToggles = document.querySelectorAll('.nav-toggle')
-    navToggles.forEach((navToggle) => {
-        if (e.target === navToggle && e.target.classList.contains('active')) {
-            navToggle.classList.remove('active', 'show')
-            return
-        }
+    // Activate desktop submenu arrows
+    subMenuArrows = document.querySelectorAll('#main-menu .sub-menu-toggle-button')
 
-        if (
-            (e.target !== navToggle && !navToggle.contains(e.target)) ||
-            e.target.matches('.nav-toggle.active .menu-item-link')
-        ) {
-            navToggle.classList.remove('active', 'show')
-        } else {
-            navToggle.classList.add('active')
+    if( subMenuArrows ) {
+        for( subMenuArrow of subMenuArrows ) {
+        
+            subMenuArrow.addEventListener('click', function() {
+                const parentItem = this.closest('li')
+                const subMenu = parentItem.querySelector('.sub-menu')
 
-            setTimeout(() => {
-                navToggle.classList.add('show')
-            }, 100)
+                if (subMenu) {
+                    subMenu.classList.toggle('active')
+                    this.classList.toggle('active')
+                }
+            })
         }
+    }
+
+
+    // Close menu on resize to desktop (lg)
+    window.addEventListener("resize", function() {
+        closeSubMenus()
+        calcSubMenuPositions()
     })
+    
 
-    if (e.target.classList.contains('sub-menu-toggle-button')) {
-        const parentItem = e.target.closest('.menu-item')
-        const subMenu = parentItem.querySelector('.sub-menu')
-
-        if (subMenu && subMenu.classList.contains('sub-menu')) {
-            subMenu.classList.toggle('active')
-        }
-    }
 })
