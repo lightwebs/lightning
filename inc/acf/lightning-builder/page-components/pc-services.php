@@ -4,10 +4,8 @@ if ( get_row_layout() == 'services' && !s(get_row_layout())['hide_component'] ) 
 ?>
     <section id="<?php echo s($prefix)['component_id']; ?>" class="pc-services section <?php echo section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?>">
 
-        <div class="w-full mx-auto <?php echo s($prefix)['text_color']; ?>">
-            <?php component_header($prefix); ?>
-        </div>
-
+        <?php component_header($prefix); ?>
+   
         <div class="container <?php echo s($prefix)['text_color']; ?>">
             <?php if (have_rows('services_rows')) : ?>
                 <?php while (have_rows('services_rows')) : the_row() ?>
@@ -15,13 +13,10 @@ if ( get_row_layout() == 'services' && !s(get_row_layout())['hide_component'] ) 
 
                     <div class="lg:py-6 py-3 gap-6 lg:gap-12 grid grid-cols-1 md:grid-cols-<?php echo $num_of_cols; ?>">
                         <?php if (have_rows('services_cols')) : ?>
-                            <?php while (have_rows('services_cols')) : the_row() ?>
-
-                                <?php 
+                            <?php while (have_rows('services_cols')) : the_row();
                                 $title = get_sub_field('title');
                                 $text = get_sub_field('text');
                                 $link = get_sub_field('link'); ?>
-
 
                                 <div class="p-6 text-black bg-white md:p-12 service-card">
                                     <div class="flex justify-between pb-3 md:pb-4">
