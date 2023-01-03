@@ -125,6 +125,15 @@ return [
             'wrapper' => [
                 'width' => '40',
             ],
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'field_lb_text_media_type',
+                        'operator' => '!=',
+                        'value' => 'statistics',
+                    ],
+                ],
+            ],
         ],
         [
             'key' => 'field_lb_text_media_video_loop',
