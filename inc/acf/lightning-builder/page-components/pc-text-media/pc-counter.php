@@ -7,6 +7,7 @@
         while (have_rows('statistics_repeater')) : the_row();
             $title = get_sub_field('statistic_title');
             $type = get_sub_field('statistic_type');
+            $should_animate = get_sub_field('should_animate');
             $is_simple = $type === 'simple';
             $is_division = $type === 'division';
 
@@ -24,7 +25,7 @@
 
             <div class="flex flex-col gap-4">
                 <p class="text-5xl font-bold">
-                    <span class="counter">
+                    <span class="<?php echo $should_animate ? 'counter' : null; ?>">
                         <?php echo $n ?>
                     </span>
                     <?php if ($is_simple) :

@@ -222,7 +222,7 @@ return [
                     'name' => 'statistic_type',
                     'type' => 'button_group',
                     'wrapper' => [
-                        'width' => 40,
+                        'width' => 20,
                     ],
                     'choices' => [
                         'simple' => 'Enkel',
@@ -233,11 +233,25 @@ return [
                     'layout' => 'horizontal',
                 ],
                 [
+                    'key' => 'field_lb_text_statistics_should_animate',
+                    'label' => __('Animera värdet', 'lightning'),
+                    'name' => 'should_animate',
+                    'type' => 'true_false',
+                    'message' => '',
+                    'default_value' => 1,
+                    'ui' => 1,
+                    'ui_on_text' => 'Ja',
+                    'ui_off_text' => 'Nej',
+                    'wrapper' => [
+                        'width' => 20,
+                    ],
+                ],
+                [
                     'key' => 'field_lb_statistics_value',
                     'label' => __('Värde', 'lightning'),
                     'name' => 'statistic_value',
                     'type' => 'number',
-                    'instructions' => __('Värdet countern ska animera till', 'lightning'),
+                    'instructions' => __('Värdet som visas i frontend', 'lightning'),
                     'required' => 1,
                     'wrapper' => ['width' => 60],
                     'conditional_logic' => [
