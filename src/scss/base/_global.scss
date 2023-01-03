@@ -1,6 +1,6 @@
 @layer base {
     .container {
-        @apply mx-auto px-4 md:px-8 xl:px-12 xxl:px-16 w-full max-w-[1800px];
+        @apply mx-auto px-4 md:px-8 xl:px-12 xxl:px-16 w-full max-w-container;
     }
 }
 

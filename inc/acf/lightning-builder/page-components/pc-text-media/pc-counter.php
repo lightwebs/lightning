@@ -4,7 +4,7 @@
 
 <div class="flex order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1'; ?> w-full bg-purple-500 text-white h-full justify-end">
 
-    <div class="py-12 max-w-[900px] w-full">
+    <div class="py-12 max-w-container-1/2 w-full">
         <div class="flex flex-col gap-12 container">
             <?php if (have_rows('statistics_repeater')) :
                 while (have_rows('statistics_repeater')) : the_row();
