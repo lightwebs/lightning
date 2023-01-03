@@ -6,9 +6,9 @@ acf_add_local_field_group([
     'fields' => [
         [
             'key' => 'field_lb_coworker_email',
-            'label' => __('Medarbetaren E-post', 'lightning'),
+            'label' => __('E-post', 'lightning'),
             'name' => 'coworker_email',
-            'type' => 'text',
+            'type' => 'email',
             'maxlength' => 50,
             'required' => 0, 
             'wrapper' => ['width' => 50] 
@@ -16,7 +16,7 @@ acf_add_local_field_group([
 
         [
             'key' => 'field_lb_coworker_phone',
-            'label' => __('Medarbetaren Telefonnummer', 'lightning'),
+            'label' => __('Telefonnummer', 'lightning'),
             'name' => 'coworker_phone',
             'type' => 'text',
             'maxlength' => 50,
