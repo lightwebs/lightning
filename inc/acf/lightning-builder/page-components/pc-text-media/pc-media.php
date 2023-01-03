@@ -3,14 +3,13 @@ $h_full = $full_width ? 'h-full' : '';
 $text_media_img = get_sub_field('text_media_img');
 ?>
 
-<div class=" <?php echo $text_placement === '1' ? 'justify-self-start' : 'justify-self-end';
-                $full_width ? 'w-full !px-0 h-full' : '' ?> order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1'; ?>">
+<div class="w-full <?php
+                    echo $text_placement === '1' ? 'justify-self-start' : 'justify-self-end';
+                    $full_width ? 'w-full !px-0 h-full' : '' ?> order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1'; ?>">
     <?php if ($media_type === 'img') : ?>
-        <div class="h-full self-end max-w-[700px]">
-            <?php if ($img) :
-                image($text_media_img, 'full', $full_width ? 'w-full object-cover aspect-4/3 h-full' : 'object-cover aspect-4/3');
-            endif; ?>
-        </div>
+        <?php if ($img) :
+            image($text_media_img, 'full', $full_width ? 'w-full object-cover aspect-4/3 h-full' : 'object-cover aspect-4/3 w-full');
+        endif; ?>
     <?php endif; ?>
 
     <?php if ($media_type === 'video') : ?>
