@@ -38,6 +38,30 @@ return [
             'ui' => 1,
             'ui_on_text' => 'Ja',
             'ui_off_text' => 'Nej',
+            'wrapper' => ['width' => 50]
+        ],
+        [
+            'key' => 'field_lb_text_text_width',
+            'label' => __('Textens bredd', 'lightning'),
+            'name' => 'text_width',
+            'type' => 'button_group',
+            'instructions' => __('650px är bra för läsbarheten.', 'lightning'),
+            'choices' => [
+                'max-w-full' => __('Fullbredd', 'lightning'),
+                'max-w-4xl' => __('896px', 'lightning'),
+                'max-w-prose' => __('650px', 'lightning'),
+            ],
+            'default_value' => 'max-w-full',
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'field_lb_text_text_show_text_2',
+                        'operator' => '==',
+                        'value' => '0',
+                    ],
+                ],
+            ],
+            'wrapper' => ['width' => 50]
         ],
         [
             'key' => 'field_lb_text_text_left',
