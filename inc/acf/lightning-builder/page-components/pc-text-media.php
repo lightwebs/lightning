@@ -7,7 +7,7 @@ if (get_row_layout() == 'text_media' && !s(get_row_layout())['hide_component']) 
     $full_width = get_sub_field('text_media_full');
 ?>
 
-    <section <?php component_id($prefix); ?> class="pc-text-media relative section <?php echo $full_width ? '!py-0' : section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?> <?php echo s($prefix)['text_color']; ?>">
+    <section <?php component_id($prefix); ?> class="pc-text-media section <?php echo $full_width ? '!py-0' : section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?> <?php echo s($prefix)['text_color']; ?>">
         <?php
         include __DIR__ . '/pc-text-media/pc-text-media-regular.php'; ?>
     </section>
