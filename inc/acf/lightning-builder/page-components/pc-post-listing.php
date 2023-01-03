@@ -71,10 +71,11 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
             <div class="grid gap-6 lg:gap-8 xxl:gap-12 post-container search-result <?php
                                                                                     echo $post_type == 'post' ? 'md:grid-cols-4' : 'md:grid-cols-2';
                                                                                     echo $post_type == 'testimonial' ? ' items-start' : ' items-stretch';
-                                                                                    ?> lg:grid-cols-<?php echo $columns; ?>">
+                                                                                    echo $post_type == 'coworker' ? ' grid-cols-2 md:grid-cols-3' : '';
+                                                                                    ?> lg:grid-cols-<?php echo $columns; ?>">                                                                   
                 <?php
-                if ($query->have_posts()) : ?>
-                    <?php while ($query->have_posts()) : $query->the_post();
+                if ($query->have_posts()) : ?> 
+                    <?php while ($query->have_posts()) : $query->the_post();                  
                         if ($post_type == 'post') {
                             post_card(get_the_ID(), $card_classes, 20, $post_number, $masonry);
                         }
@@ -87,6 +88,10 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
                             testimonial_card(get_the_ID(), $card_classes, 10);
                         }
 
+                        if ($post_type == 'coworker') {
+                            coworker_card(get_the_ID(), $card_classes, 10);
+                        }
+                        
                         $post_number++;
                     endwhile; ?>
                 <?php endif;
