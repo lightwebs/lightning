@@ -56,7 +56,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
                 </div>
             </div>
 
-            <div class="w-full  md:mt-0 flex items-end">
+            <div class="w-full mt-0 flex items-end">
                 <? if (!empty($image)) : ?>
                     <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="object-contain " />
                 <? endif; ?>
