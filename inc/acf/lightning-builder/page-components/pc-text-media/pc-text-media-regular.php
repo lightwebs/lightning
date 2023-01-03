@@ -12,17 +12,11 @@ if ($is_media || $is_video || $is_statistics) :
 ?>
 
 
-    <div class="grid items-center md:grid-cols-2 <?php echo !$full_width ? 'gap-y-4 md:gap-x-6 lg:gap-x-12' : ''; ?>">
+    <div class="grid items-center md:grid-cols-2 <?php echo !$full_width ? 'gap-y-4 md:gap-x-6 lg:gap-x-12 container' : ''; ?>">
         <?php if ($text) : ?>
-            <div class="container !max-w-[700px] !ml-0 !mr-0 order-2 md:order-<?php echo $text_placement;
-                                                                                echo $text_placement === '1' ? ' justify-self-end' : ' justify-self-start'; ?>">
-                <div class="<?php
-                            if ($full_width && $text_placement === '1') :
-                                echo 'pr-4 md:pr-6 lg:pr-12';
-                            elseif ($full_width && $text_placement === '2') :
-                                echo 'pl-4 md:pl-6 lg:pl-12';
-                            endif;
-                            ?>">
+            <div class="!max-w-[700px] order-2 md:order-<?php echo $text_placement;
+                                                        echo $text_placement === '1' ? ' justify-self-end' : ' justify-self-start'; ?>">
+                <div class="container <?php $full_width ? compensate_padding($text_placement) : ''; ?>">
                     <?php echo $text; ?>
                     <?php if ($link) :
                         btn_l_primary($link, 'mt-4 lg:mt-6');

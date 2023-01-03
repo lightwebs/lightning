@@ -4,8 +4,8 @@
 
 <div class="flex order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1'; ?> w-full bg-purple-500 text-white h-full justify-end">
 
-    <div class="py-12 max-w-screen-sm w-full">
-        <div class="flex flex-col gap-12">
+    <div class="py-12 max-w-[700px] w-full">
+        <div class="flex flex-col gap-12 container">
             <?php if (have_rows('statistics_repeater')) :
                 while (have_rows('statistics_repeater')) : the_row();
                     $title = get_sub_field('statistic_title');
