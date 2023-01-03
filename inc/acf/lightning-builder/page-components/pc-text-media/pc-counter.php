@@ -2,7 +2,8 @@
 
 ?>
 
-<div class="flex order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1'; ?> w-full bg-purple-500 text-white h-full justify-end">
+<div class="flex order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1';
+                                    echo $text_placement === '1' ? ' justify-start' : ' justify-end'; ?> w-full bg-purple-500 text-white h-full ">
 
     <div class="py-12 max-w-container-1/2 w-full">
         <div class="flex flex-col gap-12 container">
