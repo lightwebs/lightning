@@ -38,9 +38,13 @@ if ($is_media || $is_video || $is_statistics) :
     </div>
 
     <?php if ($full_width) : ?>
-        <div class="h-full px-0 pointer-events-none md:absolute">
-            <div class="grid items-center h-full md:grid-cols-2 gap-x-0">
-                <?php include __DIR__ . '/pc-media.php'; ?>
+        <div class="h-full px-0 pointer-events-none w-full">
+            <div class="grid w-full items-center h-full md:grid-cols-2 gap-x-0">
+                <?php if ($is_statistics) :
+                    include __DIR__ . '/pc-counter.php';
+                elseif ($is_media || $is_video) :
+                    include __DIR__ . '/pc-media.php';
+                endif; ?>
                 <div class="p-4 order-2 md:order-<?php echo $text_placement; ?>">
                     <span class="md:invisible md:opacity-0"><?php echo $text; ?>
                         <?php if ($link) :
