@@ -164,6 +164,35 @@ return [
             ],
         ],
         [
+            'key' => 'field_lb_post_listing_picked_coworkers',
+            'label' => __('Välj Kollega', 'lightning'),
+            'name' => 'picked_coworker',
+            'type' => 'relationship',
+            'post_type' => [
+                'coworker',
+            ],
+            'filters' => [
+                'search',
+                'taxonomy',
+            ],
+            'min' => '0',
+            'return_format' => 'id',
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'field_lb_post_listing_content_type',
+                        'operator' => '==',
+                        'value' => 'picked',
+                    ],
+                    [
+                        'field' => 'field_lb__post_listing_post_type',
+                        'operator' => '==',
+                        'value' => 'coworker',
+                    ],
+                ],
+            ],
+        ],
+        [
             'key' => 'field_lb_post_listing_picked_testimonials',
             'label' => __('Välj vittnesmål', 'lightning'),
             'name' => 'picked_testimonial',
