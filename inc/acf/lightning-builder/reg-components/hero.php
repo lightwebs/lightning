@@ -81,27 +81,18 @@ return [
                     'required' => 0,
                     'wrapper' => ['width' => 33]
                 ],
-
                 [
                     'key' => 'field_lb_hero_button_type',
                     'label' => __('Knapptyp', 'lightning'),
                     'name' => 'button_type',
-                    'type' => 'select',
-                    'instructions' => __('Välj om knappen ska visas som primär eller sekundär', 'lightning'),
+                    'type' => 'button_group',
+                    'instructions' => __('Välj hur knappen ska visas i frontend', 'lightning'),
                     'choices' => [
-                        'primary' => __('Primary', 'lightning'),
-                        'secondary' => __('Secondary', 'lightning'),
+                        'primary' => __('Primär', 'lightning'),
+                        'secondary' => __('Sekundär', 'lightning'),
                     ],
-                    'default_value' => [
-                        'value',
-                    ],
-                    'allow_null' => 0,
-                    'multiple' => 0,
-                    'ui' => 0,
-                    'return_format' => 'value',
-                    'ajax' => 0,
-                    'placeholder' => __('Placeholder', 'lightning'),
-                    'required' => 0,
+                    'default_value' => 'primary',
+                    'layout' => 'horizontal',
                     'wrapper' => ['width' => 33]
                 ],
                 [
@@ -109,7 +100,7 @@ return [
                     'label' => __('Visa ikon', 'lightning'),
                     'name' => 'show_icon',
                     'type' => 'true_false',
-                    'instructions' => __('Fyll i knappen om den ska visa en pil-ikon i frontend', 'lightning'),
+                    'instructions' => __('Bestämmer om en pil ska visas i frontend', 'lightning'),
                     'default_value' => 0,
                     'ui' => 1,
                     'ui_on_text' => 'Ja',

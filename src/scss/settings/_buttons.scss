@@ -50,24 +50,6 @@
         &:disabled {
             @apply bg-gray-400 text-gray-700 cursor-not-allowed hover:bg-gray-400;
         }
-
-        &.nav-btn {
-            font-size: rc(14);
-            font-weight: 300;
-            line-height: rc(18);
-            min-height: 30px;
-            min-width: 30px;
-            padding: rc(8);
-            @include radius-lg;
-
-            @media all and (min-width: #{$md}) {
-                font-size: rc(16);
-            }
-
-            * {
-                pointer-events: none;
-            }
-        }
     }
 
     @keyframes spinning {
