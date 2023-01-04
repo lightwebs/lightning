@@ -6,11 +6,11 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
     $key_info = get_sub_field('key_info_repeater');
     $buttons = get_sub_field('buttons_repeater');
 ?>
-    <section id="<?php echo s($prefix)['component_id']; ?>" class="pc-hero section <?php echo section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?> py-4 md:py-0 lg:py-0 xl:py-0 xxl:py-0 pt-6 md:pt-9 xl:pt-10 xxl:pt-12">
+    <section id="<?php echo s($prefix)['component_id']; ?>" class="pc-hero section  <?php echo s($prefix)['bg_color']; ?>">
 
 
         <div class="container <?php echo s($prefix)['text_color']; ?>  gap-4 md:gap-24 md:flex">
-            <div class="w-full flex flex-col gap-4 md:gap-6 py-6 justify-center">
+            <div class="w-full flex flex-col gap-4 md:gap-6 py-6 justify-center <?php section_spacing() ?>">
                 <h1 class="text-2xl md:text-3xl text-purple-500 mb-0"><?php echo $title; ?></h1>
 
                 <?php if (s($prefix)['title']) : ?>
