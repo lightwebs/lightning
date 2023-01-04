@@ -30,7 +30,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
                             $title = get_sub_field('key_info_title');
                     ?>
                             <div class="flex gap-2 md:gap-4 items-center">
-                                <span class="material-icons-round text-purple-500 text-sm">change_history</span>
+                                <img src="<?php echo get_stylesheet_directory_uri() . '/src/assets/icons/icon-triangle-filled.svg' ?>" alt="Decoration icon" class="h-[14px] w-[14px]" aria-hidden="true">
                                 <p class="font-medium text-[18px] md:text-[20px]"> <?php echo $title ?> </p>
                             </div>
                     <?php
