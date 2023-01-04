@@ -24,7 +24,7 @@ if (!function_exists('component_header')) {
                     <?php
                     if ($is_small_text) : ?>
                         <div class="!absolute !z-[1] left-0 pointer-events-none mt-3.5 w-full border-t-2 <?php echo $is_black_text ? 'border-text-black' : 'border-text-white'; ?>"></div>
-                        <span class="relative px-5 ml-4 <?php echo $is_black_text ? 'bg-white' : 'bg-black'; ?>">
+                        <span class="relative px-5 ml-4 <?php echo $is_black_text ? 'bg-white' : 'bg-background-black'; ?>">
                         <?php
                     endif;
 
