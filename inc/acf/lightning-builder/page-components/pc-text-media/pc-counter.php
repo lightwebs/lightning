@@ -3,7 +3,7 @@
 ?>
 
 <div class="flex order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1';
-                                    echo $text_placement === '1' ? ' justify-start' : ' justify-end'; ?> w-full bg-purple-500 text-white h-full ">
+                                    echo $text_placement === '1' ? ' justify-start' : ' justify-end'; ?> w-full bg-[#400093] text-white h-full ">
 
     <div class="py-12 max-w-container-1/2 w-full">
         <div class="grid grid-cols-2 gap-12 container">
