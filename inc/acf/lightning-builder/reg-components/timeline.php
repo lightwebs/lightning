@@ -34,16 +34,56 @@ return [
             'name' => 'timeline',
             'type' => 'repeater',
             'instructions' => __('INSTRUCTIONS', 'lightning'),
-            'collapsed' => 'field_lb_timeline_repeater', // field key
-            'layout' => 'table', // table, block, row
-            'button_label' => __('Add entry', 'lightning'),
+            'collapsed' => 'field_lb_timeline_repeater',
+            'layout' => 'block',
+            'button_label' => __('År +', 'lightning'),
             'sub_fields' => [
                 [
                     'key' => 'field_lb_timeline_year',
                     'label' => __('År', 'lightning'),
-                    'name' => 'text',
+                    'name' => 'year',
                     'type' => 'text',
-                    'required' => 0, // 0 | 1
+                ],
+                [
+                    'key' => 'field_lb_timeline_title',
+                    'label' => __('Rubrik', 'lightning'),
+                    'name' => 'title',
+                    'type' => 'text',
+                ],
+                [
+                    'key' => 'field_lb_timeline_content',
+                    'label' => __('Text', 'lightning'),
+                    'name' => 'content',
+                    'type' => 'textarea',
+                ],
+                [
+                    'key' => 'field_lb_timeline_image',
+                    'label' => __('Bild', 'lightning'),
+                    'name' => 'image',
+                    'type' => 'image',
+                    'instructions' => __('Välj bild som visas bredvid texten', 'lightning'),
+                    'preview_size' => 'thumbnail',
+                    'mime_types' => 'svg, png, jpg, jpeg',
+                    'return_format' => 'array',
+                    'required' => 0,
+                    'wrapper' => ['width' => 100],
+                ],
+                [
+                    'key' => 'field_lb_timeline_image_placement',
+                    'label' => 'Sida för bild',
+                    'name' => 'image_placement',
+                    'type' => 'button_group',
+                    'wrapper' => [
+                        'width' => '40',
+                    ],
+                    'choices' => [
+                        1 => 'Vänster',
+                        2 => 'Höger',
+                    ],
+                    'allow_null' => 0,
+                    'default_value' => 1,
+                    'layout' => 'horizontal',
+                    'return_format' => 'value',
                 ],
             ],
         ],
