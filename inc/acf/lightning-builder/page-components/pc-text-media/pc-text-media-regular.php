@@ -3,6 +3,7 @@ $is_media = $media_type === 'img';
 $is_video = $media_type === 'video';
 $is_statistics = $media_type === 'statistics';
 $text_placement = get_sub_field('text_media_placement');
+$text_alignment = get_sub_field('text_media_text_alignment');
 if ($is_media || $is_video || $is_statistics) :
 ?>
 
@@ -12,9 +13,10 @@ if ($is_media || $is_video || $is_statistics) :
             <div class="mr-0 ml-0 order-2 md:order-<?php echo $text_placement;
                                                     echo $text_placement === '1' ? ' justify-self-end' : ' justify-self-start';
                                                     echo $full_width ? ' max-w-container-1/2' : '';
-                                                    ?>">
+                                                    ?> self-<?php echo $text_alignment ?>">
 
-                <div class=" <?php echo $full_width ? 'container' . compensate_padding($text_placement) : 'pt-4 md:pt-6 lg:pt-8';
+                <div class=" <?php echo $full_width ? 'container' . compensate_padding($text_placement) : '';
+                                echo $text_alignment !== 'start' ? ' py-4 md:py-6 lg:py-8' : '';
                                 ?>">
                     <?php echo $text; ?>
                     <?php if ($link) :
