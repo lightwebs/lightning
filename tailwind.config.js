@@ -65,7 +65,7 @@ module.exports = {
             background: {
                 transparent: 'transparent',
                 white: '#ffffff',
-                black: '#000000',
+                black: '#000C24',
             },
             text: {
                 white: '#ffffff',
@@ -80,6 +80,7 @@ module.exports = {
             },
             fontSize: {
                 inherit: 'inherit',
+                '2.5xl': '1.75rem',
             },
 
             padding: {
