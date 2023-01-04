@@ -53,7 +53,6 @@ function displayMatches(searchId, results, searchInput) {
     timeoutId = setTimeout(() => {
         timeoutId = null
         if (searchInput.value.length < minSearchLength && results.length === 0) {
-            console.log(searchInput.value, minSearchLength, results.length)
             populateResults()
             return
         }
