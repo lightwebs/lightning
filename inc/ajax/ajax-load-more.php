@@ -93,7 +93,7 @@ function load_more_callback() {
     ];
 
     if ($total_posts <= 12) {
-        $posts['load_more_btn_text'] = __('Inga mer inlägg', 'lightning');
+        $posts['load_more_btn_text'] = __('Inga fler inlägg', 'lightning');
     } else {
         $posts['load_more_btn_text'] = __('Ladda fler', 'lightning');
     }

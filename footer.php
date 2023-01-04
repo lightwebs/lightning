@@ -13,7 +13,6 @@ $form_shortcode = get_field('footer_form_shortcode', 'option');
 			<div class="flex flex-col">
 				<?php while (have_rows('footer_col_repeater', 'options')) : the_row();
 					$title = get_sub_field('footer_col_title', 'options');
-					// $qty = count(get_field('footer_col_repeater', 'options'));
 				?>
 
 					<div class="flex flex-col mt-12 md:items-end">

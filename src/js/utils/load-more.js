@@ -73,7 +73,7 @@ export const loadPosts = async (e, target) => {
                 return
             }
 
-            if (response.data.load_more_btn_text === 'Inga mer inlägg') {
+            if (response.data.load_more_btn_text === 'Inga fler inlägg') {
                 loadMoreBtn.setAttribute('disabled', 'disabled')
                 loadMoreBtn.classList.remove('loading')
             } else {

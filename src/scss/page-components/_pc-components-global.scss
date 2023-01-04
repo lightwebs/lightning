@@ -6,7 +6,8 @@
             &:first-of-type {
                 @apply pt-[calc(65px+3rem)] md:pt-[calc(80px+4rem)] lg:pt-[calc(88px+4.5rem)] xl:pt-[calc(88px+6rem)] xxl:pt-[calc(88px+7rem)];
 
-                &.pc-cover {
+                &.pc-cover,
+                &.pc-hero {
                     @apply pt-[65px] md:pt-[80px] lg:pt-[88px];
                 }
             }
@@ -29,6 +30,6 @@
         }
     }
     .section * {
-        @apply z-[1];
+        @apply z-[2];
     }
 }

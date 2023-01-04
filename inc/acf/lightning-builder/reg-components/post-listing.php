@@ -237,6 +237,28 @@ return [
             'ui' => 1,
             'ui_on_text' => 'Ja',
             'ui_off_text' => 'Nej',
+            'wrapper' => ['width' => 50],
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'field_lb__post_listing_post_type',
+                        'operator' => '==',
+                        'value' => 'post',
+                    ],
+                ],
+            ],
+        ],
+        [
+            'key' => 'field_lb_post_listing_show_cats',
+            'label' => __('Visa kategoritagg?', 'lightning'),
+            'name' => 'show_cats',
+            'type' => 'true_false',
+            'message' => 'Visa i kategorier i listningen?',
+            'default_value' => 1,
+            'ui' => 1,
+            'ui_on_text' => 'Ja',
+            'ui_off_text' => 'Nej',
+            'wrapper' => ['width' => 50],
             'conditional_logic' => [
                 [
                     [

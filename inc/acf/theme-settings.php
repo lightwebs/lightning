@@ -10,20 +10,6 @@ acf_add_local_field_group([
             'placement' => 'top',
         ],
         [
-            'key' => 'field_theme_settings_logo_choice',
-            'label' => 'Bild eller text',
-            'name' => 'site_logo_choice',
-            'type' => 'button_group',
-            'choices' => [
-                'logo' => 'Logga',
-                'text' => 'Text',
-            ],
-            'allow_null' => 0,
-            'default_value' => 'logo',
-            'layout' => 'horizontal',
-            'return_format' => 'value',
-        ],
-        [
             'key' => 'field_theme_settings_logo_image',
             'label' => 'Logga',
             'name' => 'site_logo',
@@ -46,7 +32,7 @@ acf_add_local_field_group([
         ],
         [
             'key' => 'field_theme_settings_logo_image_dark',
-            'label' => 'Logga i dark mode',
+            'label' => 'Mörk logga',
             'name' => 'site_logo_dark',
             'type' => 'image',
             'return_format' => 'id',
@@ -64,44 +50,6 @@ acf_add_local_field_group([
             'wrapper' => [
                 'width' => '50',
             ]
-        ],
-        [
-            'key' => 'field_theme_settings_logo_text',
-            'label' => 'Webbplatsens namn',
-            'name' => 'site_logo_text',
-            'type' => 'text',
-            'conditional_logic' => [
-                [
-                    [
-                        'field' => 'field_theme_settings_logo_choice',
-                        'operator' => '==',
-                        'value' => 'text',
-                    ],
-                ],
-            ],
-        ],
-        [
-            'key' => 'field_theme_settings_logo_slogan',
-            'label' => 'Slogan',
-            'name' => 'site_logo_slogan',
-            'type' => 'text',
-            'instructions' => 'Valfritt',
-            'conditional_logic' => [
-                [
-                    [
-                        'field' => 'field_theme_settings_logo_choice',
-                        'operator' => '==',
-                        'value' => 'text',
-                    ],
-                ],
-            ],
-        ],
-        [
-            'key' => 'field_theme_settings_right_menu_msg',
-            'label' => 'Högermenyn',
-            'type' => 'message',
-            'new_lines' => 'wpautop',
-            'esc_html' => 0,
         ],
         [
             'key' => 'field_lb_theme_settings_right_menu_btn',

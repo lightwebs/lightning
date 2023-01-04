@@ -12,6 +12,7 @@ if (!function_exists('post_card')) {
         $title = get_the_title();
         $link = get_permalink();
         $date = get_the_date();
+        $show_cats = get_sub_field('show_cats');
         $image_id = get_post_thumbnail_id($post_id);
         $image_calsses = 'object-cover group-hover:scale-105 transition-transform duration-300 h-full';
 
@@ -34,7 +35,9 @@ if (!function_exists('post_card')) {
 
                     <div class="flex flex-col md:col-span-3 card-body p-4 xl:p-6 <?php echo str_contains($class, 'bg-[transparent]') ? '!px-0' : ''; ?>">
 
-                        <?php get_post_terms($post_id, 'category', 'mb-4'); ?>
+                        <?php if ($show_cats) : ?>
+                            <?php get_post_terms($post_id, 'category', 'mb-4'); ?>
+                        <?php endif; ?>
 
                         <h4 class="mb-2"><?php echo $title; ?></h4>
                         <small class="mb-4"><?php echo $date; ?></small>
