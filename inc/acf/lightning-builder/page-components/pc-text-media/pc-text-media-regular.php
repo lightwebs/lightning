@@ -8,14 +8,12 @@ if ($is_media || $is_video || $is_statistics) :
 ?>
 
 
-    <div class="grid items-center md:grid-cols-2 <?php echo !$full_width ? 'gap-y-4 md:gap-x-6 lg:gap-x-12 container ' : 'gap-y-4 pb-12 md:pb-0';
-
-                                                    ?> ">
+    <div class="grid items-<?php echo $text_alignment ?> md:grid-cols-2 <?php echo !$full_width ? 'gap-y-4 md:gap-x-6 lg:gap-x-12 container ' : 'gap-y-4 pb-12 md:pb-0'; ?> ">
         <?php if ($text) : ?>
             <div class="mr-0 ml-0 order-2 md:order-<?php echo $text_placement;
                                                     echo $text_placement === '1' ? ' justify-self-end' : ' justify-self-start';
                                                     echo $full_width ? ' max-w-container-1/2' : '';
-                                                    ?> self-<?php echo $text_alignment ?>">
+                                                    ?>">
 
                 <div class=" <?php echo $full_width ? 'container' . compensate_padding($text_placement) : '';
                                 ?>">
