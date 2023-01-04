@@ -28,7 +28,7 @@
             ?>
 
                     <div class="flex flex-col gap-4">
-                        <p class="text-5xl font-bold font-space">
+                        <p class="text-3xl sm:text-4xl xl:!text-5xl font-bold font-space">
                             <span class="<?php echo $should_animate ? 'counter' : ''; ?>">
                                 <?php echo $n ?>
                             </span>
