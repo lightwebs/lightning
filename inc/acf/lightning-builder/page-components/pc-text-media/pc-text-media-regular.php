@@ -3,6 +3,7 @@ $is_media = $media_type === 'img';
 $is_video = $media_type === 'video';
 $is_statistics = $media_type === 'statistics';
 $text_placement = get_sub_field('text_media_placement');
+if ($is_media || $is_video || $is_statistics) :
 ?>
 
 
