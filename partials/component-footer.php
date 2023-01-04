@@ -19,11 +19,11 @@ if (!function_exists('component_footer')) {
             if ($is_small_text) {
                 $link_class .= ' !text-xl lg:!text-2xl italic';
             } ?>
-            <footer class="container mt-6 md:mt-6 xl:mt-8 xxl:mt-12 flex <?php echo $is_small_text ? 'justify-end' : ''; ?> ">
+            <footer class="container mt-8 md:mt-10 xl:mt-12 xxl:mt-16 flex <?php echo $is_small_text ? 'justify-end' : ''; ?> ">
                 <?php
                 if ($is_small_text) : ?>
-                    <div class="absolute left-0 pointer-events-none mt-3.5 w-full border-t-2 <?php echo $is_black_text ? 'border-text-black' : 'border-text-white'; ?>"></div>
-                    <span class="relative z-[1] <?php echo $is_black_text ? 'bg-white mr-4 px-5' : 'bg-black mr-4 px-5'; ?>">
+                    <div class="absolute !z-[1] left-0 pointer-events-none mt-3.5 w-full border-t-2 <?php echo $is_black_text ? 'border-text-black' : 'border-text-white'; ?>"></div>
+                    <span class="relative mr-4 px-5 <?php echo $is_black_text ? 'bg-white' : 'bg-background-black'; ?>">
 
                     <?php
                 endif;

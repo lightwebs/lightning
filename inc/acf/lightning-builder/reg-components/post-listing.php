@@ -299,6 +299,15 @@ return [
             'return_format' => 'value',
             'allow_null' => 0,
             'layout' => 'horizontal',
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'field_lb__post_listing_post_type',
+                        'operator' => '!=',
+                        'value' => 'coworker',
+                    ],
+                ],
+            ],
         ],
         [
             'key' => 'field_lb_post_listing_colors',
