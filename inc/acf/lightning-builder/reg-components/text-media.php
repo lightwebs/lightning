@@ -26,6 +26,26 @@ return [
             'name' => 'text_media_btn',
             'type' => 'link',
             'return_format' => 'array',
+            'wrapper' => [
+                'width' => '60',
+            ],
+        ],
+        [
+            'key' => 'field_lb_text_alignment',
+            'label' => __('Textposition', 'lightning'),
+            'name' => 'text_media_text_alignment',
+            'type' => 'button_group',
+            'instructions' => 'Välj textpositionen för denna komponent.',
+            'layout' => 'vertical',
+            'wrapper' => [
+                'width' => '40',
+            ],
+            'choices' => [
+                'start' => __('Toppen ↑', 'lightning'),
+                'center' => __('Mitten →', 'lightning'),
+                'end' => __('Botten ↓', 'lightning'),
+            ],
+            'default_value' => 'center',
         ],
         [
             'key' => 'field_lb_text_media_type',
