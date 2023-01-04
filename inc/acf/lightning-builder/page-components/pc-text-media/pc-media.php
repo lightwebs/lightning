@@ -1,6 +1,14 @@
 <?php
 $h_full = $full_width ? 'h-full' : '';
 $text_media_img = get_sub_field('text_media_img');
+
+if ($is_media) :
+    $img = get_sub_field('text_media_img');
+elseif ($is_video) :
+    $video = get_sub_field('text_media_video');
+    $video_controls = get_sub_field('text_media_video_controls');
+    $loop_video = get_sub_field('text_media_video_loop');
+endif;
 ?>
 
 <div class="w-full <?php
