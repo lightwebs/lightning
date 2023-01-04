@@ -10,7 +10,6 @@ acf_add_local_field_group([
             'name' => 'case_excerpt',
             'type' => 'text',
             'instructions' => __('Kort beskrivande text som syns i case listning', 'lightning'),
-            'maxlength' => 50,
             'required' => 1,
             'wrapper' => ['width' => 100]
         ],
