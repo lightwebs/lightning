@@ -1,6 +1,5 @@
 <?php
 $h_full = $full_width ? 'h-full' : '';
-$text_media_img = get_sub_field('text_media_img');
 
 if ($is_img) :
     $img = get_sub_field('text_media_img');
@@ -16,7 +15,7 @@ endif;
                     $full_width ? 'w-full !px-0 h-full' : '' ?> order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1'; ?>">
     <?php if ($media_type === 'img') : ?>
         <?php if ($img) :
-            image($text_media_img, 'full', $full_width ? 'w-full object-cover aspect-4/3 h-full' : 'object-cover aspect-4/3 w-full');
+            image($img, 'full', $full_width ? 'w-full object-cover aspect-4/3 h-full' : 'object-cover aspect-4/3 w-full');
         endif; ?>
     <?php endif; ?>
 
