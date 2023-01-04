@@ -19,7 +19,7 @@ if (!function_exists('coworker_card')) {
         <div class="card group" data-post-id="<?php echo $post_id; ?>">
             <div class="h-full <?php echo $class; ?>">
               
-                <div class="w-full mb-3 overflow-hidden card-image md:mb-4">
+                <div class="w-full mb-2 overflow-hidden card-image">
                     <?php echo image($image_id, 'medium_large', 'min-h-[192px] object-cover w-full aspect-2/3 group-hover:scale-105 transition-transform duration-300') ?>
                 </div>
 
