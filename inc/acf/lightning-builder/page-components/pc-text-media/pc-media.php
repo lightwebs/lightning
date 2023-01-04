@@ -2,7 +2,7 @@
 $h_full = $full_width ? 'h-full' : '';
 $text_media_img = get_sub_field('text_media_img');
 
-if ($is_media) :
+if ($is_img) :
     $img = get_sub_field('text_media_img');
 elseif ($is_video) :
     $video = get_sub_field('text_media_video');

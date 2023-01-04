@@ -1,10 +1,10 @@
 <?php
-$is_media = $media_type === 'img';
+$is_img = $media_type === 'img';
 $is_video = $media_type === 'video';
 $is_statistics = $media_type === 'statistics';
 $text_placement = get_sub_field('text_media_placement');
 $text_alignment = get_sub_field('text_media_text_alignment');
-if ($is_media || $is_video || $is_statistics) :
+if ($is_img || $is_video || $is_statistics) :
 ?>
 
 
@@ -32,7 +32,7 @@ if ($is_media || $is_video || $is_statistics) :
             </div>
         <?php endif; ?>
 
-        <?php if ($is_media || $is_video) :
+        <?php if ($is_img || $is_video) :
             include __DIR__ . '/pc-media.php';
         elseif ($is_statistics) :
             include __DIR__ . '/pc-counter.php';
