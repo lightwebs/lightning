@@ -5,9 +5,10 @@ add_action('wp_ajax_nopriv_load_more', 'load_more_callback');
 
 function load_more_callback() {
     check_ajax_referer('load_more', 'security');
+    error_log(print_r($_POST, true));
     $card_text_colors = $_POST['card_text_color'];
     $card_bg_colors = $_POST['card_bg_color'];
-    error_log(print_r($_POST, true));
+    $masonry = $_POST['masonry'];
     $paged = $_POST['paged'];
     $cat_id = $_POST['cat_id'];
     $filter = [$_POST['filter']];
@@ -17,6 +18,7 @@ function load_more_callback() {
     $exclude = explode(',', $exclude[0]);
     $exclude = array_filter($exclude);
 
+    $post_card_class = $card_text_colors . ' ' . $card_bg_colors;
 
     $is_filters = $filter[0] != null || $filter[0] != '';
 
@@ -64,8 +66,15 @@ function load_more_callback() {
             ob_start();
             if ($search) {
                 small_card(get_the_ID());
-            } else {
-                card(get_the_ID(), $card_text_colors . ' ' . $card_bg_colors);
+            }
+            if ($post_type == 'post') {
+                post_card(get_the_ID(), $post_card_class, 20, false, $masonry);
+            }
+            if ($post_type == 'case') {
+                case_card(get_the_ID(), $card_text_colors, 10);
+            }
+            if ($post_type == 'coworker') {
+                coworker_card(get_the_ID(), $card_text_colors, 10);
             }
             $post_array[] = ob_get_clean();
         }
@@ -84,7 +93,7 @@ function load_more_callback() {
     ];
 
     if ($total_posts <= 12) {
-        $posts['load_more_btn_text'] = __('Inga mer inlägg', 'lightning');
+        $posts['load_more_btn_text'] = __('Inga fler inlägg', 'lightning');
     } else {
         $posts['load_more_btn_text'] = __('Ladda fler', 'lightning');
     }

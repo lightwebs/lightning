@@ -6,6 +6,23 @@ return [
     'display' => 'block',
     'sub_fields' => [
         [
+            'key' => 'field_lb_project_cta_comp_head_tab',
+            'label' => 'Komponenthuvud',
+            'type' => 'tab',
+            'placement' => 'top',
+        ],
+        [
+            'key' => 'field_lb_project_cta_header',
+            'label' => 'Header',
+            'name' => 'project_cta',
+            'type' => 'clone',
+            'clone' => [
+                0 => 'group_clone_component_header',
+            ],
+            'display' => 'seamless',
+            'prefix_name' => 1
+        ],
+        [
             'key' => 'field_lb_project_cta_content_tab',
             'label' => 'Innehåll',
             'type' => 'tab',
@@ -32,7 +49,7 @@ return [
             'name' => 'project_cta',
             'type' => 'clone',
             'clone' => [
-                0 => 'group_clone_component_footer',
+                0 => 'group_clone_component_settings',
             ],
             'display' => 'seamless',
             'prefix_name' => 1

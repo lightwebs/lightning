@@ -8,9 +8,12 @@ module.exports = {
         './**/*.php',
     ],
     // darkMode: 'class',
+    corePlugins: {
+        container: false,
+    },
     safelist: [
         {
-            pattern: /grid-cols-(1|2|3|4)/,
+            pattern: /grid-cols-(1|2|3|4|5|6|7|8)/,
             variants: ['md', 'lg', 'xl', 'xxl'],
         },
     ],
@@ -24,23 +27,12 @@ module.exports = {
             xl: '1280px',
             xxl: '1536px',
         },
+
         fontFamily: {
             sans: ['Inter', 'sans-serif'],
             space: ['"Space Grotesk"', 'sans-serif'],
             material: ['"Material Icons Round"', 'sans-serif'],
         },
-        container: {
-            screens: {
-                // sm: '560px',
-                // md: '754px',
-                // lg: '978px',
-                // xl: '1186px',
-                xxl: '1400px',
-            },
-            padding: '1rem',
-            center: true,
-        },
-
 
         colors: {
             transparent: 'transparent',
@@ -89,8 +81,17 @@ module.exports = {
             fontSize: {
                 inherit: 'inherit',
             },
+
+            padding: {
+                18: '4.5rem',
+            },
         },
 
-        plugins: [require('@tailwindcss/line-clamp'), require('@tailwindcss/aspect-ratio')],
+        variants: {
+            extend: {
+                lineClamp: ['active'],
+            },
+        },
     },
+    plugins: [require('@tailwindcss/line-clamp'), require('@tailwindcss/aspect-ratio')],
 }

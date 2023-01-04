@@ -9,7 +9,7 @@ if (get_row_layout() == 'cover' && !s(get_row_layout())['hide_component']) :
 ?>
 
     <section <?php component_id($prefix); ?> class="relative pc-cover">
-        <div class="container px-0 md:px-4">
+        <div class="container">
             <div class="flex flex-col md:flex-row md:py-16 <?php
                                                             echo s($prefix)['has_color_bg']
                                                                 ? 'items-end md:items-center pt-0 lg:py-20'

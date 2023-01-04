@@ -107,7 +107,7 @@ return [
             'name' => 'cover',
             'type' => 'clone',
             'clone' => [
-                0 => 'group_clone_component_footer',
+                0 => 'group_clone_component_settings',
             ],
             'display' => 'seamless',
             'layout' => 'block',

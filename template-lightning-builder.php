@@ -8,14 +8,6 @@ get_header();
 <main id="primary" class="site-main">
     <!-- 
     Keep for Tailwind postcss
-    lg:grid-cols-1
-    lg:grid-cols-2
-    lg:grid-cols-3
-    lg:grid-cols-4
-    xl:grid-cols-1
-    xl:grid-cols-2
-    xl:grid-cols-3
-    xl:grid-cols-4
     !block
 -->
 
