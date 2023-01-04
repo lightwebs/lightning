@@ -12,12 +12,15 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
         <div class="container <?php echo s($prefix)['text_color']; ?>  gap-4 md:gap-24 md:flex">
             <div class="w-full flex flex-col gap-4 md:gap-6 py-6 justify-center">
                 <h1 class="text-2xl md:text-3xl text-purple-500 mb-0"><?php echo $title; ?></h1>
+
                 <?php if (s($prefix)['title']) : ?>
-                    <?php echo '<' . s($prefix)['title_tag'] . ' class="text-5xl md:text-7xl mb-0"> '; ?>
+                    <?php echo '<' . s($prefix)['title_tag'] . ' class="m-0 text-5xl leading-[61.25px] md:text-[80px] md:leading-[80px]"> '; ?>
+
                     <?php echo s($prefix)['title'] ?>
+
                     <?php echo '</' . s($prefix)['title_tag'] . '>'; ?>
                 <?php endif; ?>
-                <p class="text-2xl"><?php echo  s($prefix)['text']; ?></p>
+                <p class="text-[22px] leading-[35px]"><?php echo  s($prefix)['text']; ?></p>
 
 
                 <div class="flex gap-5 flex-wrap">
@@ -27,8 +30,8 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
                             $title = get_sub_field('key_info_title');
                     ?>
                             <div class="flex gap-2 md:gap-4 items-center">
-                                <span class="material-icons-round text-purple-500 text-sm w-5">change_history</span>
-                                <p class="font-medium text-lg md:text-xl"> <?php echo $title ?> </p>
+                                <span class="material-icons-round text-purple-500 text-sm">change_history</span>
+                                <p class="font-medium text-[18px] md:text-[20px]"> <?php echo $title ?> </p>
                             </div>
                     <?php
                         endwhile;
@@ -37,7 +40,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
 
                 </div>
 
-                <div class="flex flex-col md:flex-row gap-4 md:gap-6 md:items-stretch items-start flex-wrap">
+                <div class="flex flex-col md:flex-row gap-4 md:items-stretch items-start flex-wrap">
 
                     <?php
                     if (have_rows('buttons_repeater')) :
