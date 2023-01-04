@@ -26,11 +26,11 @@ $form_shortcode = get_field('footer_form_shortcode', 'option');
 
 							<!-- Only link OR text should exist, checking link first. -->
 							<?php if ($link !== '') : ?>
-								<a class="text-lg" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
+								<a class="text-lg font-light" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
 									<?php echo $link['title']; ?>
 								</a>
 							<?php elseif ($text !== '') : ?>
-								<p class="text-lg"><?php echo $text; ?></p>
+								<p class="text-lg font-light"><?php echo $text; ?></p>
 							<?php endif; ?>
 
 						<?php endwhile; ?>
