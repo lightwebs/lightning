@@ -25,6 +25,7 @@ if ( get_row_layout() == 'services' && !s(get_row_layout())['hide_component'] ) 
                                             <a class="flex items-center justify-center h-12 bg-purple-500 rounded-full min-w-[3rem] ml-3 hover:scale-110 transition duration-300" href="<?php echo $link['url']; ?>">
                                                 <span class="text-white material-icons-round">north_east</span>
                                             <a class="flex items-center justify-center h-12 bg-purple-500 rounded-full min-w-[3rem] ml-3 hover:scale-110 transition duration-300" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']?>">
+                                                <span class="text-3xl text-white material-icons-round">north_east</span>
                                             </a>
                                         <?php endif; ?>
                                     </div>
