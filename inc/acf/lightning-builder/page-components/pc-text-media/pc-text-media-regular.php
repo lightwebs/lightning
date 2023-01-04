@@ -2,13 +2,11 @@
 $is_media = $media_type === 'img';
 $is_video = $media_type === 'video';
 $is_statistics = $media_type === 'statistics';
-
-if ($is_media || $is_video || $is_statistics) :
-    $img = get_sub_field('text_media_img');
-    $video = get_sub_field('text_media_video');
-    $video_controls = get_sub_field('text_media_video_controls');
-    $loop_video = get_sub_field('text_media_video_loop');
-    $text_placement = get_sub_field('text_media_placement');
+$img = get_sub_field('text_media_img');
+$video = get_sub_field('text_media_video');
+$video_controls = get_sub_field('text_media_video_controls');
+$loop_video = get_sub_field('text_media_video_loop');
+$text_placement = get_sub_field('text_media_placement');
 ?>
 
 
