@@ -6,7 +6,7 @@
                                     echo $text_placement === '1' ? ' justify-start' : ' justify-end'; ?> w-full bg-purple-500 text-white h-full ">
 
     <div class="py-12 max-w-container-1/2 w-full">
-        <div class="flex flex-col gap-12 container">
+        <div class="grid grid-cols-2 gap-12 container">
             <?php if (have_rows('statistics_repeater')) :
                 while (have_rows('statistics_repeater')) : the_row();
                     $title = get_sub_field('statistic_title');
