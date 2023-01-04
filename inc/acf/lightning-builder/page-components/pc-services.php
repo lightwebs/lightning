@@ -18,9 +18,9 @@ if ( get_row_layout() == 'services' && !s(get_row_layout())['hide_component'] ) 
                                 $text = get_sub_field('text');
                                 $link = get_sub_field('link'); ?>
 
-                                <div class="p-6 text-black bg-white md:p-12 service-card">
                                     <div class="flex justify-between pb-3 md:pb-4">
                                         <h3><?php echo $title; ?></h3>
+                                <div class="p-6 text-black bg-white md:p-8 lg:p-12 service-card">
                                         <?php if ($link) : ?>
                                             <a class="flex items-center justify-center h-12 bg-purple-500 rounded-full min-w-[3rem] ml-3 hover:scale-110 transition duration-300" href="<?php echo $link['url']; ?>">
                                                 <span class="text-white material-icons-round">north_east</span>
