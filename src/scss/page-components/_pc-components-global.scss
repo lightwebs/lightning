@@ -12,7 +12,7 @@
                 }
             }
 
-            &.bg-\[\#ffffff\]:not(.full-width):not(.pc-text-media) {
+            &.bg-\[\#ffffff\]:not(.full-width) {
                 + .bg-\[\#ffffff\] {
                     @apply pt-0;
                 }
