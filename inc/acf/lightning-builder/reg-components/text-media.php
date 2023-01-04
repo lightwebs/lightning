@@ -308,7 +308,7 @@ return [
                 ],
                 [
                     'key' => 'field_lb_statistics_division_denominator',
-                    'label' => __('Täljare', 'lightning'),
+                    'label' => __('Nämnare', 'lightning'),
                     'name' => 'statistic_denominator',
                     'type' => 'number',
                     'instructions' => __('Nämnaren i bråket. Visas till vänster', 'lightning'),
