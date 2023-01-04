@@ -10,6 +10,7 @@ import './menu/hamburger.js'
 import './page-components/pc-post-listing/load-more'
 import './page-components/testimonials'
 import './utils/gravity-form-inputs'
+import './page-components/timeline'
 
 // scss
 import '../scss/style.scss'
