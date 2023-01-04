@@ -172,6 +172,29 @@ return [
             'ui' => 1,
         ],
         [
+            'key' => 'field_lb_text_statistics_display',
+            'label' => __('Visa som', 'lightning'),
+            'name' => 'text_media_statistics_display',
+            'type' => 'button_group',
+            'choices' => [
+                'col' => __('Stapel', 'lightning'),
+                'grid' => __('Två kolumner', 'lightning'),
+            ],
+            'default_value' => 'grid',
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'field_lb_text_media_type',
+                        'operator' => '==',
+                        'value' => 'statistics',
+                    ],
+                ],
+            ],
+            'wrapper' => [
+                'width' => '50',
+            ],
+        ],
+        [
             'key' => 'field_lb_text_media_statstics_repeater',
             'label' => __('Statistik', 'lightning'),
             'name' => 'statistics_repeater',

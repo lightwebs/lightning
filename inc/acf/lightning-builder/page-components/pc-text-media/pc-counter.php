@@ -1,12 +1,12 @@
 <?php
-
+$show_as_grid = get_sub_field('text_media_statistics_display') === 'grid';
 ?>
 
 <div class="flex order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1';
                                     echo $text_placement === '1' ? ' justify-start' : ' justify-end'; ?> w-full bg-[#400093] text-white h-full ">
 
     <div class="py-12 max-w-container-1/2 w-full">
-        <div class="grid grid-cols-2 gap-12 container">
+        <div class="<?php echo $show_as_grid ? 'grid grid-cols-2 '  : 'flex flex-col ' ?> container gap-12">
             <?php if (have_rows('statistics_repeater')) :
                 while (have_rows('statistics_repeater')) : the_row();
                     $title = get_sub_field('statistic_title');
