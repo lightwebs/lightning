@@ -2,7 +2,7 @@
 $form_shortcode = get_field('footer_form_shortcode', 'option');
 ?>
 
-<footer class="py-12 text-white bg-black site-footer md:py-16 lg-18 xl:py-20 xxl:py-24">
+<footer class="py-12 text-white bg-background-black site-footer md:py-16 lg-18 xl:py-20 xxl:py-24">
 
 	<!-- Footer top -->
 	<div class="container">
