@@ -49,7 +49,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
                             if ($show_icon) {
                                 $link['title'] = $link['title'] . '<span class="material-icons-round text-purple-500 group-hover:text-white transition-color duration-300">arrow_forward</span>';
                             }
-                            $type == 'primary' ? btn_l_primary($link, 'items-center text-base', 'group flex gap-4') : btn_l_secondary($link, ' justify-center  text-purple-500 border-solid border-purple-500 hover:text-white border-box group flex gap-4 text-base');
+                            $type == 'primary' ? btn_l_primary($link, 'items-center text-base', 'group flex gap-4') : btn_l_secondary($link, ' justify-center  text-purple-500 border-solid border-purple-500 hover:text-white border-box group flex gap-4 text-base uppercase');
                         endwhile;
                     endif;
                     ?>
