@@ -6,7 +6,7 @@ $form_shortcode = get_field('footer_form_shortcode', 'option');
 
 	<!-- Footer top -->
 	<div class="container">
-		<div class="flex flex-col md:justify-between items-d md:flex-row">
+		<div class="flex flex-col md:items-end md:justify-between md:flex-row">
 			<div class="footer-form md:max-w-[400px]">
 				<?php echo do_shortcode($form_shortcode); ?>
 			</div>
