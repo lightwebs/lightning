@@ -3,7 +3,7 @@ return [
     'key' => 'layout_services',
     'name' => 'services',
     'label' => 'Tjänster',
-    'display' => 'block', 
+    'display' => 'block',
     'sub_fields' => [
         [
             'key' => 'field_lb_services_comp_head_tab',
@@ -75,7 +75,7 @@ return [
                             'wrapper' => ['width' => '50'],
                             'return_format' => 'array',
                             'parent_repeater' => 'field_lb_services_cols',
-                        ],  
+                        ],
                     ],
                 ],
             ],
@@ -108,4 +108,3 @@ return [
         ]
     ]
 ];
-
