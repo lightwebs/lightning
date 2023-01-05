@@ -27,7 +27,9 @@ if (get_row_layout() == 'roadmap' && !s(get_row_layout())['hide_component']) :
                             <div class="relative flex even:ml-8 odd:after:w-[calc(2rem+2px)] sm:odd:after:w-[calc(100%+2px)] first:after:!border-t-transparent last:after:!border-b-transparent sm:w-1/2 even:sm:self-end before:border-l-2 after:border-b-2 after:absolute after:bottom-0 after:even:border-b-transparent after:odd:border-t-2 after:odd:top-0 <?php echo $col_count == 'even' ? 'last:border-b-2' : ''; ?> <?php echo $border_black; ?> ">
                                 <div class="px-4 py-6 md:p-6 lg:p-8 xl:p-12 xxl:p-16">
                                     <h4><span class="mr-2"><?php echo $number . '.'; ?></span><?php echo $title; ?></h4>
-                                    <?php echo $text; ?>
+                                    <div class="preamble">
+                                        <?php echo $text; ?>
+                                    </div>
                                 </div>
                             </div>
 

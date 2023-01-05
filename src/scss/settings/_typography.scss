@@ -139,8 +139,8 @@ h4,
 
 p,
 .p {
-    margin-top: 0;
     @include regular-text;
+    @apply mb-3 md:mb-4 mt-0;
 }
 
 @layer base {
