@@ -26,8 +26,7 @@ if (get_row_layout() == 'timeline' && !s(get_row_layout())['hide_component']) :
 
         <?php if (have_rows('timeline')) : ?>
             <div class="container <?php echo $text_color; ?>">
-                <?php while (have_rows('timeline')) : the_row(); ?>
-                    <?php
+                <?php while (have_rows('timeline')) : the_row();
                     $title = get_sub_field('title');
                     $content = get_sub_field('content');
                     $image = get_sub_field('image');
@@ -38,7 +37,7 @@ if (get_row_layout() == 'timeline' && !s(get_row_layout())['hide_component']) :
                     if ($image === false) {
                         $content_classes = 'w-full md:max-w-[600px] md:mx-auto';
                     }
-                    ?>
+                ?>
                     <div class="flex-col items-center hidden gap-12 md:flex-row timeline-item md:gap-16 lg:gap-18 xl:gap-24 xxl:gap-28">
                         <?php if ($image !== false) : ?>
                             <div class="flex items-center justify-center flex-1 order-2 <?php echo $image_placement; ?>">
