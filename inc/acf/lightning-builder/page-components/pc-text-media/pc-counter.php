@@ -38,7 +38,7 @@ $show_as_grid = get_sub_field('text_media_statistics_display') === 'grid';
                                 echo '/ ' . $d;
                             endif; ?>
                         </p>
-                        <p class="text-xl"><?php echo $title; ?></p>
+                        <h3 class="text-xl"><?php echo $title; ?></h3>
                     </div>
 
             <?php
