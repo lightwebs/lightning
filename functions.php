@@ -41,3 +41,11 @@ foreach ($post_type_files as $file) {
 
 require lb_path() . 'acf-lightning-builder.php';
 require acf_path() . 'article-builder/acf-article-builder.php';
+
+// // Setting the Google Maps API key for ACF
+function my_acf_google_map_api( $api ){
+    $api['key'] = 'AIzaSyBBkPNiE5cDrWQbyvMtDOJ7BdZhXitVxe0';
+    return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
