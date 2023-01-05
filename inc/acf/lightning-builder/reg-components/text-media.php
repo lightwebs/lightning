@@ -33,7 +33,7 @@ return [
         [
             'key' => 'field_lb_text_media_link_type',
             'label' => __('Visa länk som', 'lightning'),
-            'name' => 'link_type',
+            'name' => 'text_media_link_type',
             'type' => 'button_group',
             'choices' => [
                 'button' => __('Knapp', 'lightning'),
