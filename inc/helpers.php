@@ -300,7 +300,7 @@ function custom_link($link, string $class = null, string $icon_class = null, str
     if ($link) {
         $icon_name = $icon_name ? $icon_name : 'arrow_forward';
         $link_color = get_sub_field('link_colors');
-        echo "<a class='inline-block font-semibold group md:text-lg {$link_color} {$class}' href='{$link['url']}'>{$link['title']}<span class='ml-3 -mt-1 font-semibold align-middle transition-transform duration-300 md:ml-4 text-inherit material-icons-round group-hover:translate-x-1 {$icon_class}'>{$icon_name}</span></a>";
+        echo "<a class='inline-block font-semibold group md:text-lg {$link_color} {$class}' href='{$link['url']}' target='{$link['target']}'>{$link['title']}<span class='ml-3 -mt-1 font-semibold align-middle transition-transform duration-300 md:ml-4 text-inherit material-icons-round group-hover:translate-x-1 {$icon_class}'>{$icon_name}</span></a>";
     }
 }
 

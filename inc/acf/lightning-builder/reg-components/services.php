@@ -3,7 +3,7 @@ return [
     'key' => 'layout_services',
     'name' => 'services',
     'label' => 'Tjänster',
-    'display' => 'block', 
+    'display' => 'block',
     'sub_fields' => [
         [
             'key' => 'field_lb_services_comp_head_tab',
@@ -75,12 +75,11 @@ return [
                             'wrapper' => ['width' => '50'],
                             'return_format' => 'array',
                             'parent_repeater' => 'field_lb_services_cols',
-                        ],  
+                        ],
                     ],
                 ],
             ],
         ],
-
         [
             'key' => 'field_lb_services_settings_tab',
             'label' => 'Inställningar',
@@ -93,7 +92,7 @@ return [
             'name' => 'services',
             'type' => 'clone',
             'clone' => [
-                0 => 'group_clone_component_footer',
+                0 => 'group_clone_component_settings',
             ],
             'display' => 'seamless',
             'prefix_name' => 1

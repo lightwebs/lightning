@@ -55,6 +55,16 @@ return [
             'prefix_name' => 1
         ],
         [
+            'key' => 'field_lb_cta_small_cta',
+            'label' => 'Smal CTA?',
+            'name' => 'cta_small',
+            'type' => 'true_false',
+            'default_value' => 0,
+            'ui' => 1,
+            'ui_on_text' => 'Ja',
+            'ui_off_text' => 'Nej',
+        ],
+        [
             'key' => 'field_lb_project_cta_component_id',
             'label' => 'Komponentens id (frivillig)',
             'name' => 'component_id',
