@@ -223,6 +223,7 @@ return [
             'type' => 'button_group',
             'choices' => [
                 'col' => __('Stapel', 'lightning'),
+                'row' => __('Rad', 'lightning'),
                 'grid' => __('Två kolumner', 'lightning'),
             ],
             'default_value' => 'grid',
