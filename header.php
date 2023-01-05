@@ -27,15 +27,19 @@
 <?php
 
 if (have_rows('lb_components')) :
+	$i = 0;
 	while (have_rows('lb_components')) : the_row();
-		$prefix = get_row_layout();
-		$text_color = get_sub_field($prefix . '_text_colors');
+		if ($i === 0) {
+			$prefix = get_row_layout();
+			$text_color = get_sub_field($prefix . '_text_colors');
 
-		$site_header_classes = '';
-		if ($text_color === 'text-[#000000]') {
-			$site_header_classes = 'dark-text';
+			$site_header_classes = '';
+			if ($text_color === 'text-[#000000]') {
+				$site_header_classes = 'dark-text';
+			}
 		}
-		break; // We are only interested in the first component
+		$i++;
+
 	endwhile;
 endif; ?>
 
