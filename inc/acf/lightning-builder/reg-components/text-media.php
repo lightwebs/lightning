@@ -224,6 +224,7 @@ return [
             'choices' => [
                 'col' => __('Stapel', 'lightning'),
                 'row' => __('Rad', 'lightning'),
+                'media' => __('Media', 'lightning'),
                 'grid' => __('Två kolumner', 'lightning'),
             ],
             'default_value' => 'grid',
@@ -238,6 +239,25 @@ return [
             ],
             'wrapper' => [
                 'width' => '50',
+            ],
+        ],
+        [
+            'key' => 'field_lb_text_statistics_media_image',
+            'label' => __('Bild', 'lightning'),
+            'name' => 'statistic_media_image',
+            'type' => 'image',
+            'preview_size' => 'thumbnail',
+            'return_format' => 'array',
+            'required' => 1,
+            'wrapper' => ['width' => 100],
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'field_lb_text_statistics_display',
+                        'operator' => '==',
+                        'value' => 'media',
+                    ],
+                ],
             ],
         ],
         [
