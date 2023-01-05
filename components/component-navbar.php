@@ -30,7 +30,7 @@ $walker = new Menu_Content;
 
     <div class="flex items-center gap-4 nav-right">
         <?php if ($right_menu_btn) :
-            btn_l_primary($right_menu_btn);
+            btn_l_primary($right_menu_btn, 'py-2 px-3 text-sm md:px-5 md:py-3');
         endif; ?>
 
         <button id="main-menu-toggle" class="p-0 text-white btn nav-btn main-menu-toggle-btn lg:hidden" aria-label="<?php echo __('Toggla menyn', 'lightning'); ?>" title="<?php echo __('Toggla menyn', 'lightning'); ?>">

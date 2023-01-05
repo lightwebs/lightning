@@ -256,7 +256,7 @@ function section_spacing() {
  */
 function btn_l_primary($link, string $class = null, $data = null) {
     if ($link) {
-        echo "<a class='inline-flex px-5 py-3 text-sm font-semibold text-white uppercase bg-purple-500 hover:bg-purple-400 active:bg-purple-300 md:px-6 md:text-base transition-colors duration-300 {$class}' {$data}' href='{$link['url']}'>{$link['title']}</a>";
+        echo "<a class='inline-flex px-5 py-3 text-sm font-semibold text-white uppercase bg-purple-500 hover:bg-purple-400 active:bg-purple-300 md:px-6 md:text-base transition-colors duration-300 {$class}' {$data}' href='{$link['url']}' target='{$link['target']}'>{$link['title']}</a>";
     }
 }
 
