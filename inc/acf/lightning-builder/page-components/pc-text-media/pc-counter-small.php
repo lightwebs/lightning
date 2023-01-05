@@ -5,17 +5,18 @@ if ($has_media) :
 endif;
 ?>
 
-<div class="flex flex-col justify-center h-full">
+<div class="flex flex-col justify-center h-full order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1';
+                                                                    echo $text_placement === '1' ? ' items-end' : ' items-start'; ?>">
     <?php if ($has_media) : ?>
         <div class="xs:w-4/5 -z-10">
             <img src="<?php echo $statistics_img['url']; ?>" alt="<?php echo $media['alt']; ?>" class="aspect-4/3 w-full" />
         </div>
     <?php endif; ?>
 
-    <div class="flex items-center order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1';
-                                                    echo $text_placement === '1' ? ' justify-start' : ' justify-end';
-                                                    echo $has_media ? ' place-end' : ' self-center';
-                                                    ?> text-white w-full">
+    <div class="flex items-center   <?php
+                                    echo $text_placement === '1' ? ' justify-start' : ' justify-end';
+                                    echo $has_media ? ' place-end' : ' self-center';
+                                    ?> text-white w-full">
 
 
         <div class="xs:-translate-y-20 w-full py-12 max-w-container-1/2 bg-[#400093] xs:w-fit">
