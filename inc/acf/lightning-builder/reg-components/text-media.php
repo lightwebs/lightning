@@ -65,7 +65,7 @@ return [
             'choices' => [
                 'img' => 'Bild',
                 'video' => 'Video',
-                'statistics' => 'Statistics',
+                'statistics' => 'Statistik',
             ],
             'return_format' => 'value',
             'allow_null' => 0,
