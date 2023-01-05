@@ -80,7 +80,6 @@ return [
                 ],
             ],
         ],
-
         [
             'key' => 'field_lb_services_settings_tab',
             'label' => 'Inställningar',
@@ -93,7 +92,7 @@ return [
             'name' => 'services',
             'type' => 'clone',
             'clone' => [
-                0 => 'group_clone_component_footer',
+                0 => 'group_clone_component_settings',
             ],
             'display' => 'seamless',
             'prefix_name' => 1
@@ -109,3 +108,4 @@ return [
         ]
     ]
 ];
+

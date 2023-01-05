@@ -19,6 +19,9 @@ module.exports = {
     ],
 
     theme: {
+        maxWidth: {
+            '1/2': '50%',
+        },
         screens: {
             xs: '374px',
             sm: '640px',
