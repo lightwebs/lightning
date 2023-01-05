@@ -21,7 +21,7 @@ return [
             'media_upload' => 0,
         ],
         [
-            'key' => 'field_lb_text_media_media_link',
+            'key' => 'field_lb_text_media_link',
             'label' => 'Länk',
             'name' => 'text_media_link',
             'type' => 'link',
