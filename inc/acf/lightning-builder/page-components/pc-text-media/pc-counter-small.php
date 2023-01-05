@@ -19,7 +19,7 @@ endif;
                                     ?> text-white w-full">
 
 
-        <div class="xs:-translate-y-20 w-full py-12 max-w-container-1/2 bg-[#400093] xs:w-fit">
+        <div class="xs:-translate-y-20 xs:-mb-20 w-full py-12 max-w-container-1/2 bg-[#400093] xs:w-fit">
             <div class="flex container gap-12">
                 <?php if (have_rows('statistics_repeater')) :
                     while (have_rows('statistics_repeater')) : the_row();
