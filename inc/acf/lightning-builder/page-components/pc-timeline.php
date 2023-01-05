@@ -46,7 +46,7 @@ if (get_row_layout() == 'timeline' && !s(get_row_layout())['hide_component']) :
                             </div>
                         <?php endif; ?>
 
-                        <div class="flex flex-col flex-1 order-1 md:order-1 <?php echo $content_classes; ?>">
+                        <div class="flex flex-col flex-1 order-1 <?php echo $content_classes; ?>">
                             <h3><?php echo $title; ?></h3>
                             <p><?php echo $content; ?></p>
                         </div>
