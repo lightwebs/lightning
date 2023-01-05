@@ -8,7 +8,7 @@ if (get_row_layout() == 'logos_banner' && !s(get_row_layout())['hide_component']
 
         <?php component_header($prefix); ?>
         <?php if (have_rows('logos_banner_logotypes')) : ?>
-            <div class="container grid grid-cols-3 md:grid-cols-<?php echo $count ?> items-center gap-11 <?php section_spacing(); ?> ">
+            <div class="container grid <?php echo $count < 3 ? 'grid-cols-' . $count : 'grid-cols-3'; ?> md:grid-cols-<?php echo $count ?> items-center gap-11 <?php section_spacing(); ?> ">
                 <?php
                 while (have_rows('logos_banner_logotypes')) : the_row();
                     $logo = get_sub_field('logotype');
