@@ -1,48 +1,43 @@
 <?php
-if ($media_type === 'img' || $media_type === 'video') :
-    $img = get_sub_field('text_media_img');
-    $video = get_sub_field('text_media_video');
-    $video_controls = get_sub_field('text_media_video_controls');
-    $loop_video = get_sub_field('text_media_video_loop');
-    $text_placement = get_sub_field('text_media_placement');
+$is_img = $media_type === 'img';
+$is_video = $media_type === 'video';
+$is_statistics = $media_type === 'statistics';
+$text_placement = get_sub_field('text_media_placement');
+$text_alignment = get_sub_field('text_media_text_alignment');
+if ($is_img || $is_video || $is_statistics) :
 ?>
 
-    <div class="container <?php echo $full_width ? 'hidden md:block' : ''; ?>">
-        <div class="grid items-center md:grid-cols-2 gap-y-4 md:gap-x-6 lg:gap-x-12">
 
-            <?php if ($text) : ?>
-                <div class="order-2 md:order-<?php echo $text_placement; ?>">
-                    <div class="<?php echo $full_width ? 'py-4 md:py-12 md:py-20' : ''; ?>">
+    <div class="grid items-<?php echo $text_alignment ?> md:grid-cols-2 <?php echo !$full_width ? 'gap-y-6 md:gap-x-6 lg:gap-x-12 container ' : 'gap-y-6 pb-12 md:pb-0'; ?> ">
+        <?php if ($text) : ?>
+            <div class="mr-0 ml-0 order-2 md:order-<?php echo $text_placement;
+                                                    echo $text_placement === '1' ? ' justify-self-end' : ' justify-self-start';
+                                                    echo $full_width ? ' max-w-container-1/2' : '';
+                                                    ?>">
+
+                <div class=" <?php echo $full_width ? 'container' . compensate_padding($text_placement) : '';
+                                ?>">
+                    <div class="<?php
+                                if ($full_width) : echo 'md:py-6';
+                                elseif ($text_alignment === 'start') : echo 'md:pt-6';
+                                elseif ($text_alignment === 'end') : echo 'pb-4 md:pb-6';
+                                endif; ?>
+                                ">
                         <?php echo $text; ?>
-
                         <?php if ($link) :
                             btn_l_primary($link, 'mt-4 lg:mt-6');
                         endif; ?>
                     </div>
                 </div>
-            <?php endif; ?>
+            </div>
+        <?php endif; ?>
 
-            <?php if (!$full_width) : ?>
-                <?php include __DIR__ . '/pc-media.php'; ?>
-            <?php else : ?>
-                <div class="py-0 my-0 order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1'; ?>"></div>
-            <?php endif; ?>
-        </div>
+        <?php if ($is_img || $is_video) :
+            include __DIR__ . '/pc-media.php';
+        elseif ($is_statistics) :
+            include __DIR__ . '/pc-counter.php';
+        endif; ?>
     </div>
 
-    <?php if ($full_width) : ?>
-        <div class="h-full px-0 pointer-events-none md:absolute">
-            <div class="grid items-center h-full md:grid-cols-2 gap-x-0">
-                <?php include __DIR__ . '/pc-media.php'; ?>
-                <div class="p-4 order-2 md:order-<?php echo $text_placement; ?>">
-                    <span class="md:invisible md:opacity-0"><?php echo $text; ?>
-                        <?php if ($link) :
-                            btn_l_primary($link, 'lg:mt-6');
-                        endif; ?>
-                    </span>
-                </div>
-            </div>
-        </div>
-    <?php endif; ?>
 
 <?php endif; ?>

@@ -81,6 +81,11 @@ module.exports = {
                 '4/3': '4 / 3',
                 '3/4': '3 / 4',
             },
+            maxWidth: {
+                container: '1800px',
+                ['container-1/2']: '900px',
+            },
+
             fontSize: {
                 inherit: 'inherit',
                 '2.5xl': '1.75rem',

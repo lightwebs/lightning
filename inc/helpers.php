@@ -78,6 +78,11 @@ function component_id($prefix) {
     }
 }
 
+function compensate_padding(string $text_placement) {
+    $is_left_aligned = $text_placement === '1';
+    echo $is_left_aligned ? ' pr-4 md:pr-6 lg:pr-12 ' : ' pl-4 md:pl-6 lg:pl-12 ';
+}
+
 
 /**
  *
@@ -251,7 +256,7 @@ function section_spacing() {
  */
 function btn_l_primary($link, string $class = null, $data = null) {
     if ($link) {
-        echo "<a class='inline-flex px-5 py-3 text-sm font-semibold text-white uppercase bg-purple-500 hover:bg-purple-400 active:bg-purple-300 md:px-6 md:text-base transition-colors duration-300 {$class}' {$data}' href='{$link['url']}'>{$link['title']}</a>";
+        echo "<a class='inline-flex px-5 py-3 text-sm font-semibold text-white uppercase bg-purple-500 hover:bg-purple-400 active:bg-purple-300 md:px-6 md:text-base transition-colors duration-300 {$class}' {$data}' href='{$link['url']}' target='{$link['target']}'>{$link['title']}</a>";
     }
 }
 
