@@ -62,12 +62,8 @@
     }
 }
 
-.mobile-menu-open {
-    @apply overflow-hidden;
-
-    .site-header {
-        @apply bg-white;
-
+.site-header {
+    &.dark-text {
         .logo-light {
             @apply hidden;
         }
@@ -88,8 +84,69 @@
         }
 
         #burger-icon,
-        #burger-close {
+        #main-menu .main-menu-wrapper > ul li a,
+        #main-menu .main-menu-wrapper > ul li .menu-item-with-arrow .sub-menu-toggle-button .material-icons-round {
             @apply text-black;
+        }
+
+        &.bg-background-black {
+            .logo-light {
+                @apply block;
+            }
+
+            .logo-dark {
+                @apply hidden;
+            }
+
+            .logo-img,
+            .nav-right a,
+            .nav-right button,
+            .sub-menu-toggle-button,
+            .sub-menu a,
+            li a {
+                &:focus-within {
+                    outline: 1px dashed #fff;
+                }
+            }
+
+            #burger-icon,
+            #main-menu .main-menu-wrapper > ul li a,
+            #main-menu .main-menu-wrapper > ul li .menu-item-with-arrow .sub-menu-toggle-button .material-icons-round {
+                @apply text-white;
+            }
+        }
+    }
+}
+
+.mobile-menu-open {
+    @apply overflow-hidden;
+
+    .site-header {
+        @apply bg-white;
+
+        .logo-light {
+            @apply hidden #{!important};
+        }
+
+        .logo-dark {
+            @apply block #{!important};
+        }
+
+        .logo-img,
+        .nav-right a,
+        .nav-right button,
+        .sub-menu-toggle-button,
+        .sub-menu a,
+        li a {
+            &:focus-within {
+                outline: 1px dashed #000;
+            }
+        }
+
+        #burger-icon,
+        #main-menu .main-menu-wrapper > ul li a,
+        #main-menu .main-menu-wrapper > ul li .menu-item-with-arrow .sub-menu-toggle-button .material-icons-round {
+            @apply text-black #{!important};
         }
     }
 }
