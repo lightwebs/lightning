@@ -44,7 +44,7 @@ return [
             'conditional_logic' => [
                 [
                     [
-                        'field' => 'field_lb_text_media_media_link',
+                        'field' => 'field_lb_text_media_link',
                         'operator' => '!=empty',
                     ],
                 ],
