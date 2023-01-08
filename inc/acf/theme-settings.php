@@ -86,6 +86,61 @@ acf_add_local_field_group([
             'media_upload' => 1,
             'delay' => 0,
         ],
+        [
+            'key' => 'field_theme_settings_404_tab',
+            'label' => 'Kontakt-CTA',
+            'type' => 'tab',
+            'placement' => 'top',
+        ],
+        [
+            'key' => 'field_lb_theme_settings_contact_cta_image',
+            'label' => __('Bild', 'lightning'),
+            'name' => 'cta_image',
+            'type' => 'image',
+            'instructions' => __('Bild på person i CTA', 'lightning'),
+            'preview_size' => 'thumbnail',
+            'mime_types' => '',
+            'return_format' => 'array',
+            'required' => 1,
+            'wrapper' => ['width' => 100]
+        ],
+        [
+            'key' => 'field_lb_theme_settings_contact_cta_icon',
+            'label' => __('Bild', 'lightning'),
+            'name' => 'cta_image',
+            'type' => 'image',
+            'instructions' => __('Ikon som visas i CTA', 'lightning'),
+            'preview_size' => 'thumbnail',
+            'mime_types' => '',
+            'return_format' => 'array',
+            'required' => 1,
+            'wrapper' => ['width' => 100]
+        ],
+        [
+            'key' => 'field_lb_theme_settings_contact_cta_icon',
+            'label' => __('Bild', 'lightning'),
+            'name' => 'cta_image',
+            'type' => 'image',
+            'instructions' => __('Ikon som visas i CTA', 'lightning'),
+            'preview_size' => 'thumbnail',
+            'mime_types' => '',
+            'return_format' => 'array',
+            'required' => 1,
+            'wrapper' => ['width' => 100]
+        ],
+        [
+            'key' => 'field_lb_theme_settings_contact_cta_content',
+            'label' => __('Innehåll', 'lightning'),
+            'name' => 'cta_content',
+            'type' => 'wysiwyg',
+            'instructions' => __('INSTRUCTIONS', 'lightning'),
+            'tabs' => 'all',
+            'toolbar' => 'basic',
+            'media_upload' => 0,
+            'delay' => 1,
+            'required' => 1,
+            'wrapper' => ['width' => 100]
+        ],
     ],
     'location' => [
         [
