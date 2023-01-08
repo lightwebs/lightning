@@ -140,6 +140,17 @@ acf_add_local_field_group([
             'delay' => 1,
             'required' => 1,
             'wrapper' => ['width' => 100]
+        [
+            'key' => 'field_lb_theme_settings_floating_cta_status',
+            'label' => __('Status', 'lightning'),
+            'name' => 'cta_status',
+            'type' => 'true_false',
+            'instructions' => __('Aktivera eller inaktivera CTA', 'lightning'),
+            'default_value' => 1,
+            'ui' => 1,
+            'ui_on_text' => 'Aktiverad',
+            'ui_off_text' => 'Inaktiverad',
+            'wrapper' => ['width' => 30]
         ],
     ],
     'location' => [
