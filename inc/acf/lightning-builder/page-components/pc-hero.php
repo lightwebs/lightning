@@ -20,7 +20,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
 
                     <?php echo '</' . s($prefix)['title_tag'] . '>'; ?>
                 <?php endif; ?>
-                <p class="text-[22px] leading-[35px]"><?php echo  s($prefix)['text']; ?></p>
+                <p class="text-[22px] leading-[35px] mb-0"><?php echo  s($prefix)['text']; ?></p>
 
 
                 <div class="flex gap-5 flex-wrap">
