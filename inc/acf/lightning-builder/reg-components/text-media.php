@@ -21,9 +21,9 @@ return [
             'media_upload' => 0,
         ],
         [
-            'key' => 'field_lb_text_media_media_btn',
-            'label' => 'Knapp',
-            'name' => 'text_media_btn',
+            'key' => 'field_lb_text_media_link',
+            'label' => 'Länk',
+            'name' => 'text_media_link',
             'type' => 'link',
             'return_format' => 'array',
             'wrapper' => [
@@ -31,22 +31,29 @@ return [
             ],
         ],
         [
-            'key' => 'field_lb_text_alignment',
-            'label' => __('Textposition', 'lightning'),
-            'name' => 'text_media_text_alignment',
+            'key' => 'field_lb_text_media_link_type',
+            'label' => __('Visa länk som', 'lightning'),
+            'name' => 'text_media_link_type',
             'type' => 'button_group',
-            'instructions' => 'Välj textpositionen för denna komponent.',
-            'layout' => 'vertical',
+            'choices' => [
+                'button' => __('Knapp', 'lightning'),
+                'link' => __('Länk', 'lightning'),
+            ],
+            'default_value' => 'button',
+            'layout' => 'horizontal',
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'field_lb_text_media_link',
+                        'operator' => '!=empty',
+                    ],
+                ],
+            ],
             'wrapper' => [
                 'width' => '40',
             ],
-            'choices' => [
-                'start' => __('Toppen ↑', 'lightning'),
-                'center' => __('Mitten →', 'lightning'),
-                'end' => __('Botten ↓', 'lightning'),
-            ],
-            'default_value' => 'center',
         ],
+
         [
             'key' => 'field_lb_text_media_type',
             'label' => 'Mediatyp',
@@ -58,11 +65,28 @@ return [
             'choices' => [
                 'img' => 'Bild',
                 'video' => 'Video',
-                'statistics' => 'Statistics',
+                'statistics' => 'Statistik',
             ],
             'return_format' => 'value',
             'allow_null' => 0,
             'layout' => 'horizontal',
+        ],
+        [
+            'key' => 'field_lb_text_alignment',
+            'label' => __('Textposition', 'lightning'),
+            'name' => 'text_media_text_alignment',
+            'type' => 'button_group',
+            'instructions' => 'Välj textpositionen för denna komponent.',
+            'layout' => 'vertical',
+            'wrapper' => [
+                'width' => '60',
+            ],
+            'choices' => [
+                'start' => __('Toppen ↑', 'lightning'),
+                'center' => __('Mitten →', 'lightning'),
+                'end' => __('Botten ↓', 'lightning'),
+            ],
+            'default_value' => 'center',
         ],
         [
             'key' => 'field_lb_text_media_placement',
@@ -90,6 +114,7 @@ return [
             'layout' => 'horizontal',
             'return_format' => 'value',
         ],
+
         [
             'key' => 'field_lb_text_media_img',
             'label' => 'Bild',
@@ -198,6 +223,8 @@ return [
             'type' => 'button_group',
             'choices' => [
                 'col' => __('Stapel', 'lightning'),
+                'row' => __('Rad', 'lightning'),
+                'media' => __('Media', 'lightning'),
                 'grid' => __('Två kolumner', 'lightning'),
             ],
             'default_value' => 'grid',
@@ -212,6 +239,25 @@ return [
             ],
             'wrapper' => [
                 'width' => '50',
+            ],
+        ],
+        [
+            'key' => 'field_lb_text_statistics_media_image',
+            'label' => __('Bild', 'lightning'),
+            'name' => 'statistic_media_image',
+            'type' => 'image',
+            'preview_size' => 'thumbnail',
+            'return_format' => 'array',
+            'required' => 1,
+            'wrapper' => ['width' => 100],
+            'conditional_logic' => [
+                [
+                    [
+                        'field' => 'field_lb_text_statistics_display',
+                        'operator' => '==',
+                        'value' => 'media',
+                    ],
+                ],
             ],
         ],
         [
