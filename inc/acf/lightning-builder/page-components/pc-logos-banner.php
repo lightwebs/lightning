@@ -5,7 +5,7 @@ if (get_row_layout() == 'logos_banner' && !s(get_row_layout())['hide_component']
 ?>
 
     <section <?php component_id($prefix); ?> class="pc-columns section  py-6 md:py-12 <?php echo s($prefix)['bg_color']; ?> <?php echo s($prefix)['text_color']; ?>">
-        <div class="container grid <?php echo $count < 3 ? 'grid-cols-' . $count : 'grid-cols-3'; ?> md:grid-cols-<?php echo $count ?> gap-12 ">
+        <div class="container grid <?php echo $count < 3 ? 'grid-cols-' . $count : 'grid-cols-3'; ?> md:grid-cols-<?php echo $count ?> gap-4 sm:gap-12 ">
             <?php if (have_rows('logos_banner_logotypes')) : ?>
                 <?php
                 while (have_rows('logos_banner_logotypes')) : the_row();
