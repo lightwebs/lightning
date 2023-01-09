@@ -26,22 +26,20 @@ if (!function_exists('coworker_card')) {
                 <div class="flex flex-col md:col-span-3 card-body">
 
                     <p class="mb-1 text-base font-bold font-space"><?php echo $title; ?></p>
-
-                    <?php
-                    if (count($terms) > 1) {
-                        echo '<p class="mb-1 text-sm">';
-                        foreach ($terms as $term) {
-                            if ($term === reset($terms)) {
-                                echo $term->name;
-                            } else {
-                                echo ' / ' . $term->name;
-                            }   
-                        }
-                        echo '</p>';
-                    } else {
-                        echo '<p class="mb-1 text-sm">' . $terms[0]->name . '</p>';
-                    }
-                    ?>
+                    
+                    <p class="mb-1 text-sm"> 
+                        <?php if (count($terms) > 1) {
+                            foreach ($terms as $term) {
+                                if ($term === reset($terms)) {
+                                    echo $term->name;
+                                } else {
+                                    echo ' / ' . $term->name;
+                                }   
+                            }
+                        } else {
+                            echo  $terms[0]->name;;
+                        } ?>
+                    </p>
               
                     <div class="contact-links">
                         <?php if($phone) :?>
