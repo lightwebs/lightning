@@ -130,7 +130,7 @@ acf_add_local_field_group([
         ],
         [
             'key' => 'field_theme_settings_contact_link_org_nr',
-            'label' => __('Länka till Allabolag i ny flik?', 'lightning'),
+            'label' => __('Länka till Alla bolag i ny flik?', 'lightning'),
             'name' => 'link_org_nr',
             'type' => 'true_false',
             'message' => '',
