@@ -9,7 +9,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
     <section id="<?php echo s($prefix)['component_id']; ?>" class="pc-hero section  <?php echo s($prefix)['bg_color']; ?>">
 
 
-        <div class="container <?php echo s($prefix)['text_color']; ?>  gap-4 md:gap-24 md:flex">
+        <div class="container <?php echo s($prefix)['text_color']; ?>  gap-4 md:gap-24 lg:flex">
             <div class="w-full flex flex-col gap-4 md:gap-6 py-6 justify-center md:py-8">
                 <h1 class="text-[22px] md:text-[28px] text-purple-500 mb-0"><?php echo $title; ?></h1>
 
