@@ -61,7 +61,7 @@ if (get_row_layout() == 'contact' && !s(get_row_layout())['hide_component']) :
                             <?php echo s($prefix)['title'] ?>
                             <?php echo '</' . s($prefix)['title_tag'] . '>'; ?>
                             <?php if (s($prefix)['text']) : ?>
-                                <div class="w-full">
+                                <div class="w-full text-lg">
                                     <?php echo s($prefix)['text']; ?>
                                 </div>
                             <?php endif; ?>
