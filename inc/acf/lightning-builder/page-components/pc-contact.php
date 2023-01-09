@@ -1,14 +1,15 @@
 <?php
-if ( get_row_layout() == 'contact' && !s(get_row_layout())['hide_component'] ) :
-$prefix = get_row_layout();
-$form_shortcode = get_sub_field('contact_form_shortcode');
-$phone = get_sub_field('phone');
-$email = get_sub_field('email');
-$link_org_nr = get_sub_field('link_org_nr');
-$org_nr = get_sub_field('org_nr');
-$trimmed_org_nr = str_replace('-', '', $org_nr);
-$location = get_sub_field('google_maps');
-$address = $location['address'];
+if (get_row_layout() == 'contact' && !s(get_row_layout())['hide_component']) :
+    $site_logo_dark =
+        $prefix = get_row_layout();
+    $form_shortcode = get_sub_field('contact_form_shortcode');
+    $phone = get_field('phone', 'option');
+    $email = get_field('email', 'option');
+    $link_org_nr = get_field('link_org_nr', 'option');
+    $org_nr = get_field('org_nr', 'option');
+    $trimmed_org_nr = str_replace('-', '', $org_nr);
+    $location = get_field('google_maps', 'option');
+    $address = $location['address'];
 ?>
     <section id="<?php echo s($prefix)['component_id']; ?>" class="pc-contact relative section p-0 lg:container flex flex-col lg:flex-row <?php echo section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?>">   
         

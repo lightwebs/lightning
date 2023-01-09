@@ -3,7 +3,7 @@ return [
     'key' => 'layout_contact',
     'name' => 'contact',
     'label' => 'Kontakt',
-    'display' => 'block', 
+    'display' => 'block',
     'sub_fields' => [
         [
             'key' => 'field_lb_contact_comp_head_tab',
@@ -33,54 +33,6 @@ return [
             'label' => 'Gravity Form shortcode',
             'name' => 'contact_form_shortcode',
             'type' => 'text',
-        ],
-        [
-            'key' => 'field_lb_contact_address',
-            'label' => __('Adress', 'lightning'),
-            'name' => 'google_maps',
-            'type' => 'google_map',
-            'center_lat' => '35.681236',
-            'center_lng' => '139.767125',
-            'zoom' => '10',
-            'height' => '400',
-            'required' => 0, 
-            'wrapper' => ['width' => 100]
-        ],
-        [
-            'key' => 'field_lb_contact_phone',
-            'label' => __('Telefonnummer', 'lightning'),
-            'name' => 'phone',
-            'type' => 'text',
-            'required' => 0, 
-            'wrapper' => ['width' => 50] 
-        ],
-        [
-            'key' => 'field_lb_contact_email',
-            'label' => __('Email', 'lightning'),
-            'name' => 'email',
-            'type' => 'email',
-            'required' => 0, 
-            'wrapper' => ['width' => 50] 
-        ],
-        [
-            'key' => 'field_lb_contact_org_nr',
-            'label' => __('Organisationsnummer', 'lightning'),
-            'name' => 'org_nr',
-            'type' => 'text',
-            'required' => 0, 
-            'wrapper' => ['width' => 50] 
-        ],
-        [
-            'key' => 'field_lb_contact_link_org_nr',
-            'label' => __('Länka till Allabolag i ny flik?', 'lightning'),
-            'name' => 'link_org_nr',
-            'type' => 'true_false',
-            'message' => '',
-            'default_value' => 0,
-            'ui' => 1, 
-            'ui_on_text' => 'Ja',
-            'ui_off_text' => 'Nej',
-            'wrapper' => ['width' => 50] 
         ],
         [
             'key' => 'field_lb_contact_settings_tab',
