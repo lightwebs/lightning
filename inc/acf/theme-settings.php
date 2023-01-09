@@ -86,6 +86,60 @@ acf_add_local_field_group([
             'media_upload' => 1,
             'delay' => 0,
         ],
+        [
+            'key' => 'field_theme_settings_company_info_tab',
+            'label' => 'Företagsinformation',
+            'type' => 'tab',
+            'placement' => 'top',
+        ],
+        [
+            'key' => 'field_theme_settings_contact_address',
+            'label' => __('Adress', 'lightning'),
+            'name' => 'google_maps',
+            'type' => 'google_map',
+            'center_lat' => '35.681236',
+            'center_lng' => '139.767125',
+            'zoom' => '10',
+            'height' => '400',
+            'required' => 0,
+            'wrapper' => ['width' => 100]
+        ],
+        [
+            'key' => 'field_theme_settings_contact_phone',
+            'label' => __('Telefonnummer', 'lightning'),
+            'name' => 'phone',
+            'type' => 'text',
+            'required' => 0,
+            'wrapper' => ['width' => 50]
+        ],
+        [
+            'key' => 'field_theme_settings_contact_email',
+            'label' => __('Email', 'lightning'),
+            'name' => 'email',
+            'type' => 'email',
+            'required' => 0,
+            'wrapper' => ['width' => 50]
+        ],
+        [
+            'key' => 'field_theme_settings_contact_org_nr',
+            'label' => __('Organisationsnummer', 'lightning'),
+            'name' => 'org_nr',
+            'type' => 'text',
+            'required' => 0,
+            'wrapper' => ['width' => 50]
+        ],
+        [
+            'key' => 'field_theme_settings_contact_link_org_nr',
+            'label' => __('Länka till Allabolag i ny flik?', 'lightning'),
+            'name' => 'link_org_nr',
+            'type' => 'true_false',
+            'message' => '',
+            'default_value' => 0,
+            'ui' => 1,
+            'ui_on_text' => 'Ja',
+            'ui_off_text' => 'Nej',
+            'wrapper' => ['width' => 50]
+        ],
     ],
     'location' => [
         [

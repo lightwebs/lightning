@@ -54,3 +54,9 @@
 .gform_confirmation_message {
     @apply text-xl #{!important};
 }
+
+.pc-contact{
+    .gform_title{
+        display: none;
+    }
+}
