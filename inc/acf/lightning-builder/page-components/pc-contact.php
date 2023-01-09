@@ -48,7 +48,7 @@ if (get_row_layout() == 'contact' && !s(get_row_layout())['hide_component']) :
             </div>
 
         <div class="relative px-0 bg-purple-800 lg:ml-auto xl:p-16 lg:p-8 lg:w-10/12">
-            <div class="grid grid-cols-1 sm:grid-cols-2 xl:gap-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:gap-8">
                 <?php if($location) : ?>     
                     <div class="acf-map lg:max-w-[648px] h-[448px] sm:h-auto px-4 md:p-0 order-last sm:order-first	" data-zoom="16">
                         <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
