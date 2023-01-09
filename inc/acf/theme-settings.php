@@ -87,6 +87,47 @@ acf_add_local_field_group([
             'delay' => 0,
         ],
         [
+            'key' => 'field_theme_settings_floating_CTA_tab',
+            'label' => 'Flytande CTA',
+            'type' => 'tab',
+            'placement' => 'top',
+        ],
+        [
+            'key' => 'field_lb_theme_settings_floating_cta_image',
+            'label' => __('Bild', 'lightning'),
+            'name' => 'cta_image',
+            'type' => 'image',
+            'instructions' => __('Bild på kontaktpersonen i CTA', 'lightning'),
+            'preview_size' => 'thumbnail',
+            'return_format' => 'array',
+            'required' => 1,
+            'wrapper' => ['width' => 20]
+        ],
+        [
+            'key' => 'field_lb_theme_settings_floating_cta_content',
+            'label' => __('Innehåll', 'lightning'),
+            'name' => 'cta_content',
+            'type' => 'wysiwyg',
+            'tabs' => 'all',
+            'toolbar' => 'basic',
+            'media_upload' => 0,
+            'delay' => 1,
+            'required' => 1,
+            'wrapper' => ['width' => 60]
+        ],
+        [
+            'key' => 'field_lb_theme_settings_floating_cta_status',
+            'label' => __('Status', 'lightning'),
+            'name' => 'cta_status',
+            'type' => 'true_false',
+            'instructions' => __('Aktivera CTA?', 'lightning'),
+            'default_value' => 1,
+            'ui' => 1,
+            'ui_on_text' => 'Ja',
+            'ui_off_text' => 'Nej',
+            'wrapper' => ['width' => 20]
+        ],
+        [
             'key' => 'field_theme_settings_company_info_tab',
             'label' => 'Företagsinformation',
             'type' => 'tab',
