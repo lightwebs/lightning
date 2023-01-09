@@ -10,12 +10,12 @@ elseif ($is_video) :
 endif;
 ?>
 
-<div class="w-full <?php
-                    echo $text_placement === '1' ? 'justify-self-start' : 'justify-self-end';
-                    $full_width ? 'w-full !px-0 h-full' : '' ?> order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1'; ?>">
+<div class="flex w-full <?php
+                        echo $text_placement === '1' ? 'justify-self-start' : 'justify-self-end';
+                        echo $full_width ? 'w-full !px-0 h-full' : '' ?> order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1'; ?>">
     <?php if ($media_type === 'img') : ?>
         <?php if ($img) :
-            image($img, 'full', $full_width ? 'w-full object-cover aspect-4/3 h-full' : 'object-cover aspect-4/3 w-full');
+            image($img, 'full', $full_width ? 'w-full h-full object-cover' : 'object-cover aspect-4/3 w-full');
         endif; ?>
     <?php endif; ?>
 
@@ -25,12 +25,10 @@ endif;
             $url = wp_get_attachment_url($video);
             $title = get_the_title($video);
         ?>
-            <div class="<?php echo $full_width ? 'h-full' : ''; ?>">
-                <video class="object-cover <?php echo $full_width ? 'aspect-4/3 h-full' : 'aspect-video'; ?>" <?php echo $video_controls ? ' controls' : ''; ?><?php echo $loop_video ? ' loop autoplay playsinline muted' : ''; ?>>
-                    <source src="<?php echo $url; ?>" type="video/mp4">
-                    <source src="<?php echo $url; ?>" type="video/mp4">
-                </video>
-            </div>
+            <video class="object-cover <?php echo $full_width ? 'h-full' : 'aspect-video'; ?>" <?php echo $video_controls ? ' controls' : ''; ?><?php echo $loop_video ? ' loop autoplay playsinline muted' : ''; ?>>
+                <source src="<?php echo $url; ?>" type="video/mp4">
+                <source src="<?php echo $url; ?>" type="video/mp4">
+            </video>
         <?php endif; ?>
 
     <?php endif; ?>

@@ -17,28 +17,28 @@ $show_as_grid = get_sub_field('text_media_statistics_display') === 'grid';
 
                     if ($is_simple) {
                         $unit = get_sub_field('statistic_unit');
-                        $n = get_sub_field('statistic_value');
+                        $number = get_sub_field('statistic_value');
                     }
 
                     if ($is_division) {
-                        $n = get_sub_field('statistic_numerator');
-                        $d = get_sub_field('statistic_denominator');
+                        $number = get_sub_field('statistic_numerator');
+                        $denominator = get_sub_field('statistic_denominator');
                     }
 
             ?>
 
                     <div class="flex flex-col gap-4">
-                        <p class="text-3xl sm:text-4xl xl:!text-5xl font-bold font-space">
+                        <p class="text-3xl sm:text-4xl xl:!text-5xl font-bold font-space mb-0">
                             <span class="<?php echo $should_animate ? 'counter' : ''; ?>">
-                                <?php echo $n; ?>
+                                <?php echo $number; ?>
                             </span>
                             <?php if ($is_simple) :
                                 echo ' ' . $unit;
                             elseif ($is_division) :
-                                echo '/ ' . $d;
+                                echo '/ ' . $denominator;
                             endif; ?>
                         </p>
-                        <h3 class="text-xl"><?php echo $title; ?></h3>
+                        <h3 class="text-xl font-medium mb-0"><?php echo $title; ?></h3>
                     </div>
 
             <?php
