@@ -20,7 +20,7 @@ if (get_row_layout() == 'contact' && !s(get_row_layout())['hide_component']) :
                     if ($string !== false) {
                         $newstring = substr_replace($address,',<br>',$string,strlen(','));
                     }
-                    $swe = ', Sweden';
+                    $swe = ', Sverige';
                     $trimmedAdd = str_replace($swe, '', $newstring);?> 
                     <div class="mb-4 lg:mb-6">
                         <p class="mb-2 text-xl font-bold"><?php echo __('Adress', 'lightning') ?></p>
@@ -42,13 +42,13 @@ if (get_row_layout() == 'contact' && !s(get_row_layout())['hide_component']) :
                 <?php if($org_nr) : ?>
                     <div class="mb-4 lg:mb-6">
                         <p class="mb-2 text-xl font-bold"><?php echo __('Organisationsnummer', 'lightning') ?></p>
-                        <a class="text-lg" class="<?php echo $link_org_nr ? '' : ' pointer-events-none' ?>" href="https://www.allabolag.se/<?php echo $trimmed_org_nr; ?>" target="_blank"><?php echo $org_nr; ?></a>
+                        <a class="text-lg <?php echo $link_org_nr ? '' : ' pointer-events-none' ?>" href="https://www.allabolag.se/<?php echo $trimmed_org_nr; ?>" target="_blank"><?php echo $org_nr; ?></a>
                     </div>
                 <?php endif; ?>
             </div>
 
         <div class="relative px-0 bg-purple-800 lg:ml-auto xl:p-16 lg:p-8 lg:w-10/12">
-            <div class="grid grid-cols-1 sm:grid-cols-2 xl:gap-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:gap-8">
                 <?php if($location) : ?>     
                     <div class="acf-map lg:max-w-[648px] h-[448px] sm:h-auto px-4 md:p-0 order-last sm:order-first	" data-zoom="16">
                         <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
@@ -61,7 +61,7 @@ if (get_row_layout() == 'contact' && !s(get_row_layout())['hide_component']) :
                             <?php echo s($prefix)['title'] ?>
                             <?php echo '</' . s($prefix)['title_tag'] . '>'; ?>
                             <?php if (s($prefix)['text']) : ?>
-                                <div class="w-full">
+                                <div class="w-full text-lg">
                                     <?php echo s($prefix)['text']; ?>
                                 </div>
                             <?php endif; ?>
