@@ -42,7 +42,7 @@ if (get_row_layout() == 'contact' && !s(get_row_layout())['hide_component']) :
                 <?php if($org_nr) : ?>
                     <div class="mb-4 lg:mb-6">
                         <p class="mb-2 text-xl font-bold"><?php echo __('Organisationsnummer', 'lightning') ?></p>
-                        <a class="text-lg" class="<?php echo $link_org_nr ? '' : ' pointer-events-none' ?>" href="https://www.allabolag.se/<?php echo $trimmed_org_nr; ?>" target="_blank"><?php echo $org_nr; ?></a>
+                        <a class="text-lg <?php echo $link_org_nr ? '' : ' pointer-events-none' ?>" href="https://www.allabolag.se/<?php echo $trimmed_org_nr; ?>" target="_blank"><?php echo $org_nr; ?></a>
                     </div>
                 <?php endif; ?>
             </div>
