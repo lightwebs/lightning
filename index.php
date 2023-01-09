@@ -24,26 +24,23 @@ $floating_cta = glob(acf_path() . 'lightning-builder/page-components/pc-floating
             <?php
             if (have_posts()) :
                 $found_posts = $wp_query->found_posts;
-            ?>
-                <?php
                 if (is_home() && !is_front_page()) :
-                ?>
+            ?>
 
                     <h1 class="sr-only page-title dark:text-white">
                         <?php single_post_title(); ?>
                     </h1>
 
-                <?php
+            <?php
                 endif;
 
                 /* Start the Loop */
                 while (have_posts()) :
                     the_post();
                     get_template_part('template-parts/content', get_post_type());
-                endwhile; ?>
-            <?php else :
-                get_template_part('template-parts/content', 'none'); ?>
-            <?php
+                endwhile;
+            else :
+                get_template_part('template-parts/content', 'none');
             endif;
             ?>
 
@@ -54,8 +51,8 @@ $floating_cta = glob(acf_path() . 'lightning-builder/page-components/pc-floating
                 <?php echo btn_primary('Ladda fler', 'load-more mx-auto block', 'data-post-type="' . get_post_type() . '"'); ?>
             </div>
         <?php
-        endif; ?>
-        <?php include $floating_cta ?>
+        endif;
+        include $floating_cta ?>
     </div>
 </main><!-- #main -->
 
