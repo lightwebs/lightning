@@ -20,7 +20,7 @@ if (get_row_layout() == 'contact' && !s(get_row_layout())['hide_component']) :
                     if ($string !== false) {
                         $newstring = substr_replace($address,',<br>',$string,strlen(','));
                     }
-                    $swe = ', Sweden';
+                    $swe = ', Sverige';
                     $trimmedAdd = str_replace($swe, '', $newstring);?> 
                     <div class="mb-4 lg:mb-6">
                         <p class="mb-2 text-xl font-bold"><?php echo __('Adress', 'lightning') ?></p>
