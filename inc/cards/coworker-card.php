@@ -27,10 +27,20 @@ if (!function_exists('coworker_card')) {
 
                     <p class="mb-1 text-base font-bold font-space"><?php echo $title; ?></p>
                     
-                    <?php foreach ( $terms as $term ) : ?>
-                            <p class="text-sm"> <?php echo $term->name ?> </p>
-                    <?php endforeach; ?>
-                                            
+                    <p class="mb-1 text-sm"> 
+                        <?php if (count($terms) > 1) {
+                            foreach ($terms as $term) {
+                                if ($term === reset($terms)) {
+                                    echo $term->name;
+                                } else {
+                                    echo ' / ' . $term->name;
+                                }   
+                            }
+                        } else {
+                            echo  $terms[0]->name;;
+                        } ?>
+                    </p>
+              
                     <div class="contact-links">
                         <?php if($phone) :?>
                             <a class="mb-1" href="tel:<?php echo $phone; ?>">
