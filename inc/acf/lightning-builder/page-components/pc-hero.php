@@ -31,7 +31,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
                     ?>
                             <div class="flex gap-2 md:gap-4 items-center">
                                 <img src="<?php echo get_stylesheet_directory_uri() . '/src/assets/icons/icon-triangle-filled.svg' ?>" alt="Decoration icon" class="h-[14px] w-[14px]" aria-hidden="true">
-                                <p class="font-medium text-[18px] md:text-[20px]"> <?php echo $title ?> </p>
+                                <p class="font-medium text-[18px] md:text-[20px] mb-0"> <?php echo $title ?> </p>
                             </div>
                     <?php
                         endwhile;
