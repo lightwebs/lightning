@@ -40,7 +40,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
 
                 </div>
 
-                <div class="flex flex-col md:flex-row gap-4 md:items-stretch items-start flex-wrap">
+                <div class="flex gap-4 md:items-stretch items-start flex-wrap">
 
                     <?php
                     if (have_rows('buttons_repeater')) :
