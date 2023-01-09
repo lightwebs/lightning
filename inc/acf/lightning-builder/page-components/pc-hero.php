@@ -9,8 +9,8 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
     <section id="<?php echo s($prefix)['component_id']; ?>" class="pc-hero section  <?php echo s($prefix)['bg_color']; ?>">
 
 
-        <div class="container <?php echo s($prefix)['text_color']; ?>  gap-4 md:gap-24 md:flex">
-            <div class="w-full flex flex-col gap-4 md:gap-6 py-6 justify-center <?php section_spacing() ?>">
+        <div class="container <?php echo s($prefix)['text_color']; ?>  gap-4 md:gap-24 lg:flex">
+            <div class="w-full flex flex-col gap-4 md:gap-6 py-6 justify-center md:py-8">
                 <h1 class="text-[22px] md:text-[28px] text-purple-500 mb-0"><?php echo $title; ?></h1>
 
                 <?php if (s($prefix)['title']) : ?>
@@ -20,7 +20,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
 
                     <?php echo '</' . s($prefix)['title_tag'] . '>'; ?>
                 <?php endif; ?>
-                <p class="text-[22px] leading-[35px]"><?php echo  s($prefix)['text']; ?></p>
+                <p class="text-[22px] leading-[35px] mb-0"><?php echo  s($prefix)['text']; ?></p>
 
 
                 <div class="flex gap-5 flex-wrap">
@@ -31,7 +31,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
                     ?>
                             <div class="flex gap-2 md:gap-4 items-center">
                                 <img src="<?php echo get_stylesheet_directory_uri() . '/src/assets/icons/icon-triangle-filled.svg' ?>" alt="Decoration icon" class="h-[14px] w-[14px]" aria-hidden="true">
-                                <p class="font-medium text-[18px] md:text-[20px]"> <?php echo $title ?> </p>
+                                <p class="font-medium text-[18px] md:text-[20px] mb-0"> <?php echo $title ?> </p>
                             </div>
                     <?php
                         endwhile;
@@ -40,7 +40,7 @@ if (get_row_layout() == 'hero' && !s(get_row_layout())['hide_component']) :
 
                 </div>
 
-                <div class="flex flex-col md:flex-row gap-4 md:items-stretch items-start flex-wrap">
+                <div class="flex gap-4 md:items-stretch items-start flex-wrap">
 
                     <?php
                     if (have_rows('buttons_repeater')) :
