@@ -113,19 +113,19 @@ acf_add_local_field_group([
             'media_upload' => 0,
             'delay' => 1,
             'required' => 1,
-            'wrapper' => ['width' => 50]
+            'wrapper' => ['width' => 60]
         ],
         [
             'key' => 'field_lb_theme_settings_floating_cta_status',
             'label' => __('Status', 'lightning'),
             'name' => 'cta_status',
             'type' => 'true_false',
-            'instructions' => __('Aktivera eller inaktivera CTA', 'lightning'),
+            'instructions' => __('Aktivera CTA?', 'lightning'),
             'default_value' => 1,
             'ui' => 1,
-            'ui_on_text' => 'Aktiverad',
-            'ui_off_text' => 'Inaktiverad',
-            'wrapper' => ['width' => 30]
+            'ui_on_text' => 'Ja',
+            'ui_off_text' => 'Nej',
+            'wrapper' => ['width' => 20]
         ],
         [
             'key' => 'field_theme_settings_company_info_tab',
