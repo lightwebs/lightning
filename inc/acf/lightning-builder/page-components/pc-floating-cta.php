@@ -9,7 +9,7 @@ $status = get_field('cta_status', 'option');
             waving_hand
         </span>
     </div>
-    <div id="floating-cta-content" class="w-[260px] hidden p-4 bg-white !text-sm text-black !mb-0 group-hover:block">
+    <div id="floating-cta-content" class="w-[260px] hidden bg-white !text-sm text-black !mb-0 group-hover:block">
         <?php echo $content ?>
     </div>
 </div>
