@@ -8,7 +8,7 @@ endif;
 <div class="flex flex-col justify-center h-full order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1';
                                                                     echo $text_placement === '1' ? ' items-end' : ' items-start'; ?>">
     <?php if ($has_media) : ?>
-        <div class="xs:w-4/5 -z-10">
+        <div class="sm:w-4/5 -z-10">
             <img src="<?php echo $statistics_img['url']; ?>" alt="<?php echo $media['alt']; ?>" class="aspect-4/3 w-full" />
         </div>
     <?php endif; ?>
@@ -19,7 +19,7 @@ endif;
                                     ?> text-white w-full">
 
 
-        <div class="<?php echo $has_media ? 'xs:-translate-y-20 xs:-mb-20 xs:w-fit' : '';
+        <div class="<?php echo $has_media ? 'sm:-translate-y-20 sm:-mb-20 sm:w-fit' : '';
                     ?>  w-full py-12 max-w-container-1/2 bg-[#400093] ">
             <div class="flex container gap-12">
                 <?php if (have_rows('statistics_repeater')) :
