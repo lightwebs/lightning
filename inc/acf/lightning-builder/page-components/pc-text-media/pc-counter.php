@@ -38,7 +38,7 @@ $show_as_grid = get_sub_field('text_media_statistics_display') === 'grid';
                                 echo '/ ' . $denominator;
                             endif; ?>
                         </p>
-                        <h3 class="text-xl font-medium mb-0"><?php echo $title; ?></h3>
+                        <h3 class="text-xl font-medium mb-0 font-sans"><?php echo $title; ?></h3>
                     </div>
 
             <?php

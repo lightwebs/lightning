@@ -53,7 +53,7 @@ endif;
                                     echo '/ ' . $d;
                                 endif; ?>
                             </p>
-                            <h3 class="text-xl font-medium mb-0"><?php echo $title; ?></h3>
+                            <h3 class="text-xl font-medium mb-0 font-sans"><?php echo $title; ?></h3>
                         </div>
 
                 <?php
