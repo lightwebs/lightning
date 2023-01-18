@@ -21,7 +21,7 @@ endif;
 
         <div class="<?php echo $has_media ? 'sm:-translate-y-20 sm:-mb-20 sm:w-fit' : '';
                     ?>  w-full py-12 max-w-container-1/2 bg-[#400093] ">
-            <div class="flex container gap-12">
+            <div class="flex container gap-12 flex-wrap md:flex-nowrap ">
                 <?php if (have_rows('statistics_repeater')) :
                     while (have_rows('statistics_repeater')) : the_row();
                         $title = get_sub_field('statistic_title');
