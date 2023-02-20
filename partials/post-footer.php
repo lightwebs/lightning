@@ -22,7 +22,7 @@ $continue_reading = get_field('continue_reading');
 
 <h5 class="mt-6 text-sm text-center lg:hidden dark:text-white "><?php echo __('Dela', 'lightning'); ?></h5>
 <div class="sticky text-white bottom-6 md:bottom-9">
-    <?php echo social_share(get_the_ID(), 'row', 'justify-center py-2 bg-purple-900/80 rounded-full'); ?>
+    <?php echo social_share(get_the_ID(), 'row', 'justify-center py-2 rounded-full'); ?>
 </div>
 
 <footer class="my-10">

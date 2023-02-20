@@ -24,7 +24,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('pt-10 sm:pt-12 md:pt-18 lg:pt-22'); ?>>
 	<?php wp_body_open();
 	?>
 

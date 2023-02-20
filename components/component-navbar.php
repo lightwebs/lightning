@@ -31,7 +31,7 @@ $menu_login_btn = get_field('menu_login_btn', 'option');
             array(
                 'theme_location' => 'menu-1',
                 'container_id'   => 'main-menu',
-                'container_class' => 'absolute min-w-full sm:min-w-[320px] lg:relative right-0 top-full bg-slate-100 dark:bg-slate-700 p-4 hidden lg:block',
+                'container_class' => 'absolute min-w-full bg-white sm:min-w-[320px] lg:relative right-0 top-full bg-slate-100 dark:bg-slate-700 p-4 hidden lg:block',
                 'menu_id'        => 'primary-menu',
                 'menu_class'     => 'flex flex-col w-full lg:flex-row lg:items-center lg:ml-8 md:gap-x-8',
                 'walker'         => $walker,
