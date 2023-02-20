@@ -9,13 +9,9 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
     $card_bg_colors = get_sub_field('card_bg_colors');
     $content_type = get_sub_field('content_type');
     $columns = get_sub_field('columns');
-    $masonry = get_sub_field('masonry');
     $post_number = 0;
 
     $card_classes = $card_text_colors;
-    if ($masonry && $post_type == 'post') {
-        $columns = $columns * 2;
-    }
 
     if ($post_type == 'post') {
         $card_classes .= ' ' . $card_bg_colors;

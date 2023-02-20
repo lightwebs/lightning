@@ -8,7 +8,6 @@ function load_more_callback() {
     error_log(print_r($_POST, true));
     $card_text_colors = $_POST['card_text_color'];
     $card_bg_colors = $_POST['card_bg_color'];
-    $masonry = $_POST['masonry'];
     $paged = $_POST['paged'];
     $cat_id = $_POST['cat_id'];
     $filter = [$_POST['filter']];
@@ -68,10 +67,7 @@ function load_more_callback() {
                 small_card(get_the_ID());
             }
             if ($post_type == 'post') {
-                post_card(get_the_ID(), $post_card_class, 20, false, $masonry);
-            }
-            if ($post_type == 'case') {
-                case_card(get_the_ID(), $card_text_colors, 10);
+                post_card(get_the_ID(), $post_card_class, 20, false);
             }
             if ($post_type == 'coworker') {
                 coworker_card(get_the_ID(), $card_text_colors, 10);

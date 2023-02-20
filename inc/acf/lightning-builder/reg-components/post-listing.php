@@ -228,27 +228,6 @@ return [
             'placement' => 'top',
         ],
         [
-            'key' => 'field_lb_post_listing_masonry',
-            'label' => __('Masonry grid?', 'lightning'),
-            'name' => 'masonry',
-            'type' => 'true_false',
-            'message' => 'Visa i masonry-grid',
-            'default_value' => 0,
-            'ui' => 1,
-            'ui_on_text' => 'Ja',
-            'ui_off_text' => 'Nej',
-            'wrapper' => ['width' => 50],
-            'conditional_logic' => [
-                [
-                    [
-                        'field' => 'field_lb__post_listing_post_type',
-                        'operator' => '==',
-                        'value' => 'post',
-                    ],
-                ],
-            ],
-        ],
-        [
             'key' => 'field_lb_post_listing_show_cats',
             'label' => __('Visa kategoritagg?', 'lightning'),
             'name' => 'show_cats',

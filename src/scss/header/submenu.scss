@@ -19,7 +19,7 @@
     }
 
     li.menu-item-has-children {
-        @apply flex lg:inline-flex w-full lg:w-auto flex-wrap lg:flex-nowrap items-center mb-3 lg:mb-0 relative;
+        @apply flex lg:inline-flex w-full lg:w-auto flex-wrap lg:flex-nowrap items-center mb-3 lg:mb-0;
         // > a.menu-item-link .sub-menu-toggle-button{
         //     @apply after:content-['\e5cf'] after:ml-auto after:font-['Material_Icons_Round'] after:duration-300;
         // }
