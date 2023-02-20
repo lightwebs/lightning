@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-        './**/*.ts',
         './src/js/**/*.js',
         './inc/acf/lightning-builder/page-components/**/*.php',
         './inc/acf/article-builder/article-components/**/*.php',
@@ -70,8 +69,8 @@ module.exports = {
                 black: '#000C24',
             },
             text: {
-                white: '#ffffff',
                 black: '#000000',
+                white: '#ffffff',
             },
         },
 

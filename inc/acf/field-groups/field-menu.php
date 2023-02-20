@@ -5,13 +5,18 @@ acf_add_local_field_group([
     'title' => 'Meny',
     'fields' => [
         [
-            'key' => 'field_lb_menu_description',
-            'label' => 'Undertext',
-            'name' => 'description',
-            'aria-label' => '',
-            'type' => 'text',
-            'instructions' => 'Bör endast användas på undermenyer',
-        ]
+            'key' => 'field_lb_menu_icons',
+            'label' => 'Ikon',
+            'name' => 'icon',
+            'type' => 'select',
+            'multiple' => 0,
+            'allow_null' => 0,
+            'choices' => $icons,
+            'default_value' => false,
+            'ui' => 1,
+            'ajax' => 1,
+            'return_format' => 'label',
+        ],
     ],
     'location' => [
         [

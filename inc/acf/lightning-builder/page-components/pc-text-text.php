@@ -15,7 +15,7 @@ if (get_row_layout() == 'text_text' && !s(get_row_layout())['hide_component']) :
             <div class="container">
                 <div class="<?php echo $show_text_2 ? 'grid md:grid-cols-2 gap-y-4 md:gap-6 lg:gap-12' : ''; ?>">
 
-                    <div class="<?php echo s($prefix)['text_color']; ?> <?php echo $text_width && !$show_text_2 ? $text_width : ''; ?>">
+                    <div class="<?php echo s($prefix)['text_color']; ?> <?php echo $text_width && $show_text_2 !== true ? $text_width : ''; ?>">
                         <?php echo $text_left; ?>
                     </div>
 

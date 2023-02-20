@@ -77,7 +77,7 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
                 if ($query->have_posts()) :
                     while ($query->have_posts()) : $query->the_post();
                         if ($post_type == 'post') {
-                            post_card(get_the_ID(), $card_classes, 20, $post_number, $masonry);
+                            post_card(get_the_ID(), $card_classes, 20, $post_number);
                         }
 
                         if ($post_type == 'testimonial') {
@@ -97,7 +97,7 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
             <?php
             if ($found_posts > 12 && $qty < 1) :  ?>
                 <div class="flex justify-center my-8">
-                    <?php echo btn_primary('Ladda fler', 'pc-load-more mx-auto block', 'data-post-type="' . $post_type . '" data-qty="' . $qty . '"' . '" data-masonry="' . $masonry . '"'); ?>
+                    <?php echo btn_primary('Ladda fler', 'pc-load-more mx-auto block', 'data-post-type="' . $post_type . '" data-qty="' . $qty . '"' . '"'); ?>
                 </div>
             <?php
             endif; ?>

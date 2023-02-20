@@ -6,18 +6,19 @@ if (get_row_layout() == 'faq' && !s(get_row_layout())['hide_component']) :
     $faqs = new WP_Query([
         'post_type' => 'faq',
         'posts_per_page' => 500,
-        'orderby' => 'title',
         'post__in' => $faq_picked,
+        'orderby' => 'post__in',
     ]);
 ?>
 
     <section <?php component_id($prefix); ?> class="pc-faq section <?php echo section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?>">
+        <div class="container">
+            <div class="grid gap-x-16 md:grid-cols-2">
+                <div>
+                    <?php component_header($prefix, true); ?>
+                </div>
 
-
-        <div class="grid md:grid-cols-2">
-            <?php component_header($prefix); ?>
-            <div class="container">
-                <div class="">
+                <div>
                     <?php
                     if ($faqs->have_posts()) : ?>
                         <?php while ($faqs->have_posts()) : $faqs->the_post(); ?>

@@ -18,7 +18,7 @@ $text_colors = [];
 if (is_admin()) {
 
 $bg_colors = ['bg-[transparent]' => __('transparent', 'lightning') , 'bg-[#ffffff]' => __('white', 'lightning') , 'bg-[#000C24]' => __('black', 'lightning')];
-$text_colors = ['text-[#ffffff]' => __('white', 'lightning') , 'text-[#000000]' => __('black', 'lightning')];
+$text_colors = ['text-[#000000]' => __('black', 'lightning') , 'text-[#ffffff]' => __('white', 'lightning')];
 
     add_action('admin_head', function () use ($bg_colors, $text_colors) {
         $colors_css = '';
