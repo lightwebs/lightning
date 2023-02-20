@@ -2,38 +2,17 @@
     .container {
         @apply mx-auto px-4 md:px-8 xl:px-12 xxl:px-16 w-full max-w-container;
     }
-}
 
-.screen-reader-text {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-}
-
-img {
-    height: auto;
-    max-width: 100%;
-}
-
-pre {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    background-color: #fff;
-
-    &:nth-child(even) {
-        background-color: #ddd;
+    .screen-reader-text {
+        @apply absolute top-[-9999px] left-[-9999px] w-1 h-1 overflow-hidden;
     }
-}
 
-.hide {
-    display: none !important;
-}
+    img {
+        @apply h-auto;
+        max-width: 100%;
+    }
 
-.ratio-4x3-md-height {
-    @media all and (min-width: #{$md}) {
-        min-height: calc(50vw * 0.75);
+    pre {
+        @apply whitespace-pre-wrap break-all bg-white even:bg-gray-50;
     }
 }

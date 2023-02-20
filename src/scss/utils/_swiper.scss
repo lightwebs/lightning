@@ -1,23 +1,5 @@
-[class^='swiper-button'] {
-    color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: rc(44);
-    height: rc(44);
-    @include radius-lg;
-    background-color: transparent;
-    border: 1px solid lighten($color: grey, $amount: 2);
-    cursor: pointer;
-    transition: background-color 0.5s, border-color 0.1s;
-
-    &:hover {
-        background-color: lighten($color: grey, $amount: 4);
-        border-color: lighten($color: grey, $amount: 10);
-    }
-
-    &:after,
-    :before {
-        font-size: rc(22);
+@layer components {
+    [class^='swiper-button'] {
+        @apply flex items-center justify-center w-10 h-10 text-2xl text-gray-500 bg-transparent rounded-full shadow-lg cursor-pointer transition-colors duration-300 hover:bg-gray-50 hover:border-gray-100 after:text-2xl before:text-2xl;
     }
 }

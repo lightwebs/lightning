@@ -27,8 +27,6 @@ function s($prefix, bool $sub = true) {
         $link = get_sub_field($prefix . '_component_link');
         $bg_color = get_sub_field($prefix . '_bg_colors');
         $hide_component = get_sub_field($prefix . '_hide_component');
-        $gradient = get_sub_field($prefix . '_gradient');
-        $gradient_placement = get_sub_field($prefix . '_gradient_placement');
         $text_color = get_sub_field($prefix . '_text_colors');
         $component_id = get_sub_field('component_id');
         $has_color_bg = $bg_color !== 'bg-[transparent]';
@@ -41,8 +39,6 @@ function s($prefix, bool $sub = true) {
         $link = get_field($prefix . '_component_link');
         $bg_color = get_field($prefix . '_bg_colors');
         $hide_component = get_field($prefix . '_hide_component');
-        $gradient = get_field($prefix . '_gradient');
-        $gradient_placement = get_field($prefix . '_gradient_placement');
         $text_color = get_field($prefix . '_text_colors');
         $component_id = get_field('component_id');
         $has_color_bg = $bg_color !== 'bg-[transparent]';
@@ -51,8 +47,6 @@ function s($prefix, bool $sub = true) {
     return [
         'bg_color' => $bg_color,
         'hide_component' => $hide_component,
-        'gradient' => $gradient,
-        'gradient_placement' => $gradient_placement,
         'text_color' => $text_color,
         'text' => $text,
         'link' => $link,
@@ -362,6 +356,5 @@ include_once get_template_directory() . '/partials/author.php';
  */
 include_once get_template_directory() . '/inc/cards/small-card.php';
 include_once get_template_directory() . '/inc/cards/post-card.php';
-include_once get_template_directory() . '/inc/cards/case-card.php';
 include_once get_template_directory() . '/inc/cards/testimonial-card.php';
 include_once get_template_directory() . '/inc/cards/coworker-card.php';

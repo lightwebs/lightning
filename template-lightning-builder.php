@@ -1,7 +1,6 @@
 <?php
 // Template Name: Lightning Builder
 // Template Post Type: page, case
-$hide_sidebar = get_field('hide_sidebar');
 get_header();
 ?>
 
@@ -26,5 +25,4 @@ get_header();
 </main>
 
 <?php
-get_sidebar();
 get_footer();

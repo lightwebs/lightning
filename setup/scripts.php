@@ -17,7 +17,6 @@ function lightning_scripts() {
         'ABSPATH' => str_replace('/wp-content/themes/lwlightning', '', get_template_directory_uri()),
         'restBase' => get_rest_url() . 'lw',
         'loadMore' => wp_create_nonce('load_more'),
-        'filterSearch' => wp_create_nonce('filter_search'),
         'isLoggedIn' => is_user_logged_in(),
     ));
 

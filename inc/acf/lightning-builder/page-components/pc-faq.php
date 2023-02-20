@@ -12,26 +12,26 @@ if (get_row_layout() == 'faq' && !s(get_row_layout())['hide_component']) :
 ?>
 
     <section <?php component_id($prefix); ?> class="pc-faq section <?php echo section_spacing(); ?> <?php echo s($prefix)['bg_color']; ?>">
-        <div class="w-full max-w-[52rem] xl:max-w-[54rem] xxl:max-w-[56rem] mx-auto">
+
+
+        <div class="grid md:grid-cols-2">
             <?php component_header($prefix); ?>
-        </div>
-
-        <div class="container list-faq">
-            <div class="w-full max-w-3xl mx-auto">
-
-                <?php
-                if ($faqs->have_posts()) : ?>
-                    <?php while ($faqs->have_posts()) : $faqs->the_post(); ?>
-                        <details class="mb-8 faq-item mb-md-12">
-                            <summary class="flex items-center justify-between p-4 md:p-8 faq-question">
-                                <h4 class="mb-0">
-                                    <?php echo the_title(); ?></h4>
-                            </summary>
-                            <div class="px-4 pb-6 faq-answer md:pb-8 md:px-8"><?php echo the_content(); ?></div>
-                        </details>
-                <?php endwhile;
-                    wp_reset_postdata();
-                endif; ?>
+            <div class="container">
+                <div class="">
+                    <?php
+                    if ($faqs->have_posts()) : ?>
+                        <?php while ($faqs->have_posts()) : $faqs->the_post(); ?>
+                            <details class="mb-8 faq-item mb-md-12">
+                                <summary class="flex items-center justify-between p-4 md:p-8 faq-question">
+                                    <h4 class="mb-0">
+                                        <?php echo the_title(); ?></h4>
+                                </summary>
+                                <div class="px-4 pb-6 faq-answer md:pb-8 md:px-8"><?php echo the_content(); ?></div>
+                            </details>
+                    <?php endwhile;
+                        wp_reset_postdata();
+                    endif; ?>
+                </div>
             </div>
         </div>
 

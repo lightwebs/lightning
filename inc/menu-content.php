@@ -1,53 +1,76 @@
 <?php
 
-class Menu_Content extends Walker_Nav_Menu {
+class Menu_content extends Walker_Nav_Menu {
     function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+        $icon = get_field('icon', $item);
+        $indent = ($depth) ? str_repeat("\t", $depth) : '';
+        $class_names = $value = '';
 
-        // Prepare all li classes.
-        $li_classes = $value = '';
-        $extra_li_classes = empty($item->classes) ? array() : (array) $item->classes;
+        $classes = empty($item->classes) ? array() : (array) $item->classes;
 
-        if ($depth === 0) {
-            // Top level
-            $extra_li_classes[] = 'top-level';
-        } elseif ($depth === 1) {
-            // Sub menu
-            $extra_li_classes[] = 'sub-level';
+        if (!empty($icon) && $icon != 'None') {
+            $classes[] = 'has-icon';
         }
 
-        $li_classes = join(' ', apply_filters('nav_menu_css_class', array_filter($extra_li_classes), $item));
-        $li_classes = 'class="' . esc_attr($li_classes) . '"';
-        $output .= '<li id="menu-item-' . $item->ID . '"' . $value . $li_classes . '>';
-
-        // Prepare all a attributes.
-        $a_classes = '';
-        $link_attributes  = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
-        $link_attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
-        $link_attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
-        $link_attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
-        $link_attributes .= 'class="' . esc_attr($a_classes) . '"';
-
-        $item_output = '';
-
-        if ($depth === 0 && in_array('menu-item-has-children', $extra_li_classes)) {
-            $item_output .= '<div class="menu-item-with-arrow">';
+        // Sub menu item
+        if ($depth > 0) {
+            $classes[] = 'sub-menu-item';
+        } else {
+            // Top level menu item
+            $classes[] = 'parent-item';
         }
-        $item_output .= '<a' . $link_attributes . '>';
 
-        if ($depth === 0) {
-            // Acctual link text
-            $item_output .= apply_filters('the_title', $item->title, $item->ID);
-        } elseif ($depth === 1) {
-            $description = get_field('description', $item);
-            $item_output .= '<span class="sub-menu-title">' . apply_filters('the_title', $item->title, $item->ID) . '</span>';
-            $item_output .= '<span class="sub-menu-description">' . $description . '</span>';
+        $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item));
+        $class_names = ' class="' . esc_attr($class_names) . '"';
+
+        $output .= $indent . '<li id="menu-item-' . $item->ID . '"' . $value . $class_names . '>';
+
+        $attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
+        $attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
+        $attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
+        $attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
+        $attributes .= 'class="inline-flex items-center text-black menu-item-link gap-x-2 dark:text-white"';
+        if (!empty($args->before)) {
+            $item_output = $args->before;
+
+            if (in_array('menu-item-has-children', $classes) && $item->menu_item_parent) {
+                $item_output .= '<span class="flex items-center justify-between w-full">';
+            }
+
+            $item_output .= '<a' . $attributes . '>';
+        } else {
+
+            if (in_array('menu-item-has-children', $classes) && $item->menu_item_parent) {
+                $item_output = '<span class="flex items-center justify-between w-full">';
+                $item_output .= '<a' . $attributes . '>';
+            } else {
+                $item_output = '<a' . $attributes . '>';
+            }
         }
+
+        if (!empty($icon) && $icon != 'None') {
+            $item_output .= $icon;
+        }
+
+        if (!empty($args->link_before)) {
+            $item_output .= $args->link_before;
+        }
+
+        $item_output .= apply_filters('the_title', $item->title, $item->ID);
+
+        if (!empty($args->link_after)) {
+            $item_output .= $args->link_after;
+        }
+
         $item_output .= '</a>';
 
-        // Dropdown icon
-        if ($depth === 0 && in_array('menu-item-has-children', $extra_li_classes)) {
-            $item_output .= '<button class="sub-menu-toggle-button"><span class="material-icons-round">expand_more</span></button>';
-            $item_output .= '</div>';
+        if (in_array('menu-item-has-children', $classes)) {
+            $item_output .= '<button class="w-4 h-4 p-0 ml-auto lg:ml-2 sub-menu-toggle-button main-item-button"><span class="text-sm text-black duration-300 pointer-events-none dark:text-white material-icons-round">expand_more</span></button>';
+            $item_output .= '</span>';
+        }
+
+        if (!empty($args->after)) {
+            $item_output .= $args->after;
         }
 
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);

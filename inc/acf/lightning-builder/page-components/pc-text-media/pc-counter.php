@@ -5,7 +5,7 @@ $show_as_grid = get_sub_field('text_media_statistics_display') === 'grid';
 <div class="flex items-center order-1 md:order-<?php echo $text_placement === '1' ? '2' : '1';
                                                 echo $text_placement === '1' ? ' justify-start' : ' justify-end'; ?> w-full bg-[#400093] text-white h-full ">
 
-    <div class="py-12 max-w-container-1/2 w-full">
+    <div class="w-full py-12 max-w-container-1/2">
         <div class="<?php echo $show_as_grid ? 'grid grid-cols-2 '  : 'flex flex-col ' ?> container gap-12">
             <?php if (have_rows('statistics_repeater')) :
                 while (have_rows('statistics_repeater')) : the_row();
@@ -28,7 +28,7 @@ $show_as_grid = get_sub_field('text_media_statistics_display') === 'grid';
             ?>
 
                     <div class="flex flex-col gap-4">
-                        <p class="text-3xl sm:text-4xl xl:!text-5xl font-bold font-space mb-0">
+                        <p class="text-3xl sm:text-4xl xl:!text-5xl font-bold mb-0">
                             <span class="<?php echo $should_animate ? 'counter' : ''; ?>">
                                 <?php echo $number; ?>
                             </span>
@@ -38,7 +38,7 @@ $show_as_grid = get_sub_field('text_media_statistics_display') === 'grid';
                                 echo '/ ' . $denominator;
                             endif; ?>
                         </p>
-                        <h3 class="text-xl font-medium mb-0 font-sans"><?php echo $title; ?></h3>
+                        <h3 class="mb-0 font-sans text-xl font-medium"><?php echo $title; ?></h3>
                     </div>
 
             <?php

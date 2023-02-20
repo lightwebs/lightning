@@ -80,10 +80,6 @@ if (get_row_layout() == 'post_listing' && !s(get_row_layout())['hide_component']
                             post_card(get_the_ID(), $card_classes, 20, $post_number, $masonry);
                         }
 
-                        if ($post_type == 'case') {
-                            case_card(get_the_ID(), $card_classes, 15);
-                        }
-
                         if ($post_type == 'testimonial') {
                             testimonial_card(get_the_ID(), $card_classes, 10);
                         }

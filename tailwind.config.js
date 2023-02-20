@@ -33,7 +33,6 @@ module.exports = {
 
         fontFamily: {
             sans: ['Inter', 'sans-serif'],
-            space: ['"Space Grotesk"', 'sans-serif'],
             material: ['"Material Icons Round"', 'sans-serif'],
         },
 

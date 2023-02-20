@@ -1,75 +1,75 @@
 @mixin h1 {
-    font-size: rc(34);
-    line-height: rc(42);
+    font-size: 34px;
+    line-height: 42px;
 
     @media all and (min-width: #{$md}) {
-        font-size: rc(40);
-        line-height: rc(48);
+        font-size: 40px;
+        line-height: 48px;
     }
 
     @media all and (min-width: #{$lg}) {
-        font-size: rc(48);
-        line-height: rc(56);
+        font-size: 48px;
+        line-height: 56px;
     }
 }
 
 @mixin h2 {
-    font-size: rc(26);
-    line-height: rc(34);
+    font-size: 26px;
+    line-height: 34px;
 
     @media all and (min-width: #{$md}) {
-        font-size: rc(36);
-        line-height: rc(42);
+        font-size: 36px;
+        line-height: 42px;
     }
 
     @media all and (min-width: #{$lg}) {
-        font-size: rc(40);
-        line-height: rc(48);
+        font-size: 40px;
+        line-height: 48px;
     }
 }
 
 @mixin h3 {
-    font-size: rc(24);
-    line-height: rc(32);
+    font-size: 24px;
+    line-height: 32px;
 
     @media all and (min-width: #{$md}) {
-        font-size: rc(28);
-        line-height: rc(34);
+        font-size: 28px;
+        line-height: 34px;
     }
 
     @media all and (min-width: #{$lg}) {
-        font-size: rc(32);
-        line-height: rc(40);
+        font-size: 32px;
+        line-height: 40px;
     }
 }
 
 @mixin h4 {
-    font-size: rc(22);
-    line-height: rc(30);
+    font-size: 22px;
+    line-height: 30px;
 
     @media all and (min-width: #{$lg}) {
-        font-size: rc(24);
-        line-height: rc(32);
+        font-size: 24px;
+        line-height: 32px;
     }
 }
 
 @mixin h5 {
-    font-size: rc(18);
-    line-height: rc(26);
+    font-size: 18px;
+    line-height: 26px;
 
     @media all and (min-width: #{$lg}) {
-        font-size: rc(22);
-        line-height: rc(30);
+        font-size: 22px;
+        line-height: 30px;
     }
 }
 
 @mixin preamble {
-    font-size: rc(18);
-    line-height: rc(28);
+    font-size: 18px;
+    line-height: 28px;
 
     @media all and (min-width: #{$lg}) {
-        font-size: rc(20);
-        line-height: rc(30);
+        font-size: 20px;
+        line-height: 30px;
     }
 }
 
@@ -105,7 +105,7 @@
     h5,
     h6 {
         @apply font-bold mt-0 mb-2;
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: 'Inter', sans-serif;
     }
 }
 

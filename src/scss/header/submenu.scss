@@ -1,0 +1,40 @@
+@layer base {
+    ul.sub-menu {
+        @apply lg:absolute relative w-full lg:w-auto z-10 hidden right-0 lg:top-full opacity-0 whitespace-nowrap transition-opacity duration-200 bg-white text-black dark:text-white lg:px-4 lg:py-2;
+
+        &.active {
+            @apply block opacity-100;
+        }
+
+        li {
+            @apply justify-start mb-2 last:mb-0;
+        }
+
+        a {
+            @apply text-sm font-semibold;
+        }
+        ul.sub-menu {
+            @apply px-2;
+        }
+    }
+
+    li.menu-item-has-children {
+        @apply flex lg:inline-flex w-full lg:w-auto flex-wrap lg:flex-nowrap items-center mb-3 lg:mb-0 relative;
+        // > a.menu-item-link .sub-menu-toggle-button{
+        //     @apply after:content-['\e5cf'] after:ml-auto after:font-['Material_Icons_Round'] after:duration-300;
+        // }
+
+        @media all and (min-width: #{$lg}) {
+            &:hover {
+                > .sub-menu-toggle-button {
+                    transform-style: preserve-3d;
+                    transform: rotateX(180deg);
+                }
+
+                > ul.sub-menu {
+                    @apply block opacity-100;
+                }
+            }
+        }
+    }
+}

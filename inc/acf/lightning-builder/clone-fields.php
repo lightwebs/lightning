@@ -33,19 +33,6 @@ if (function_exists('acf_add_local_field_group')) {
                 'wrapper' => ['width' => 15],
             ],
             [
-                'key' => 'field_lb_clone_title_type',
-                'label' => __('Rubriksvariant', 'lightning'),
-                'name' => 'title_type',
-                'type' => 'button_group',
-                'default_value' => 1,
-                'choices' => [
-                    'normal' => 'Vanlig',
-                    'small' => 'Liten',
-                ],
-                'return_format' => 'value',
-                'wrapper' => ['width' => 15],
-            ],
-            [
                 'key' => 'field_clone_title_tag_message',
                 'label' => 'OBS VIKTIGT!',
                 'type' => 'message',
@@ -130,42 +117,6 @@ if (function_exists('acf_add_local_field_group')) {
                 'allow_null' => 0,
                 'layout' => 'horizontal',
             ],
-            // [
-            //     'key' => 'field_lb_clone_gradient',
-            //     'label' => __('Visa gradient?', 'lightning'),
-            //     'name' => 'gradient',
-            //     'type' => 'true_false',
-            //     'message' => '',
-            //     'default_value' => 0,
-            //     'ui' => 1,
-            //     'ui_on_text' => 'Visa',
-            //     'ui_off_text' => 'Dölj',
-            //     'wrapper' => ['width' => 30],
-            // ],
-            // [
-            //     'key' => 'field_lb_clone_gradient_placement',
-            //     'label' => __('Position', 'lightning'),
-            //     'name' => 'gradient_placement',
-            //     'type' => 'button_group',
-            //     'choices' => [
-            //         'left-top' => __('↖', 'lightning'),
-            //         'right-top' => __('↗', 'lightning'),
-            //         'center' => __('⊙', 'lightning'),
-            //         'left-bottom' => __('↙', 'lightning'),
-            //         'right-bottom' => __('↘', 'lightning'),
-            //     ],
-            //     'default_value' => 'upleft',
-            //     'wrapper' => ['width' => 70],
-            //     'conditional_logic' => [
-            //         [
-            //             [
-            //                 'field' => 'field_lb_clone_gradient',
-            //                 'operator' => '==',
-            //                 'value' => 1,
-            //             ],
-            //         ],
-            //     ],
-            // ],
             [
                 'key' => 'field_clone_component_name',
                 'label' => 'Komponentens namn',

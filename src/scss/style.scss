@@ -6,9 +6,7 @@
 
 // Settings
 @import './settings/variables';
-@import './settings/mixins-master';
 @import './settings/typography';
-@import './settings/buttons';
 @import './settings/forms';
 @import './settings/accessibility';
 
@@ -16,23 +14,15 @@
 @import './utils/tooltips';
 @import './utils/toggles';
 @import './utils/swiper';
-@import './utils/overlay';
 @import './utils/details';
-@import './utils/gravity-form';
 
 // Globals
 @import './base/global';
-@import './header/menu';
-@import './header/sub-menu';
-
-// Footer
-@import './footer/footer-form';
+@import './header/submenu';
 
 // Page components
 @import './page-components/pc-columns';
-@import './page-components/pc-post-listing';
 @import './page-components/pc-components-global';
-@import './page-components/pc-floating-cta';
 
 * {
     box-sizing: border-box;

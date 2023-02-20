@@ -1,98 +1,33 @@
-label,
-legend {
-    font-size: rc(12);
-    font-weight: 600;
-}
-
-input[type='text'],
-input[type='email'],
-input[type='url'],
-input[type='password'],
-input[type='search'],
-input[type='number'],
-input[type='tel'],
-input[type='range'],
-input[type='date'],
-input[type='month'],
-input[type='week'],
-input[type='time'],
-input[type='datetime'],
-input[type='datetime-local'],
-input[type='color'],
-textarea {
-    font-family: inherit;
-    font-size: rc(16);
-    width: 100%;
-    color: #000;
-    padding: rc(8) rc(12);
-    @include radius;
-    border: 1px solid darken($color: #f7f4f9, $amount: 5);
-    background: #ffffff;
-    box-shadow: none;
-    -webkit-appearance: none;
-    margin-bottom: rc(8);
-
-    &::placeholder {
-        color: #bababa;
+@layer utilities {
+    label,
+    legend {
+        @apply text-xs font-semibold;
     }
 
-    &:focus {
-        outline: 0;
+    input[type='text'],
+    input[type='email'],
+    input[type='url'],
+    input[type='password'],
+    input[type='search'],
+    input[type='number'],
+    input[type='tel'],
+    input[type='range'],
+    input[type='date'],
+    input[type='month'],
+    input[type='week'],
+    input[type='time'],
+    input[type='datetime'],
+    input[type='datetime-local'],
+    input[type='color'],
+    textarea {
+        @apply text-base shadow-none text-inherit w-full border border-gray-300 rounded-sm px-4 py-2 appearance-none mb-2 focus:border-gray-400 focus:ring-0 focus:ring-offset-0 focus:outline-none focus:ring-gray-400 focus:ring-offset-gray-50 placeholder:text-gray-400 focus-within:border-gray-100;
     }
 
-    &:focus-within {
-        border: 1px dashed #b8938b;
-    }
-}
-
-input[type='search']::placeholder {
-    font-style: italic;
-}
-
-textarea {
-    border: none;
-    background: #ffffff;
-    -webkit-appearance: none;
-}
-
-fieldset {
-    @include radius;
-    border: none;
-    padding: 0;
-    margin-bottom: rc(8);
-}
-
-.gform_validation_container {
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-}
-
-.g-inline {
-    > div {
-        display: flex;
-        column-gap: rc(12);
-
-        span {
-            flex: 1;
-        }
-    }
-}
-
-form {
-    .error {
-        color: red;
-        font-weight: 600;
+    input[type='search']::placeholder {
+        @apply italic;
     }
 
-    .success {
-        color: green;
-        font-weight: 600;
+    fieldset {
+        @apply border-0 p-0 mb-2;
     }
-}
-
-.validation_message {
-    color: red;
-    font-size: 12px;
-    margin-top: -8px;
 }

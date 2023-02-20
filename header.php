@@ -19,40 +19,19 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;800;900&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 
-<?php
-
-if (have_rows('lb_components')) :
-	$i = 0;
-	while (have_rows('lb_components')) : the_row();
-		if ($i === 0) {
-			$prefix = get_row_layout();
-			$text_color = get_sub_field($prefix . '_text_colors');
-
-			$site_header_classes = '';
-			if ($text_color === 'text-[#000000]') {
-				$site_header_classes = 'dark-text';
-			}
-		}
-		$i++;
-
-	endwhile;
-endif; ?>
-
-
-
-<body <?php body_class('bg-background-black text-white m-0'); ?>>
+<body <?php body_class(); ?>>
 	<?php wp_body_open();
 	?>
 
 	<div id="page" class="overflow-hidden site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'lightning'); ?></a>
 
-		<header id="masthead" class="fixed top-0 z-[1001] w-full site-header transition-colors duration-300 <?php echo $site_header_classes; ?>">
+		<header id="masthead" class="fixed top-0 z-[1001] w-full site-header bg-white">
 			<div class="container">
 				<?php get_template_part('components/component', 'navbar'); ?>
 			</div>
