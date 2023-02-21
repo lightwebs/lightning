@@ -14,7 +14,6 @@
  */
 
 get_header();
-$floating_cta = glob(acf_path() . 'lightning-builder/page-components/pc-floating-cta.php');
 ?>
 
 <main id="primary" class="site-main">
@@ -51,8 +50,7 @@ $floating_cta = glob(acf_path() . 'lightning-builder/page-components/pc-floating
                 <?php echo btn_primary('Ladda fler', 'load-more mx-auto block', 'data-post-type="' . get_post_type() . '"'); ?>
             </div>
         <?php
-        endif;
-        include $floating_cta ?>
+        endif; ?>
     </div>
 </main><!-- #main -->
 

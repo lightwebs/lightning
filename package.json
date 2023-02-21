@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "rm -r dist/* .parcel-cache/*",
     "serve": "parcel --port 1234 --hmr-port 1235 src/js/app.js",
-    "colors": "node scripts/colors.js",
+    "colors": "node theme-scripts/colors.js",
     "start": "parcel watch src/js/app.js --no-hmr",
     "build": "parcel build src/js/app.js"
   },

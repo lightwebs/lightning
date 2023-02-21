@@ -36,3 +36,10 @@
 				<?php get_template_part('components/navbar'); ?>
 			</div>
 		</header>
+		<?php if (function_exists('yoast_breadcrumb')) : ?>
+			<?php if (!is_front_page()) : ?>
+				<div class="container">
+					<?php yoast_breadcrumb('<nav class="breadcrumbs">', '</nav>'); ?>
+				</div>
+			<?php endif; ?>
+		<?php endif; ?>
