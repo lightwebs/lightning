@@ -19,7 +19,7 @@ get_header();
 				<h1 class="page-title"><?php echo __('Ojdå, sidan finns inte.', 'lightning'); ?></h1>
 			</header><!-- .page-header -->
 
-			<a class="px-5 py-3 text-sm font-semibold text-white bg-purple-600 rounded hover:bg-purple-700 btn btn-primary md:px-6 md:text-base" href="<?php echo home_url(); ?>"><?php echo __('Gå till startsidan', 'lightning'); ?></a>
+			<a class="px-5 py-3 text-sm font-semibold text-white bg-primary-600 rounded hover:bg-primary-700 btn btn-primary md:px-6 md:text-base" href="<?php echo home_url(); ?>"><?php echo __('Gå till startsidan', 'lightning'); ?></a>
 		</div>
 	</section><!-- .error-404 -->
 

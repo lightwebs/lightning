@@ -33,6 +33,6 @@
 
 		<header id="masthead" class="fixed top-0 z-[1001] w-full site-header bg-white">
 			<div class="container">
-				<?php get_template_part('components/component', 'navbar'); ?>
+				<?php get_template_part('components/navbar'); ?>
 			</div>
 		</header>

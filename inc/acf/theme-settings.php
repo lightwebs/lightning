@@ -52,9 +52,9 @@ acf_add_local_field_group([
             ]
         ],
         [
-            'key' => 'field_lb_theme_settings_right_menu_btn',
+            'key' => 'field_lb_theme_settings_menu_btn',
             'label' => __('Knapp till höger', 'lightning'),
-            'name' => 'right_menu_btn',
+            'name' => 'menu_btn',
             'type' => 'link',
             'instructions' => __('T.ex. Kontaktknapp', 'lightning'),
             'required' => 0,

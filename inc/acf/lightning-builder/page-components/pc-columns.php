@@ -96,7 +96,7 @@ if (get_row_layout() == 'columns' && !s(get_row_layout())['hide_component']) :
                                 ?>
                                     <div class="<?php echo $text_classes; ?>">
                                         <?php if ($is_icon) : ?>
-                                            <div class="inline-flex items-center p-3 mb-4 rounded-full bg-purple-50 sm:mb-4 lg:mb-6">
+                                            <div class="inline-flex items-center p-3 mb-4 rounded-full bg-primary-50 sm:mb-4 lg:mb-6">
                                                 <?php echo $icon; ?>
                                             </div>
                                         <?php endif; ?>

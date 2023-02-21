@@ -1,6 +1,6 @@
 @layer base {
     ul.sub-menu {
-        @apply lg:absolute relative w-full lg:w-auto z-10 hidden right-0 lg:top-full opacity-0 whitespace-nowrap transition-opacity duration-200 bg-white text-black dark:text-white lg:px-4 lg:py-2;
+        @apply lg:absolute relative w-full mx-auto left-0 right-0 max-w-container px-4 md:px-8 xl:px-12 xxl:px-16 z-10 hidden lg:top-full opacity-0 whitespace-nowrap transition-opacity duration-200 bg-white text-black dark:text-white lg:px-4 lg:py-2;
 
         &.active {
             @apply block opacity-100;

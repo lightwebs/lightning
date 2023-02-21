@@ -15,7 +15,7 @@ if (!function_exists('testimonial_card')) {
         $image_id = get_post_thumbnail_id($post_id);
 ?>
         <div class="card group testimonial" data-post-id="<?php echo $post_id; ?>">
-            <div class="relative h-full border border-purple-100 p-4 md:p-6 flex flex-col gap-4 <?php echo $class; ?>">
+            <div class="relative h-full border border-primary-100 p-4 md:p-6 flex flex-col gap-4 <?php echo $class; ?>">
 
                 <div class="mb-2 card-body line-clamp-5 xxl:line-clamp-4"><?php echo $content; ?></div>
 

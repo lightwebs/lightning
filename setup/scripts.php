@@ -40,3 +40,11 @@ function remove_wp_block_library_css() {
     wp_dequeue_style('global-styles');
 }
 add_action('wp_enqueue_scripts', 'remove_wp_block_library_css', 100);
+
+
+// Setting the Google Maps API key for ACF
+function my_acf_google_map_api($api) {
+    $api['key'] = 'AIzaSyBBkPNiE5cDrWQbyvMtDOJ7BdZhXitVxe0';
+    return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');

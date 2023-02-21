@@ -21,7 +21,7 @@
             </div>
 
             <div class="order-1 col-span-1 mb-4 ml-auto md:order-2 md:mb-0">
-                <button class="text-white rounded bg-purple-50"><?php echo __('Filtrera', 'lightning'); ?></button>
+                <button class="text-white rounded bg-primary-50"><?php echo __('Filtrera', 'lightning'); ?></button>
             </div>
         </div>
         <div class="flex">

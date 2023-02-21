@@ -60,6 +60,7 @@ add_action('admin_menu', function () {
 		$customizer_url = add_query_arg('return', urlencode(remove_query_arg(wp_removable_query_args(), wp_unslash($_SERVER['REQUEST_URI']))), 'customize.php');
 
 		remove_menu_page('edit-comments.php');
+		remove_menu_page('plugins.php');
 		remove_submenu_page('themes.php', $customizer_url);
 		remove_submenu_page('themes.php', 'widgets.php');
 		remove_submenu_page('themes.php', 'themes.php');
@@ -179,3 +180,35 @@ add_filter('gform_validation_message', 'lw_gform_validation_message', 10, 2);
 function lw_gform_validation_message() {
 	return '<h2 class="gform_submission_error hide_summary"><span class="gform-icon gform-icon--close"></span>' . __('Ett problem uppstod när ditt formulär skulle skickas. Granska rödmarkerade fält.', 'lightning') . '</h2>';
 }
+
+
+/**
+ * Adds custom classes to the array of body classes.
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function lightning_body_classes($classes) {
+	// Adds a class of hfeed to non-singular pages.
+	if (!is_singular()) {
+		$classes[] = 'hfeed';
+	}
+
+	// Adds a class of no-sidebar when there is no sidebar present.
+	if (!is_active_sidebar('sidebar-1')) {
+		$classes[] = 'no-sidebar';
+	}
+
+	return $classes;
+}
+add_filter('body_class', 'lightning_body_classes');
+
+/**
+ * Add a pingback url auto-discovery header for single posts, pages, or attachments.
+ */
+function lightning_pingback_header() {
+	if (is_singular() && pings_open()) {
+		printf('<link rel="pingback" href="%s">', esc_url(get_bloginfo('pingback_url')));
+	}
+}
+add_action('wp_head', 'lightning_pingback_header');

@@ -28,7 +28,7 @@ if ($is_img || $is_video || $is_statistics) :
                                 ">
                         <?php echo $text; ?>
                         <?php if ($link) :
-                            $link_type === 'button' ? btn_l_primary($link, 'mt-4 lg:mt-6') : custom_link($link, 'text-purple-500 mt-4 lg:mt-6');
+                            $link_type === 'button' ? btn_l_primary($link, 'mt-4 lg:mt-6') : custom_link($link, 'text-primary-500 mt-4 lg:mt-6');
                         endif; ?>
 
                     </div>

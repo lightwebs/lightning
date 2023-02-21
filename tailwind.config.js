@@ -18,9 +18,6 @@ module.exports = {
     ],
 
     theme: {
-        maxWidth: {
-            '1/2': '50%',
-        },
         screens: {
             xs: '374px',
             sm: '640px',
@@ -51,17 +48,17 @@ module.exports = {
                 800: '#1f2937',
                 900: '#111827',
             },
-            purple: {
-                50: '#F7F1FE',
-                100: '#DAC2FA',
-                200: '#BE93F6',
-                300: '#A264F1',
-                400: '#8535ED',
-                500: '#6B13DC',
-                600: '#540FAE',
-                700: '#3D0B7F',
-                800: '#270750',
-                900: '#100321',
+            primary: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                200: '#bfdbfe',
+                300: '#93c5fd',
+                400: '#60a5fa',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+                800: '#1e40af',
+                900: '#1e3a8a',
             },
             background: {
                 transparent: 'transparent',
@@ -79,9 +76,11 @@ module.exports = {
                 '4/3': '4 / 3',
                 '3/4': '3 / 4',
             },
+
             maxWidth: {
-                container: '1800px',
-                ['container-1/2']: '900px',
+                container: '1440px',
+                ['container-1/2']: '720px',
+                '1/2': '50%',
             },
 
             fontSize: {

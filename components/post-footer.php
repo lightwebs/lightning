@@ -9,11 +9,11 @@ $continue_reading = get_field('continue_reading');
             <div class="d-block dark:text-white">
                 <small class="mb-4 d-block"><?php echo __('Fortsätt läsa', 'lightning'); ?></small>
 
-                <p class="mb-0 text-purple-700 hover:text-purple-800 dark:text-white">
+                <p class="mb-0 text-primary-700 hover:text-primary-800 dark:text-white">
                     <strong><?php echo get_the_title($next_part_id); ?></strong>
                 </p>
             </div>
-            <span class="text-purple-700 transition-transform duration-300 material-icons-round group-hover:translate-x-1 hover:text-purple-800 dark:text-white">
+            <span class="text-primary-700 transition-transform duration-300 material-icons-round group-hover:translate-x-1 hover:text-primary-800 dark:text-white">
                 chevron_right
             </span>
         </a>
@@ -52,7 +52,7 @@ $continue_reading = get_field('continue_reading');
             $title = get_the_title($article_id);
             $date = get_the_date('Y/m/d', $article_id);
         ?>
-            <a class="grid grid-cols-4 py-3 mb-2 text-purple-700 transition-opacity duration-300 border-t hover:text-purple-800 dark:border-white/5 dark:px-4 dark:md:p-6 dark:rounded dark:bg-white/5 dark:text-white last:border-b gap-x-3 md:gap-x-4 md:py-4 hover:opacity-80" href="<?php echo $link; ?>">
+            <a class="grid grid-cols-4 py-3 mb-2 text-primary-700 transition-opacity duration-300 border-t hover:text-primary-800 dark:border-white/5 dark:px-4 dark:md:p-6 dark:rounded dark:bg-white/5 dark:text-white last:border-b gap-x-3 md:gap-x-4 md:py-4 hover:opacity-80" href="<?php echo $link; ?>">
                 <?php if ($image_id) : ?>
                     <div class="col-span-1">
                         <?php echo image($image_id, 'medium', 'object-cover h-full w-full'); ?>

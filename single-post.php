@@ -42,7 +42,7 @@ get_header();
 						<?php get_template_part('article', 'builder') ?>
 					</div>
 
-					<?php get_template_part('partials/post', 'footer'); ?>
+					<?php get_template_part('components/post', 'footer'); ?>
 				</div>
 
 				<?php if (!$hide_sidebar) : ?>

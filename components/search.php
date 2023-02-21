@@ -11,7 +11,7 @@
         </form>
         <div class="close-search-result"></div>
     </div>
-    <div class="hidden p-3 bg-white rounded-b shadow-md search-result-wrapper dark:bg-purple-900 dark:text-white sm:p-4 md:p-6">
+    <div class="hidden p-3 bg-white rounded-b shadow-md search-result-wrapper dark:bg-primary-900 dark:text-white sm:p-4 md:p-6">
         <div class="flex mb-3 text-xs align-baseline">
             <strong>Träffar: </strong>
             <span class="pl-3 post-count"></span>

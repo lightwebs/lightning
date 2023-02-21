@@ -8,6 +8,7 @@ $site_logo_text = get_field('site_logo_text', 'option');
 $site_logo_slogan = get_field('site_logo_slogan', 'option');
 $menu_modules_btn = get_field('menu_modules_btn', 'option');
 $menu_login_btn = get_field('menu_login_btn', 'option');
+$menu_btn = get_field('menu_btn', 'option');
 ?>
 
 <nav id="site-navigation" class="flex items-center py-2 main-navigation md:py-4">
@@ -31,7 +32,7 @@ $menu_login_btn = get_field('menu_login_btn', 'option');
             array(
                 'theme_location' => 'menu-1',
                 'container_id'   => 'main-menu',
-                'container_class' => 'absolute min-w-full bg-white sm:min-w-[320px] lg:relative right-0 top-full bg-slate-100 dark:bg-slate-700 p-4 hidden lg:block',
+                'container_class' => 'min-w-full bg-white sm:min-w-[320px] right-0 top-full bg-slate-100 dark:bg-slate-700 p-4 hidden lg:block',
                 'menu_id'        => 'primary-menu',
                 'menu_class'     => 'flex flex-col w-full lg:flex-row lg:items-center lg:ml-8 md:gap-x-8',
                 'walker'         => $walker,
@@ -41,20 +42,23 @@ $menu_login_btn = get_field('menu_login_btn', 'option');
     </div>
 
 
-    <button class="ml-auto search-toggle btn nav-btn" aria-label="<?= __('Toggla sök', 'torplyktan'); ?>" title="<?= __('Sök', 'torplyktan'); ?>">
-        <span class="text-black pointer-events-none material-icons-round dark:text-white ">search</span>
-    </button>
-    <?php get_template_part('components/component', 'search'); ?>
 
-    <div class="flex items-center nav-right">
+
+    <div class="flex items-center ml-auto gap-x-4 nav-right">
+        <?php btn_l_primary($menu_btn); ?>
+        <button class="search-toggle btn nav-btn" aria-label="<?= __('Toggla sök', 'lightning'); ?>" title="<?= __('Sök', 'lightning'); ?>">
+            <span class="text-black pointer-events-none material-icons-round dark:text-white ">search</span>
+        </button>
+        <?php get_template_part('components/search'); ?>
+
         <?php /*
-        <button class="inline-flex items-center p-2 ml-2 rounded-full toggle-dark-mode"
+        <button class="inline-flex items-center p-2 rounded-full toggle-dark-mode"
                 aria-label="<?= __('Toggla dark mode', 'lightning'); ?>">
             <span class="text-black pointer-events-none material-icons-round dark-mode dark:text-white">dark_mode</span>
         </button>
         */ ?>
 
-        <button id="main-menu-toggle" class="ml-2 btn nav-btn main-menu-toggle-btn lg:hidden" aria-label="<?= __('Toggla menyn', 'lightning'); ?>" title="<?= __('Toggla menyn', 'lightning'); ?>">
+        <button id="main-menu-toggle" class="btn nav-btn main-menu-toggle-btn lg:hidden" aria-label="<?= __('Toggla menyn', 'lightning'); ?>" title="<?= __('Toggla menyn', 'lightning'); ?>">
             <?= __('Meny', 'lightning'); ?>
         </button>
     </div>

@@ -138,7 +138,7 @@ function get_post_terms($post_id, string $taxonomy, $class = null, $term_class =
 
     <div class="flex flex-wrap gap-1 <?php echo $class; ?>">
         <?php foreach ($taxonomy as $tax) : ?>
-            <div class="px-2 py-1 mr-1 text-xs font-semibold text-purple-700 bg-purple-100 rounded <?php echo $term_class; ?>">
+            <div class="px-2 py-1 mr-1 text-xs font-semibold text-primary-700 bg-primary-100 rounded <?php echo $term_class; ?>">
                 <?php echo $tax->name; ?>
             </div>
         <?php endforeach; ?>
@@ -250,7 +250,7 @@ function section_spacing() {
  */
 function btn_l_primary($link, string $class = null, $data = null) {
     if ($link) {
-        echo "<a class='inline-flex px-5 py-3 text-sm font-semibold text-white uppercase bg-purple-500 hover:bg-purple-400 active:bg-purple-300 md:px-6 md:text-base transition-colors duration-300 {$class}' {$data}' href='{$link['url']}' target='{$link['target']}'>{$link['title']}</a>";
+        echo "<a class='inline-flex px-5 py-3 text-sm font-semibold text-white uppercase bg-primary-500 hover:bg-primary-400 active:bg-primary-300 md:px-6 md:text-base transition-colors duration-300 {$class}' {$data}' href='{$link['url']}' target='{$link['target']}'>{$link['title']}</a>";
     }
 }
 
@@ -262,7 +262,7 @@ function btn_l_primary($link, string $class = null, $data = null) {
  */
 function btn_l_secondary($btn, string $class = null, $data = null) {
     if ($btn) {
-        echo "<a class='inline-flex px-5 py-3 text-sm font-semibold text-white bg-transparent hover:bg-purple-500 btn btn-primary md:px-6 md:text-base transition-colors duration-300 {$class}' {$data}' href='{$btn['url']}'>{$btn['title']}</a>";
+        echo "<a class='inline-flex px-5 py-3 text-sm font-semibold text-white bg-transparent hover:bg-primary-500 btn btn-primary md:px-6 md:text-base transition-colors duration-300 {$class}' {$data}' href='{$btn['url']}'>{$btn['title']}</a>";
     }
 }
 
@@ -274,7 +274,7 @@ function btn_l_secondary($btn, string $class = null, $data = null) {
  */
 function btn_primary(string $text, string $class = null, $data = null) {
     if ($text) {
-        echo "<button class='px-5 text-center py-3 text-sm font-semibold text-white bg-purple-500 hover:bg-purple-400 active:bg-purple-300 btn btn-primary md:px-6 md:text-base transition-colors duration-300 {$class}' {$data}>" . __($text, 'lightning') . "</button>";
+        echo "<button class='px-5 text-center py-3 text-sm font-semibold text-white bg-primary-500 hover:bg-primary-400 active:bg-primary-300 btn btn-primary md:px-6 md:text-base transition-colors duration-300 {$class}' {$data}>" . __($text, 'lightning') . "</button>";
     }
 }
 
@@ -285,7 +285,7 @@ function btn_primary(string $text, string $class = null, $data = null) {
  */
 function btn_secondary(string $text, string $class = null, $data = null) {
     if ($text) {
-        echo "<button class='px-5 py-3 text-sm font-semibold text-white bg-purple-500 hover:bg-purple-400 active:bg-purple-300 btn btn-primary md:px-6 md:text-base transition-colors duration-300 {$class}' {$data}>" . __($text, 'lightning') . "</button>";
+        echo "<button class='px-5 py-3 text-sm font-semibold text-white bg-primary-500 hover:bg-primary-400 active:bg-primary-300 btn btn-primary md:px-6 md:text-base transition-colors duration-300 {$class}' {$data}>" . __($text, 'lightning') . "</button>";
     }
 }
 
@@ -341,20 +341,16 @@ function get_related_posts_by_field($post_id, $field, $limit = 3) {
 
 /**
  *
- * List partials
+ * Require all partials (including subfolders)
  *
  */
-include_once get_template_directory() . '/partials/component-header.php';
-include_once get_template_directory() . '/partials/component-footer.php';
-include_once get_template_directory() . '/partials/social-share.php';
-include_once get_template_directory() . '/partials/author.php';
 
-/**
- *
- * List cards
- *
- */
-include_once get_template_directory() . '/inc/cards/small-card.php';
-include_once get_template_directory() . '/inc/cards/post-card.php';
-include_once get_template_directory() . '/inc/cards/testimonial-card.php';
-include_once get_template_directory() . '/inc/cards/coworker-card.php';
+$partials = glob(get_template_directory() . '/partials/*.php');
+foreach ($partials as $file) {
+    require $file;
+}
+
+$sub_partials = glob(get_template_directory() . '/partials/**/*.php');
+foreach ($sub_partials as $file) {
+    require $file;
+}

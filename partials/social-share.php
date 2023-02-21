@@ -42,7 +42,7 @@ if (!function_exists('social_share')) {
 
             <div class="flex flex-col gap-3 share-more">
                 <div class="<?php echo $type == 'row' ? 'ac-open-top' : 'ac-header'; ?> cursor-pointer after:!content-none" data-tooltip-top="Dela mer">
-                    <div class="text-purple-700 pointer-events-none dark:text-white material-icons-round">share</div>
+                    <div class="text-primary-700 pointer-events-none dark:text-white material-icons-round">share</div>
                 </div>
 
                 <div class="absolute flex-col hidden gap-3 lg:relative">
@@ -55,7 +55,7 @@ if (!function_exists('social_share')) {
 
                     <a class="mail-share" href="mailto:?subject=Lightweb: <?php the_title(); ?>&body=<?php echo 'Läs på Lightweb: ' . get_the_title() . '%0D%0A' . get_the_permalink(); ?>" target="_blank" alt="E-post" title="E-post" data-tooltip-top="Maila">
 
-                        <div class="text-3xl leading-none text-purple-700 dark:text-white material-icons-round">email</div>
+                        <div class="text-3xl leading-none text-primary-700 dark:text-white material-icons-round">email</div>
 
                     </a>
                 </div>
