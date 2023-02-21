@@ -77,6 +77,10 @@ module.exports = {
                 '3/4': '3 / 4',
             },
 
+            height: {
+                '4/3': 'calc(50vw * 0.75)',
+            },
+
             maxWidth: {
                 container: '1440px',
                 ['container-1/2']: '720px',

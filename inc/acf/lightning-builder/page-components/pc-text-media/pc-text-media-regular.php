@@ -1,13 +1,9 @@
 <?php
 $is_img = $media_type === 'img';
 $is_video = $media_type === 'video';
-$is_statistics = $media_type === 'statistics';
-if ($is_statistics) {
-    $statistics_display = get_sub_field('text_media_statistics_display');
-}
 $text_placement = get_sub_field('text_media_placement');
 $text_alignment = get_sub_field('text_media_text_alignment');
-if ($is_img || $is_video || $is_statistics) :
+if ($is_img || $is_video) :
 ?>
 
 
@@ -38,12 +34,6 @@ if ($is_img || $is_video || $is_statistics) :
 
         <?php if ($is_img || $is_video) :
             include __DIR__ . '/pc-media.php';
-        elseif ($is_statistics) :
-            if ($statistics_display === 'row' || $statistics_display === 'media') :
-                include __DIR__ . '/pc-counter-small.php';
-            else :
-                include __DIR__ . '/pc-counter.php';
-            endif;
         endif; ?>
     </div>
 

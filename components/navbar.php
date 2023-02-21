@@ -59,7 +59,9 @@ $menu_btn = get_field('menu_btn', 'option');
         */ ?>
 
         <button id="main-menu-toggle" class="btn nav-btn main-menu-toggle-btn lg:hidden" aria-label="<?= __('Toggla menyn', 'lightning'); ?>" title="<?= __('Toggla menyn', 'lightning'); ?>">
-            <?= __('Meny', 'lightning'); ?>
+            <span class="material-icons-round">
+                menu
+            </span>
         </button>
     </div>
 </nav><!-- #site-navigation -->

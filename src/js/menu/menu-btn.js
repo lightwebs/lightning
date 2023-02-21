@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    const hamburger = document.getElementById('main-menu-toggle')
+    const menuBtn = document.getElementById('main-menu-toggle')
     const mobileMenu = document.getElementById('main-menu')
     const burgerIcon = document.getElementById('burger-icon')
     
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.toggle('mobile-menu-open')
     }
 
-    hamburger.addEventListener('click', function() {
+    menuBtn.addEventListener('click', function() {
         toggleMenu()
     })
     
