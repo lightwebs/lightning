@@ -11,7 +11,7 @@ $menu_login_btn = get_field('menu_login_btn', 'option');
 $menu_btn = get_field('menu_btn', 'option');
 ?>
 
-<nav id="site-navigation" class="flex items-center py-2 main-navigation md:py-4">
+<nav id="site-navigation" class="flex items-center main-navigation">
     <div class="flex items-center nav-left">
         <a class="site-logo flex flex-col items-start <?= $logo_img ? 'logo-img' : 'logo-text'; ?>" href="<?= home_url(); ?>">
 
@@ -30,12 +30,12 @@ $menu_btn = get_field('menu_btn', 'option');
         $walker = new Menu_content;
         wp_nav_menu(
             array(
-                'theme_location' => 'menu-1',
-                'container_id'   => 'main-menu',
-                'container_class' => 'min-w-full bg-white sm:min-w-[320px] right-0 top-full bg-slate-100 dark:bg-slate-700 p-4 hidden lg:block',
-                'menu_id'        => 'primary-menu',
-                'menu_class'     => 'flex flex-col w-full lg:flex-row lg:items-center lg:ml-8 md:gap-x-8',
-                'walker'         => $walker,
+                'theme_location'  => 'menu-1',
+                'container_id'    => 'main-menu', // wrapping the ul element
+                'container_class' => 'min-w-full bg-white sm:min-w-[320px] top-full bg-slate-100 dark:bg-slate-700 hidden lg:block', // wrapping the ul element
+                'menu_id'         => 'primary-menu', // ul element
+                'menu_class'      => 'flex flex-col w-full lg:flex-row lg:items-center lg:ml-8 md:gap-x-8', // ul element
+                'walker'          => $walker,
             )
         );
         ?>
@@ -59,9 +59,7 @@ $menu_btn = get_field('menu_btn', 'option');
         */ ?>
 
         <button id="main-menu-toggle" class="btn nav-btn main-menu-toggle-btn lg:hidden" aria-label="<?= __('Toggla menyn', 'lightning'); ?>" title="<?= __('Toggla menyn', 'lightning'); ?>">
-            <span class="material-icons-round">
-                menu
-            </span>
+            <span class="material-icons-round menu-toggle-icon">menu</span>
         </button>
     </div>
 </nav><!-- #site-navigation -->

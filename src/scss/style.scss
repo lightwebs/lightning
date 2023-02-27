@@ -1,8 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'swiper/swiper.scss';
-@import 'swiper/modules/navigation/navigation.scss';
+
+@import './../../node_modules/swiper/swiper.scss';
+@import './../../node_modules/swiper/modules/navigation/navigation.scss';
 
 // Settings
 @import './settings/variables';

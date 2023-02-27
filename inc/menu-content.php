@@ -6,21 +6,21 @@ class Menu_content extends Walker_Nav_Menu {
         $indent = ($depth) ? str_repeat("\t", $depth) : '';
         $class_names = $value = '';
 
-        $classes = empty($item->classes) ? array() : (array) $item->classes;
+        $li_classes = empty($item->classes) ? array() : (array) $item->classes;
 
         if (!empty($icon) && $icon != 'None') {
-            $classes[] = 'has-icon';
+            $li_classes[] = 'has-icon';
         }
 
         // Sub menu item
         if ($depth > 0) {
-            $classes[] = 'sub-menu-item';
+            $li_classes[] = 'sub-menu-item';
         } else {
             // Top level menu item
-            $classes[] = 'parent-item';
+            $li_classes[] = 'parent-item lg:py-8 lg:px-2';
         }
 
-        $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item));
+        $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($li_classes), $item));
         $class_names = ' class="' . esc_attr($class_names) . '"';
 
         $output .= $indent . '<li id="menu-item-' . $item->ID . '"' . $value . $class_names . '>';
@@ -33,14 +33,14 @@ class Menu_content extends Walker_Nav_Menu {
         if (!empty($args->before)) {
             $item_output = $args->before;
 
-            if (in_array('menu-item-has-children', $classes) && $item->menu_item_parent) {
+            if (in_array('menu-item-has-children', $li_classes) && $item->menu_item_parent) {
                 $item_output .= '<span class="flex items-center justify-between w-full">';
             }
 
             $item_output .= '<a' . $attributes . '>';
         } else {
 
-            if (in_array('menu-item-has-children', $classes) && $item->menu_item_parent) {
+            if (in_array('menu-item-has-children', $li_classes) && $item->menu_item_parent) {
                 $item_output = '<span class="flex items-center justify-between w-full">';
                 $item_output .= '<a' . $attributes . '>';
             } else {
@@ -64,7 +64,7 @@ class Menu_content extends Walker_Nav_Menu {
 
         $item_output .= '</a>';
 
-        if (in_array('menu-item-has-children', $classes)) {
+        if (in_array('menu-item-has-children', $li_classes)) {
             $item_output .= '<button class="w-4 h-4 p-0 ml-auto lg:ml-2 sub-menu-toggle-button main-item-button"><span class="text-sm text-black duration-300 pointer-events-none dark:text-white material-icons-round">expand_more</span></button>';
             $item_output .= '</span>';
         }

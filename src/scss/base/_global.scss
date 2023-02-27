@@ -3,6 +3,10 @@
         @apply mx-auto px-4 md:px-8 xl:px-12 xxl:px-16 w-full max-w-container;
     }
 
+    .container-no-p {
+        @apply max-w-[calc(1440px-2rem)] md:max-w-[calc(1440px-4rem)] xl:max-w-[calc(1440px-6rem)] xxl:max-w-[calc(1440px-8rem)];
+    }
+
     .screen-reader-text {
         @apply absolute top-[-9999px] left-[-9999px] w-1 h-1 overflow-hidden;
     }
