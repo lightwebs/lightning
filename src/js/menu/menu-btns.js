@@ -13,4 +13,12 @@ document.addEventListener('click', function (e) {
     if (e.target.closest('.main-menu-toggle-btn')) {
         toggleMenu()
     }
+
+    // Search toggle
+    if (e.target.classList.contains('search-toggle')) {
+        const searchWrapper = document.querySelector('.site-search-wrapper')
+        const searchInput = searchWrapper.querySelector('.main-search-input')
+        searchWrapper.classList.toggle('!block')
+        searchInput.focus()
+    }
 })

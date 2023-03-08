@@ -212,3 +212,9 @@ function lightning_pingback_header() {
 	}
 }
 add_action('wp_head', 'lightning_pingback_header');
+
+
+add_filter('relevanssi_live_search_base_styles', '__return_false');
+add_action('wp_enqueueu_scripts', function () {
+	wp_dequeue_style('relevanssi-live-search');
+}, 99);
